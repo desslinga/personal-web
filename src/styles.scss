@@ -1,0 +1,117 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1220px;
+
+$beige: #F8EAD5;
+$brown: #8C4B25;
+$browner: #682A05;
+$dark-brown: #5D3016;
+$darker-brown: #371B0B;
+
+$font-main: 'Work Sans', sans-serif;
+
+body {
+  background-color: $beige;
+  color: $brown;
+  font-family: $font-main;
+}
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+#home-container {
+  margin-top: 7vh;
+  margin-bottom: 7vh;
+  width: 90vw;
+  transition: 0.3s ease-in-out;
+    @include sm {
+      width: 80vw;
+    }
+    @include md {
+      width: 55vw;
+    }
+    @include lg {
+      margin-top: calc(10vh + 5%);
+      width: 83vw;
+    }
+    @include xl {
+      width: 76vw;
+    }
+
+}
+
+h1, span {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 25px;
+  padding-bottom: 20px;
+  font-weight: 700;
+}
+
+a {
+  font-size: 20px;
+  margin-right: calc(1vw + 15px);
+  color: $brown;
+	font-weight: 500;
+	text-decoration: underline;
+  transition: 0.3s ease-in-out;
+}
+
+.fb-fix {
+  position: relative;
+  top: -2px;
+  font-size: 18px;
+}
+
+a:hover {
+  color: $browner;
+  transition: 0.3s ease-in-out;
+}
+
+span {
+  font-size: 18px;
+  font-weight: 300;
+  color: $dark-brown;
+}
+
+.home-about-img {
+  border-radius: 20px;
+  width: 100%;
+}
+
+.home-about-img-container {
+  margin-bottom: calc(3vw + 5px);
+}
+
+.home-about-txt-container {
+  margin-top: 1vw;
+  margin-bottom: 4vw;
+}
