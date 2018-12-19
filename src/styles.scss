@@ -7,12 +7,14 @@ $screen-lg-min: 992px;
 $screen-xl-min: 1220px;
 
 $beige: #F8EAD5;
+$darker-beige: #DFC399;
 $brown: #8C4B25;
 $browner: #682A05;
 $dark-brown: #5D3016;
 $darker-brown: #371B0B;
 
 $font-main: 'Work Sans', sans-serif;
+$font-logo: 'Playfair Display', serif;
 
 body {
   background-color: $beige;
@@ -45,10 +47,9 @@ body {
 }
 
 #home-container {
-  margin-top: 7vh;
-  margin-bottom: 7vh;
   width: 90vw;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease-all;
+  margin-top: 3vh;
     @include sm {
       width: 80vw;
     }
@@ -56,7 +57,7 @@ body {
       width: 55vw;
     }
     @include lg {
-      margin-top: calc(10vh + 5%);
+      margin-top: 6vh;
       width: 83vw;
     }
     @include xl {
@@ -81,7 +82,7 @@ a {
   margin-right: calc(1vw + 15px);
   color: $brown;
 	font-weight: 500;
-	text-decoration: underline;
+	text-decoration: none;
   transition: 0.3s ease-in-out;
 }
 
@@ -114,4 +115,86 @@ span {
 .home-about-txt-container {
   margin-top: 1vw;
   margin-bottom: 4vw;
+}
+
+//navigation styles
+.custom-nav {
+  background-color: transparent;
+}
+
+.modal-nav-content {
+  width: 100%;
+  height: auto;
+}
+
+.modal-nav-body {
+  margin-top: 100px;
+}
+
+.modal-nav-body ul {
+  list-style-type: none;
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.modal-nav-body ul li {
+  text-align: center;
+  font-size: 130%;
+  padding: 8px;
+  text-transform: uppercase;
+}
+
+.nav-menu-item {
+  font-family: $font-main;
+  font-size: 14px;
+  color: $brown;
+}
+
+.bar {
+  width: 35px;
+  height: 5px;
+  background-color: $brown;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 3px;
+}
+
+.bar1 {
+  @extend .bar;
+  &.change {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+  }
+}
+
+.bar2 {
+  @extend .bar;
+  &.change {
+    opacity: 0;
+  }
+}
+
+.bar3 {
+  @extend .bar;
+  &.change {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+  }
+}
+
+.fides-icon {
+  width: 40px;
+  height: 40px;
+  background-color: $darker-beige;
+  border-radius: 5px;
+  & span {
+    font-family: $font-logo;
+    color: white;
+    position: absolute;
+    font-size: 30px;
+    top: 8px;
+    left: 25px;
+  }
 }

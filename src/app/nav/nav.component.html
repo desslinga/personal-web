@@ -1,22 +1,31 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
+<div class='container-fluid' id='home-container'>
+  <div class='row'>
+    <div class='col-12 col-lg-6 col-xl-5'>
+      <nav class="navbar navbar-expand-sm custom-nav">
+        <a class="navbar-brand" href="#">
+          <div class="fides-icon">
+            <span>F</span>
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+          <div class="bar1" [ngClass]="{'change':navbarOpen}"></div>
+          <div class="bar2" [ngClass]="{'change':navbarOpen}"></div>
+          <div class="bar3" [ngClass]="{'change':navbarOpen}"></div>
+        </button>
+        <div class="collapse navbar-collapse" [ngClass]="{'show':navbarOpen}" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><span class="nav-menu-item">About <span class="sr-only">(current)</span></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><span class="nav-menu-item">Work</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><span class="nav-menu-item">Gallery</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
   </div>
-</nav>
+</div>
