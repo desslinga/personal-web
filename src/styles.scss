@@ -7,14 +7,15 @@ $screen-lg-min: 992px;
 $screen-xl-min: 1220px;
 
 $beige: #F8EAD5;
-$darker-beige: #DFC399;
+$darker-beige: #D6B686;
 $brown: #8C4B25;
 $browner: #682A05;
 $dark-brown: #5D3016;
 $darker-brown: #371B0B;
 
 $font-main: 'Work Sans', sans-serif;
-$font-logo: 'Playfair Display', serif;
+//$font-logo: 'Playfair Display', serif;
+$font-logo: 'Aleo', serif;
 
 body {
   background-color: $beige;
@@ -153,8 +154,8 @@ span {
 }
 
 .bar {
-  width: 35px;
-  height: 5px;
+  width: 30px;
+  height: 3px;
   background-color: $brown;
   margin: 6px 0;
   transition: 0.4s;
@@ -164,8 +165,8 @@ span {
 .bar1 {
   @extend .bar;
   &.change {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-    transform: rotate(-45deg) translate(-9px, 6px) ;
+    -webkit-transform: rotate(-45deg) translate(-6px, 3px) ;
+    transform: rotate(-45deg) translate(-6px, 3px) ;
   }
 }
 
@@ -179,8 +180,8 @@ span {
 .bar3 {
   @extend .bar;
   &.change {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-    transform: rotate(45deg) translate(-8px, -8px) ;
+    -webkit-transform: rotate(45deg) translate(-6px, -6px) ;
+    transform: rotate(45deg) translate(-6px, -6px) ;
   }
 }
 
@@ -188,13 +189,13 @@ span {
   width: 40px;
   height: 40px;
   background-color: $darker-beige;
-  border-radius: 5px;
+  border-radius: 3px;
   & span {
     font-family: $font-logo;
     color: white;
     position: absolute;
-    font-size: 30px;
-    top: 8px;
-    left: 25px;
+    font-size: 27px;
+    top: 15px;
+    left: 27px;
   }
 }
