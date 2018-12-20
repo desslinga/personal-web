@@ -138,7 +138,7 @@ span {
 
 .nav-container {
   position: relative;
-  left: -50px;
+  left: 0px;
   display: none;
   @include md {
     display: inline;
@@ -205,8 +205,12 @@ span {
 
 .nav-toggle {
   background-color: transparent;
-  position: relative;
-  left: 60%;
+  position: absolute;
+  top: -0.5vh;
+  right: 1vw;
+  @include md {
+    display: none;
+  }
 }
 
 .fides-icon {
