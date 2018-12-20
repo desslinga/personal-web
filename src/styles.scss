@@ -121,36 +121,42 @@ span {
 //navigation styles
 .custom-nav {
   background-color: transparent;
+
 }
 
-.modal-nav-content {
-  width: 100%;
-  height: auto;
+.nav-overlay {
+  position: absolute;
+  padding: 5vw;
+  top: -3vh;
+  left: -5vw;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  z-index: 6;
+  background-color: $beige;
 }
 
-.modal-nav-body {
-  margin-top: 100px;
-}
-
-.modal-nav-body ul {
-  list-style-type: none;
-  color: white;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-.modal-nav-body ul li {
-  text-align: center;
-  font-size: 130%;
-  padding: 8px;
-  text-transform: uppercase;
-}
-
-.nav-menu-item {
-  font-family: $font-main;
-  font-size: 14px;
-  color: $brown;
+.nav-container {
+  display: inline;
+  & ul {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    & li {
+      display: inline;
+      & span {
+        font-family: $font-main;
+        font-size: 14px;
+        color: $brown;
+      }
+    }
+  }
+  &.nav-open {
+    & li {
+      display: block;
+    }
+  }
 }
 
 .bar {
@@ -185,6 +191,15 @@ span {
   }
 }
 
+.nav-icon {
+  display: inline-block;
+}
+
+.nav-toggle {
+  position: relative;
+  left: 60%;
+}
+
 .fides-icon {
   width: 40px;
   height: 40px;
@@ -193,9 +208,9 @@ span {
   & span {
     font-family: $font-logo;
     color: white;
-    position: absolute;
+    position: relative;
     font-size: 27px;
-    top: 15px;
-    left: 27px;
+    top: 2px;
+    left: 11px;
   }
 }
