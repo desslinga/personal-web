@@ -137,8 +137,14 @@ span {
 }
 
 .nav-container {
-  display: inline;
+  position: relative;
+  left: -50px;
+  display: none;
+  @include md {
+    display: inline;
+  }
   & ul {
+    display: inline;
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -153,6 +159,8 @@ span {
     }
   }
   &.nav-open {
+    left: 0px;
+    display: inline;
     & li {
       display: block;
     }
@@ -171,8 +179,8 @@ span {
 .bar1 {
   @extend .bar;
   &.change {
-    -webkit-transform: rotate(-45deg) translate(-6px, 3px) ;
-    transform: rotate(-45deg) translate(-6px, 3px) ;
+    -webkit-transform: rotate(-45deg) translate(-6px, 4px) ;
+    transform: rotate(-45deg) translate(-6px, 4px) ;
   }
 }
 
@@ -186,8 +194,8 @@ span {
 .bar3 {
   @extend .bar;
   &.change {
-    -webkit-transform: rotate(45deg) translate(-6px, -6px) ;
-    transform: rotate(45deg) translate(-6px, -6px) ;
+    -webkit-transform: rotate(45deg) translate(-8px, -6px) ;
+    transform: rotate(45deg) translate(-8px, -6px) ;
   }
 }
 
@@ -196,6 +204,7 @@ span {
 }
 
 .nav-toggle {
+  background-color: transparent;
   position: relative;
   left: 60%;
 }
