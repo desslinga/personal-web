@@ -6,7 +6,6 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 
-
 export class NavComponent implements OnInit {
   navbarOpen: boolean;
   width: number;
@@ -21,6 +20,9 @@ export class NavComponent implements OnInit {
 
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
+    if (this.navbarOpen) {
+      document.body.className = "no-scroll";
+    }
   }
 
   constructor() {
