@@ -13,7 +13,7 @@ export class NavComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.width = window.innerWidth;
-    if (this.width > 762) {
+    if (this.width > 768) {
       this.navbarOpen = false;
     }
   }
@@ -22,6 +22,8 @@ export class NavComponent implements OnInit {
     this.navbarOpen = !this.navbarOpen;
     if (this.navbarOpen) {
       document.body.className = "no-scroll";
+    } else {
+      document.body.className = "";
     }
   }
 

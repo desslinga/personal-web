@@ -17,10 +17,26 @@ $font-main: 'Work Sans', sans-serif;
 //$font-logo: 'Playfair Display', serif;
 $font-logo: 'Aleo', serif;
 
+$width-xs: 90vw;
+$width-sm: 80vw;
+$width-md: 55vw;
+$width-lg: 83vw;
+$width-xl: 76vw;
+$container-pad-top-xs: 3vh;
+$container-pad-top-lg: 6vh;
+
+$fides-logo-height: 40px;
+
 body {
   background-color: $beige;
   color: $brown;
   font-family: $font-main;
+}
+
+@mixin overlay-pos($width) {
+  left: calc((-100vw + #{$width})/2);
+  padding-left: calc((100vw - #{$width})/2 + 15px);
+  padding-right: calc((100vw - #{$width})/2 + 15px);
 }
 
 @mixin sm {
@@ -48,21 +64,21 @@ body {
 }
 
 #home-container {
-  width: 90vw;
+  width: $width-xs;
   transition: 0.3s ease-all;
-  padding-top: 3vh;
+  padding-top: $container-pad-top-xs;
     @include sm {
-      width: 80vw;
+      width: $width-sm;
     }
     @include md {
-      width: 55vw;
+      width: $width-sm;
     }
     @include lg {
-      margin-top: 6vh;
-      width: 83vw;
+      padding-top: $container-pad-top-lg;
+      width: $width-lg;
     }
     @include xl {
-      width: 76vw;
+      width: $width-xl;
     }
 
 }
@@ -85,6 +101,9 @@ a {
 	font-weight: 500;
 	text-decoration: none;
   transition: 0.3s ease-in-out;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .fb-fix {
@@ -126,18 +145,19 @@ span {
 
 .nav-overlay {
   position: absolute;
-  padding: 5vw;
-  top: -3vh;
-  left: -5vw;
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
   z-index: 6;
+  top: -$container-pad-top-xs;
+  padding-top: $container-pad-top-xs;
   background-color: $beige;
+  @include overlay-pos($width-xs);
   @include sm {
-    left: -10vw;
-    padding-left: calc(10vw + 15px);
-    padding-right: calc(10vw + 15px);
+    @include overlay-pos($width-sm);
+  }
+  @include md {
+    @include overlay-pos($width-md);
   }
 }
 
@@ -156,9 +176,12 @@ span {
     list-style: none;
     & li {
       display: inline;
+      float: right;
+      line-height: $fides-logo-height;
       & span {
         font-family: $font-main;
-        font-size: 14px;
+        font-size: 20px;
+        font-weight: 400;
         color: $brown;
       }
     }
@@ -168,6 +191,10 @@ span {
     display: inline;
     & li {
       display: block;
+      float: none;
+      & span {
+        float: none;
+      }
     }
   }
 }
@@ -210,8 +237,8 @@ span {
 
 .nav-toggle {
   padding: 0;
-  height: 40px;
-  width: 40px;
+  height: $fides-logo-height;
+  width: $fides-logo-height;
   background-color: transparent;
   float: right;
   @include md {
@@ -220,8 +247,8 @@ span {
 }
 
 .fides-icon {
-  width: 40px;
-  height: 40px;
+  width: $fides-logo-height;
+  height: $fides-logo-height;
   background-color: $darker-beige;
   border-radius: 3px;
   & span {
