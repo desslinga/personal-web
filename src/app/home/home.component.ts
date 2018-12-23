@@ -7,13 +7,11 @@ import { ScreenChangeService } from '../services/screen-change.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  const navItemActive = 'about';
   screenChangeService: ScreenChangeService;
 
   constructor(private screenchangeservice: ScreenChangeService) {
     this.screenChangeService = screenchangeservice;
 
-    this.screenChangeService.setNavItemActive('about');
   }
 
   ngOnInit() {

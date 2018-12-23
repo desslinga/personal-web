@@ -5,16 +5,6 @@ import { Injectable } from '@angular/core';
 })
 
 export class ScreenChangeService {
-  navItemActive: string;
   constructor() {
-    this.navItemActive = 'about';
-  }
-
-  setNavItemActive(navItemActive: string): void {
-    this.navItemActive = navItemActive;
-  }
-
-  getNavItemActive(): string {
-    return this.navItemActive;
   }
 }

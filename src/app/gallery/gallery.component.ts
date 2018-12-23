@@ -10,6 +10,10 @@ export class GalleryComponent implements OnInit {
   imageList : Array<string>;
   screenChangeService: ScreenChangeService;
 
+  openPreview(imgUrl): void {
+    console.log(imgUrl);
+  }
+
   constructor(private screenchangeservice: ScreenChangeService) {
     this.imageList = [
       "image-01.png",
@@ -34,7 +38,6 @@ export class GalleryComponent implements OnInit {
        this.imageList[i] = "./assets/images/gallery/" + this.imageList[i];
     }
 
-    this.screenChangeService.setNavItemActive('gallery');
   }
 
   ngOnInit() {

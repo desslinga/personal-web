@@ -104,6 +104,11 @@ body {
 
 }
 
+#nav-container {
+  @extend #home-container;
+  padding-bottom: 0;
+}
+
 h1, span {
   padding: 0;
   margin: 0;
@@ -218,6 +223,9 @@ span {
   &.nav-open {
     left: 0px;
     display: inline;
+    & a {
+      font-size: 25px;
+    }
     & ul li:first-child {
       margin-top: calc(#{$fides-logo-height}/2);
     }
@@ -228,11 +236,16 @@ span {
   }
 }
 
+.nav-title {
+  display: inline;
+  font-weight: 700;
+}
+
 .bar {
   width: 30px;
   height: 3px;
   background-color: $brown;
-  margin: 6px 0;
+  margin: 7px 0;
   transition: 0.4s;
   border-radius: 3px;
 }
@@ -240,8 +253,8 @@ span {
 .bar1 {
   @extend .bar;
   &.change {
-    -webkit-transform: rotate(-45deg) translate(-6px, 4px);
-    transform: rotate(-45deg) translate(-6px, 4px);
+    -webkit-transform: rotate(-45deg) translate(-8px, 4px);
+    transform: rotate(-45deg) translate(-8px, 4px);
   }
 }
 
@@ -255,8 +268,8 @@ span {
 .bar3 {
   @extend .bar;
   &.change {
-    -webkit-transform: rotate(45deg) translate(-8px, -6px);
-    transform: rotate(45deg) translate(-8px, -6px);
+    -webkit-transform: rotate(45deg) translate(-10px, -6px);
+    transform: rotate(45deg) translate(-10px, -6px);
   }
 }
 
