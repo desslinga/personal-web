@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ScreenChangeService } from './services/screen-change.service';
+import { GalleryPreviewComponent } from './gallery-preview/gallery-preview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
-    GalleryComponent
+    GalleryComponent,
+    GalleryPreviewComponent
   ],
   imports: [
     BrowserModule,
