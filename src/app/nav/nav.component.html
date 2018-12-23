@@ -14,9 +14,9 @@
         </button>
         <div class="nav-container" [ngClass]="{'nav-open':navbarOpen}">
           <ul>
-            <li><a routerLink="/about" [ngClass]="{'nav-item-active':navItemActive == 'about'}" (click)="toggleNavbar()">ABOUT</a></li>
+            <li><a routerLink="/about" [ngClass]="{'nav-item-active': navItemActive == 'about'}" (click)="toggleNavbar()">ABOUT</a></li>
             <!--<li><a routerLink="/about" (click)="toggleNavbar()">WORK</a></li>-->
-            <li><a routerLink="/gallery" [ngClass]="{'nav-item-active':navItemActive == 'gallery'}" (click)="toggleNavbar()">GALLERY</a></li>
+            <li><a routerLink="/gallery" [ngClass]="{'nav-item-active': navItemActive == 'gallery'}" (click)="toggleNavbar()">GALLERY</a></li>
           </ul>
         </div>
       </nav>

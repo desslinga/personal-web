@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
+import { ScreenChangeService } from '../services/screen-change.service';
 
 @Component({
   selector: 'app-gallery',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryComponent implements OnInit {
   imageList : Array<string>;
-  constructor() {
+  screenChangeService: ScreenChangeService;
 
+  constructor(private screenchangeservice: ScreenChangeService) {
     this.imageList = [
       "image-01.png",
       "image-02.png",
@@ -24,16 +26,19 @@ export class GalleryComponent implements OnInit {
       "image-12.png",
       "image-13.png",
       "image-14.png"
-    ]
+    ];
+
+    this.screenChangeService = screenchangeservice;
 
     for (let i = 0; i < this.imageList.length; i++) {
        this.imageList[i] = "./assets/images/gallery/" + this.imageList[i];
     }
 
-    console.log(this.imageList, "hello" + "f");
+    this.screenChangeService.setNavItemActive('gallery');
   }
 
   ngOnInit() {
+
   }
 
 }

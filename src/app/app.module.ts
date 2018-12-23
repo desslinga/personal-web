@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { ScreenChangeService } from './services/screen-change.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ScreenChangeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

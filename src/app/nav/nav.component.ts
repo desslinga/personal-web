@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { ScreenChangeService } from '../services/screen-change.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,6 +11,7 @@ export class NavComponent implements OnInit {
   navbarOpen: boolean;
   width: number;
   navItemActive : String;
+  screenChangeService: ScreenChangeService;
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -31,11 +33,13 @@ export class NavComponent implements OnInit {
     }
   }
 
-  constructor() {
-    this.navItemActive = 'about';
+  constructor(private screenchangeservice: ScreenChangeService) {
     this.navbarOpen = false;
-    console.log(window);
     this.width = window.innerWidth;
+    this.screenChangeService = screenchangeservice;
+    console.log(screenchangeservice);
+    this.navItemActive = this.screenChangeService.getNavItemActive();
+    console.log(this.navItemActive);
   }
 
   ngOnInit() {

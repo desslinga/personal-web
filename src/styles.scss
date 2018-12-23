@@ -195,6 +195,9 @@ span {
     font-weight: 400;
     color: $brown;
     transition: $fast-ease;
+    &.nav-item-active {
+      font-weight: 700;
+    }
     &:hover {
       color: $browner;
       transition: $fast-ease;
@@ -223,10 +226,6 @@ span {
       float: none;
     }
   }
-}
-
-.nav-item-active {
-  font-weight: 700;
 }
 
 .bar {
