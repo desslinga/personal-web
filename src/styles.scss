@@ -318,3 +318,22 @@ span {
   width: 100%;
   border-radius: 5px;
 }
+
+//gallery preview styles
+#gallery-preview-container {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.6);
+  overflow-x: hidden;
+  z-index: 7;
+}
+
+.gallery-preview-photo {
+  position: absolute;
+  top: 15vmin;
+  left: 15vmin;
+  width: 60vmin;
+  border-radius: 5px;
+}

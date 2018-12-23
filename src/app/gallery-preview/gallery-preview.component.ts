@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-gallery-preview',
@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery-preview.component.scss']
 })
 export class GalleryPreviewComponent implements OnInit {
+  @Input() image: String;
 
-  constructor() { }
+  constructor() {
+    console.log(this.image);
+    document.body.className = "no-scroll";
+  }
 
   ngOnInit() {
   }

@@ -1,9 +1,10 @@
 <div class='container-fluid' id='home-container'>
   <div class='row'>
-    <div class='col-12 col-lg-6' *ngFor="let imgUrl of imageList">
+    <div class='col-12 col-lg-6' *ngFor="let imgUrl of imageListPrev">
       <div class='gallery-photo-container' (click)="openPreview(imgUrl)">
         <img src='{{imgUrl}}' class='gallery-photo'/>
       </div>
     </div>
   </div>
 </div>
+<app-gallery-preview *ngIf="openedImage != ''" [image]="openedImage"></app-gallery-preview>

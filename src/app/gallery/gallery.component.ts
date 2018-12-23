@@ -8,10 +8,13 @@ import { ScreenChangeService } from '../services/screen-change.service';
 })
 export class GalleryComponent implements OnInit {
   imageList : Array<string>;
+  imageListPrev : Array<string>;
+  openedImage: String;
   screenChangeService: ScreenChangeService;
 
   openPreview(imgUrl): void {
     console.log(imgUrl);
+    this.openedImage = imgUrl;
   }
 
   constructor(private screenchangeservice: ScreenChangeService) {
@@ -34,14 +37,16 @@ export class GalleryComponent implements OnInit {
 
     this.screenChangeService = screenchangeservice;
 
+    this.imageListPrev = [];
     for (let i = 0; i < this.imageList.length; i++) {
-       this.imageList[i] = "./assets/images/gallery/" + this.imageList[i];
+       this.imageListPrev[i] = "./assets/images/gallery/" + this.imageList[i];
     }
+
+    this.openedImage = "";
 
   }
 
   ngOnInit() {
-
   }
 
 }
