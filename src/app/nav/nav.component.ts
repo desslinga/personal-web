@@ -9,6 +9,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class NavComponent implements OnInit {
   navbarOpen: boolean;
   width: number;
+  navItemActive : String;
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -19,6 +20,9 @@ export class NavComponent implements OnInit {
   }
 
   toggleNavbar() {
+    if (this.width > 768) {
+      return;
+    }
     this.navbarOpen = !this.navbarOpen;
     if (this.navbarOpen) {
       document.body.className = "no-scroll";
@@ -28,6 +32,7 @@ export class NavComponent implements OnInit {
   }
 
   constructor() {
+    this.navItemActive = 'about';
     this.navbarOpen = false;
     console.log(window);
     this.width = window.innerWidth;

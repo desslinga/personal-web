@@ -1,3 +1,9 @@
-<p>
-  gallery works!
-</p>
+<div class='container-fluid' id='home-container'>
+  <div class='row'>
+    <div class='col-12 col-lg-6' *ngFor="let imgUrl of imageList">
+      <div class='gallery-photo-container'>
+        <img src='{{imgUrl}}' class='gallery-photo'/>
+      </div>
+    </div>
+  </div>
+</div>

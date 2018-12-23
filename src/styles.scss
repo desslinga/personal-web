@@ -87,6 +87,7 @@ body {
 #home-container {
   width: $width-xs;
   padding-top: $container-pad-top-xs;
+  padding-bottom: calc(#{$container-pad-top-xs}*1.5);
     @include sm {
       width: $width-sm;
     }
@@ -292,4 +293,15 @@ span {
 
 .no-scroll {
   overflow: hidden;
+}
+
+//gallery styles
+.gallery-photo-container {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.gallery-photo {
+  width: 100%;
+  border-radius: 5px;
 }
