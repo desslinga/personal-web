@@ -321,19 +321,35 @@ span {
 
 //gallery preview styles
 #gallery-preview-container {
-  position: absolute;
+  position: fixed;
   top: 0; left: 0;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0,0,0,0.6);
+  background-color: $darker-beige;
+  //background-color: rgba(0,0,0,0.6);
   overflow-x: hidden;
   z-index: 7;
 }
 
 .gallery-preview-photo {
-  position: absolute;
-  top: 15vmin;
-  left: 15vmin;
-  width: 60vmin;
+  position: relative;
   border-radius: 5px;
+  top: 10vh;
+  left: 15vw;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+.gallery-preview-photo-landscape {
+  @extend .gallery-preview-photo;
+  top: 10vw;
+  left: 15vw;
+  width: 70vw;
+}
+
+.gallery-preview-photo-portrait {
+  @extend .gallery-preview-photo;
+  top: 15vh;
+  left: 10vw;
+  height: 70vh;
 }

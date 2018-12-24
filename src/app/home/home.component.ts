@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
   screenChangeService: ScreenChangeService;
 
   constructor(private screenchangeservice: ScreenChangeService) {
+    document.body.className = "";
     this.screenChangeService = screenchangeservice;
 
   }

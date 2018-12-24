@@ -60,6 +60,11 @@ export class NavComponent implements OnInit {
 
     this.navItemActive = this.location.path();
     console.log(this.navItemActive);
+
+    router.events.subscribe((val) => {
+      console.log("he");
+      this.navItemActive = this.location.path();
+    });
   }
 
   ngOnInit() {
