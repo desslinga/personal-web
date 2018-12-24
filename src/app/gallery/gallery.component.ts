@@ -7,15 +7,15 @@ import { ScreenChangeService } from '../services/screen-change.service';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  imageList : Array<string>;
-  imageListPrev : Array<string>;
-  imageListFull: Array<string>;
-  openedImage: String;
+  imageList : Array<Array<any>>;
+  imageListPrev : Array<any>;
+  imageListFull: Array<any>;
+  openedImage: string;
   screenChangeService: ScreenChangeService;
 
   openPreview(i): void {
     console.log(this.imageListFull[i]);
-    this.openedImage = this.imageListFull[i]);
+    this.openedImage = this.imageListFull[i];
   }
 
   handlePrevEmit(event): void {
