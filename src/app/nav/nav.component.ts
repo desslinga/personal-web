@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 export class NavComponent implements OnInit {
   navbarOpen: boolean;
   width: number;
-  navItemActive : String;
+  navItemActive : string;
   screenChangeService: ScreenChangeService;
   navMobileWidth : number;
   navTitle: Object;

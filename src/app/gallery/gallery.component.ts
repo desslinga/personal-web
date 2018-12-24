@@ -7,9 +7,9 @@ import { ScreenChangeService } from '../services/screen-change.service';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  imageList : Array<Array<any>>;
-  imageListPrev : Array<any>;
-  imageListFull: Array<any>;
+  imageList : Array<Array<string>>;
+  imageListPrev : Array<string>;
+  imageListFull: Array<string>;
   openedImage: string;
   screenChangeService: ScreenChangeService;
 
