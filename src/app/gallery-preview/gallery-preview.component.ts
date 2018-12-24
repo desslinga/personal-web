@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-gallery-preview',
@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class GalleryPreviewComponent implements OnInit {
   @Input() image: String;
+  @Output() prevEmit: EventEmitter<Object> = new EventEmitter<Object>();
 
   constructor() {
     console.log(this.image);
@@ -14,6 +15,12 @@ export class GalleryPreviewComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  closePreview(): void {
+    this.image = "";
+    document.body.className = "";
+    this.prevEmit.emit('close');
   }
 
 }

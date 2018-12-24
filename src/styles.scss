@@ -332,24 +332,30 @@ span {
 }
 
 .gallery-preview-photo {
-  position: relative;
   border-radius: 5px;
-  top: 10vh;
-  left: 15vw;
-  max-width: 80vw;
-  max-height: 80vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  max-height: 100vh;
+  transition: $mid-ease;
+  @include sm {
+    max-width: 80vw;
+    max-height: 80vh;
+    transition: $mid-ease;
+  }
 }
 
-.gallery-preview-photo-landscape {
-  @extend .gallery-preview-photo;
-  top: 10vw;
-  left: 15vw;
-  width: 70vw;
-}
+.gallery-preview-close {
+  position: absolute;
+  cursor: pointer;
+  top: 1.5vw;
+  right: 2vw;
+  font-size: 30px;
 
-.gallery-preview-photo-portrait {
-  @extend .gallery-preview-photo;
-  top: 15vh;
-  left: 10vw;
-  height: 70vh;
+  @include sm {
+    top: 4vw;
+    right: 5vw;
+  }
 }

@@ -18,6 +18,16 @@ export class GalleryComponent implements OnInit {
     this.openedImage = this.imageListFull[i]);
   }
 
+  handlePrevEmit(event): void {
+    switch (event) {
+      case 'close':
+        this.openedImage = "";
+        break;
+      default:
+        break;
+    }
+  }
+
   constructor(private screenchangeservice: ScreenChangeService) {
     document.body.className = "";
     this.imageList = [
@@ -31,7 +41,7 @@ export class GalleryComponent implements OnInit {
       ["image-08.png","go_introduction_2.png"],
       ["image-09.png","girl_with_cats.PNG"],
       ["image-10.png","amacss_gaming_night_2.PNG"],
-      ["image-11.png","uoft_hacks_skyline.png"],
+      ["image-11.png","uoft_hacks_title.png"],
       ["image-12.png","go_introduction_1.png"],
       ["image-13.png","amacss_quiz_night.png"],
       ["image-14.png","amacss_gaming_night_1.png"]
