@@ -2,5 +2,16 @@
   <div class='gallery-preview-close' (click)="closePreview()">
     <i class="fas fa-times"></i>
   </div>
-  <img src='{{image}}' class='gallery-preview-photo'/>
+  <div class='gallery-preview-center'>
+    <img src='{{image}}' class='gallery-preview-photo'/>
+      <span class='gallery-preview-caption'>
+        <span class='gallery-preview-title'>
+          {{image}}
+        </span>
+        <span class='gallery-preview-desc'>
+          This piece was a personally made illustration, because
+          I love cats and would like to have plenty one day.
+        </span>
+      </span>
+  </div>
 </div>

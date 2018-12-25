@@ -365,23 +365,38 @@ span {
   z-index: 7;
 }
 
-.gallery-preview-photo {
+.gallery-preview-center {
   border-radius: 5px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  max-width: 90vw;
-  max-height: 80vh;
-  transition: $mid-ease;
+  width: 90vw;
+  height: 80vh;
   @include sm {
-    max-width: 80vw;
-    transition: $mid-ease;
+    width: 80vw;
   }
 }
 
+.gallery-preview-photo {
+  max-width: 90vw;
+  max-height: 80vh;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.gallery-preview-caption {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  padding-bottom: 5vh;
+}
+
 .gallery-preview-close {
-  position: absolute;
+  position: fixed;
+  z-index: 1;
   cursor: pointer;
   top: 1.5vw;
   right: 2vw;
