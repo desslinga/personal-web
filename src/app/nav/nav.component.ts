@@ -38,7 +38,7 @@ export class NavComponent implements OnInit {
   }
 
   toggleNavbar(): void {
-    this.navOverlay = document.querySelector('.nav-overlay');
+    this.navOverlay = document.querySelector('.custom-nav');
     if (this.width > this.navMobileWidth) {
       return;
     }

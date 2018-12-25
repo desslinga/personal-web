@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import * as $ from 'jquery';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 @Component({
   selector: 'app-gallery-preview',
@@ -9,9 +9,10 @@ import * as $ from 'jquery';
 export class GalleryPreviewComponent implements OnInit {
   @Input() image: String;
   @Output() prevEmit: EventEmitter<Object> = new EventEmitter<Object>();
+  siteContent: any;
 
   constructor() {
-    $('.site-content').addClass('no-scroll');
+    disableBodyScroll(this.siteContent);
     console.log(this.image);
   }
 
@@ -19,8 +20,9 @@ export class GalleryPreviewComponent implements OnInit {
   }
 
   closePreview(): void {
+    this.siteContent = document.querySelector('#home-container');
     this.image = "";
-    $('body').removeClass('no-scroll');
+    clearAllBodyScrollLocks();
     this.prevEmit.emit('close');
   }
 

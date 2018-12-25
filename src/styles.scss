@@ -115,7 +115,7 @@ body {
   z-index: 1;
   background-color: $beige;
   width: 100%;
-  padding-bottom: 1vh;
+  padding-bottom: 1.5vh;
   @include overlay-pos($width-xs);
   left: 0;
   @include sm {
@@ -362,7 +362,7 @@ span {
   top: 50%;
   transform: translate(-50%, -50%);
   max-width: 100vw;
-  max-height: 100vh;
+  max-height: 80vh;
   transition: $mid-ease;
   @include sm {
     max-width: 80vw;
