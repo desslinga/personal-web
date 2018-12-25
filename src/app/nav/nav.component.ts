@@ -44,20 +44,21 @@ export class NavComponent implements OnInit {
     }
     this.navbarOpen = !this.navbarOpen;
     if (this.navbarOpen) {
+      disableBodyScroll(this.siteContent);
       disableBodyScroll(this.navOverlay);
     } else {
-      enableBodyScroll(this.siteContent);
+      clearAllBodyScrollLocks();
     }
   }
 
   constructor(private screenchangeservice: ScreenChangeService,
               private router: Router,
               private location: Location) {
-    enableBodyScroll();
+    //enableBodyScroll();
     this.navbarOpen = false;
     this.width = window.innerWidth;
     this.screenChangeService = screenchangeservice;
-    this.siteContent = document.querySelector('.site-content');
+    this.siteContent = document.querySelector('#home-container');
     this.navMobileWidth = 768;
     this.navTitle = {
       '/about':'ABOUT',

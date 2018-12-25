@@ -29,7 +29,6 @@ export class GalleryComponent implements OnInit {
   }
 
   constructor(private screenchangeservice: ScreenChangeService) {
-    document.body.className = "";
     this.imageList = [
       ["image-01.png","uoft_hacks_tower.png"],
       ["image-02.png","transitassets-01.png"],
