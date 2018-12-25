@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { ScreenChangeService } from '../services/screen-change.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 @Component({
   selector: 'app-nav',
@@ -16,6 +17,8 @@ export class NavComponent implements OnInit {
   screenChangeService: ScreenChangeService;
   navMobileWidth : number;
   navTitle: Object;
+  navOverlay: any;
+  siteContent: any;
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -35,23 +38,26 @@ export class NavComponent implements OnInit {
   }
 
   toggleNavbar(): void {
+    this.navOverlay = document.querySelector('.nav-overlay');
     if (this.width > this.navMobileWidth) {
       return;
     }
     this.navbarOpen = !this.navbarOpen;
     if (this.navbarOpen) {
-      document.body.className = "no-scroll";
+      disableBodyScroll(this.navOverlay);
     } else {
-      document.body.className = "";
+      enableBodyScroll(this.siteContent);
     }
   }
 
   constructor(private screenchangeservice: ScreenChangeService,
               private router: Router,
               private location: Location) {
+    enableBodyScroll();
     this.navbarOpen = false;
     this.width = window.innerWidth;
     this.screenChangeService = screenchangeservice;
+    this.siteContent = document.querySelector('.site-content');
     this.navMobileWidth = 768;
     this.navTitle = {
       '/about':'ABOUT',

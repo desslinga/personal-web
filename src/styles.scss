@@ -303,10 +303,12 @@ span {
   }
 }
 
+/*
 .no-scroll {
   overflow: hidden;
+  max-height: 100vh;
 }
-
+*/
 //gallery styles
 .gallery-photo-container {
   cursor: pointer;
