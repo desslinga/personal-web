@@ -70,7 +70,7 @@ body {
 .site-content {
   padding-top: calc(#{$container-pad-top-xs} + 7vh) !important;
   @include lg {
-    padding-top: calc(#{$container-pad-top-xs} + 7vh) !important;
+    padding-top: calc(#{$container-pad-top-xs} + 12vh) !important;
   }
 }
 
@@ -123,6 +123,17 @@ body {
   left: 0;
   @include sm {
     @include overlay-pos($width-sm);
+    left: 0;
+  }
+  @include md {
+    //@include overlay-pos($width-md);
+  }
+  @include lg {
+    @include overlay-pos($width-lg);
+    left: 0;
+  }
+  @include xl {
+    @include overlay-pos($width-xl);
     left: 0;
   }
 }
