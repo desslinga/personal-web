@@ -388,12 +388,14 @@ span {
   max-height: 80vh;
   position: relative;
   left: 50%;
-  transform: translate(-50%,0);
+  transform: translate(-50%,5%);
 }
 
 .gallery-preview-caption {
-  padding-top: 5vh;
-  padding-bottom: 5vh;
+  width: 90%;
+  padding-top: 7vh;
+  padding-bottom: 7vh;
+  margin-left: 5%;
   word-break: break-all;
 }
 
