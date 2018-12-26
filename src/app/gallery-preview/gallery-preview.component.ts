@@ -7,7 +7,7 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
   styleUrls: ['./gallery-preview.component.scss']
 })
 export class GalleryPreviewComponent implements OnInit {
-  @Input() image: String;
+  @Input() image: any;
   @Output() prevEmit: EventEmitter<Object> = new EventEmitter<Object>();
   siteContent: any;
 

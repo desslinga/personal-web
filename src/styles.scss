@@ -368,6 +368,7 @@ span {
 .gallery-preview-title {
   font-weight: 600;
   font-size: 20px;
+  word-break: break-all;
 }
 
 .gallery-preview-center {
@@ -396,7 +397,6 @@ span {
   padding-top: 7vh;
   padding-bottom: 7vh;
   margin-left: 5%;
-  word-break: break-all;
 }
 
 .gallery-preview-close {
