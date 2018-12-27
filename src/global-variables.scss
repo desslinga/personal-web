@@ -1,0 +1,72 @@
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1220px;
+
+$beige: #F8EAD5;
+$darker-beige: #D6B686;
+$brown: #8C4B25;
+$browner: #682A05;
+$dark-brown: #5D3016;
+$darker-brown: #371B0B;
+
+$font-main: 'Work Sans', sans-serif;
+//$font-logo: 'Playfair Display', serif;
+$font-logo: 'Aleo', serif;
+
+$width-xs: 90vw;
+$width-sm: 80vw;
+$width-md: 55vw;
+$width-lg: 83vw;
+$width-xl: 76vw;
+$container-pad-top-xs: 3vh;
+$container-pad-top-lg: 6vh;
+
+$fides-logo-height: 40px;
+
+$fast-ease: 0.3s ease-in-out;
+$mid-ease: 0.5s ease-in-out;
+$slow-ease: 0.8s ease-in-out;
+
+// animations
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade-from-down {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-from-up {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-from-right {
+  0% {
+    transform: translateX(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+$a-fade-from-down: 0.5s ease-out 0s 1 fade-from-down;
+$a-fade-from-right: 0.5s ease-out 0s 1 fade-from-right;
+$a-fade-from-up: 0.5s ease-out 0s 1 fade-from-up;

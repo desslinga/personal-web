@@ -12,11 +12,11 @@ export class GalleryPreviewComponent implements OnInit {
   siteContent: any;
 
   constructor() {
-    this.siteContent = document.querySelector('#home-container');
     console.log(this.image);
   }
 
   ngOnInit() {
+    this.siteContent = document.querySelector('#gallery-preview-container');
     disableBodyScroll(this.siteContent);
   }
 

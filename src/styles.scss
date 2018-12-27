@@ -1,35 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
-
-$screen-sm-min: 576px;
-$screen-md-min: 768px;
-$screen-lg-min: 992px;
-$screen-xl-min: 1220px;
-
-$beige: #F8EAD5;
-$darker-beige: #D6B686;
-$brown: #8C4B25;
-$browner: #682A05;
-$dark-brown: #5D3016;
-$darker-brown: #371B0B;
-
-$font-main: 'Work Sans', sans-serif;
-//$font-logo: 'Playfair Display', serif;
-$font-logo: 'Aleo', serif;
-
-$width-xs: 90vw;
-$width-sm: 80vw;
-$width-md: 55vw;
-$width-lg: 83vw;
-$width-xl: 76vw;
-$container-pad-top-xs: 3vh;
-$container-pad-top-lg: 6vh;
-
-$fides-logo-height: 40px;
-
-$fast-ease: 0.3s ease-in-out;
-$mid-ease: 0.5s ease-in-out;
-$slow-ease: 0.8s ease-in-out;
+@import "global-variables.scss";
 
 body {
   background-color: $beige;
@@ -68,30 +39,14 @@ body {
 }
 
 .site-content {
-  padding-top: calc(#{$container-pad-top-xs} + 7vh) !important;
+  padding-top: calc(#{$container-pad-top-xs} + 9vh) !important;
   @include lg {
     padding-top: calc(#{$container-pad-top-xs} + 12vh) !important;
   }
 }
 
-.fade-in-down {
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 1s;
-}
-
-@keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
 #home-container {
+  animation: $a-fade-from-down;
   width: $width-xs;
   padding-top: $container-pad-top-xs;
   padding-bottom: calc(#{$container-pad-top-xs}*1.5);
@@ -343,7 +298,7 @@ span {
 
 //gallery styles
 .gallery-photo-container {
-  cursor: pointer;
+  //cursor: pointer;
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -387,6 +342,7 @@ span {
 .gallery-preview-photo {
   max-width: 90vw;
   max-height: 80vh;
+  border-radius: 5px;
   position: relative;
   left: 50%;
   transform: translate(-50%,5%);
