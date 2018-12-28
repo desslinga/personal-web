@@ -10,6 +10,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ScreenChangeService } from './services/screen-change.service';
 import { GalleryPreviewComponent } from './gallery-preview/gallery-preview.component';
 import { WorkComponent } from './work/work.component';
+import { ClosetrComponent } from './work/closetr/closetr.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { WorkComponent } from './work/work.component';
     NavComponent,
     GalleryComponent,
     GalleryPreviewComponent,
-    WorkComponent
+    WorkComponent,
+    ClosetrComponent
   ],
   imports: [
     BrowserModule,
