@@ -51,6 +51,16 @@ export class NavComponent implements OnInit {
     }
   }
 
+  setNavItemActive(): void {
+    if (this.navItemActive.startsWith('about')) {
+      this.navItemActive = 'about';
+    } else if (this.navItemActive.startsWith('gallery')) {
+      this.navItemActive = 'gallery';
+    } else if (this.navItemActive.startsWith('work')) {
+      this.navItemActive = 'work';
+    }
+  }
+
   constructor(private screenchangeservice: ScreenChangeService,
               private router: Router,
               private location: Location) {
@@ -60,17 +70,19 @@ export class NavComponent implements OnInit {
     this.screenChangeService = screenchangeservice;
     this.siteContent = document.querySelector('#home-container');
     this.navMobileWidth = 768;
+
     this.navTitle = {
       '/about':'ABOUT',
-      '/gallery':'GALLERY'
+      '/gallery':'GALLERY',
+      '/work':'WORK'
     }
 
     this.navItemActive = this.location.path();
-    console.log(this.navItemActive);
+    this.setNavItemActive();
 
     router.events.subscribe((val) => {
-      console.log("he");
       this.navItemActive = this.location.path();
+      this.setNavItemActive();
     });
   }
 
