@@ -52,12 +52,12 @@ export class NavComponent implements OnInit {
   }
 
   setNavItemActive(): void {
-    if (this.navItemActive.startsWith('about')) {
-      this.navItemActive = 'about';
-    } else if (this.navItemActive.startsWith('gallery')) {
-      this.navItemActive = 'gallery';
-    } else if (this.navItemActive.startsWith('work')) {
-      this.navItemActive = 'work';
+    if (this.navItemActive.startsWith('/about')) {
+      this.navItemActive = '/about';
+    } else if (this.navItemActive.startsWith('/gallery')) {
+      this.navItemActive = '/gallery';
+    } else if (this.navItemActive.startsWith('/work')) {
+      this.navItemActive = '/work';
     }
   }
 
