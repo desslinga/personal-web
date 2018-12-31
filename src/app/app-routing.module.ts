@@ -14,8 +14,8 @@ const routes: Routes = [
   {path: 'gallery', component: GalleryComponent},
   {path: 'work', component: WorkComponent},
   {path: 'work/closetr', component: ClosetrComponent},
-  {path: '/404', name: 'NotFound', component: NotFoundComponent},
-  {path: '/*path', redirectTo: '/NotFound'}
+  {path: '404', component: NotFoundComponent},
+  {path: '**', redirectTo: '/404', pathMatch: 'prefix'}
 ];
 
 @NgModule({
