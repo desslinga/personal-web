@@ -11,6 +11,7 @@ import { ScreenChangeService } from './services/screen-change.service';
 import { GalleryPreviewComponent } from './gallery-preview/gallery-preview.component';
 import { WorkComponent } from './work/work.component';
 import { ClosetrComponent } from './work/closetr/closetr.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ClosetrComponent } from './work/closetr/closetr.component';
     GalleryComponent,
     GalleryPreviewComponent,
     WorkComponent,
-    ClosetrComponent
+    ClosetrComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { WorkComponent } from './work/work.component';
 import { ClosetrComponent } from './work/closetr/closetr.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/about', pathMatch: 'full'},
@@ -12,7 +13,9 @@ const routes: Routes = [
   {path: 'about', component: HomeComponent},
   {path: 'gallery', component: GalleryComponent},
   {path: 'work', component: WorkComponent},
-  {path: 'work/closetr', component: ClosetrComponent}
+  {path: 'work/closetr', component: ClosetrComponent},
+  {path: '/404', name: 'NotFound', component: NotFoundComponent},
+  {path: '/*path', redirectTo: '/NotFound'}
 ];
 
 @NgModule({
