@@ -103,6 +103,10 @@ h1 {
   font-size: 25px;
   padding-bottom: 20px;
   font-weight: 700;
+  & a {
+    font-size: 25px;
+    font-weight: 700;
+  }
 }
 
 a {
@@ -374,4 +378,19 @@ span {
 .mtb-10 {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+//work styles
+
+.work-about-img-container {
+  @extend .home-about-img-container;
+}
+
+.work-about-txt-container {
+  @extend .home-about-txt-container;
+}
+
+.work-about-img {
+  border-radius: 10px;
+  width: 100%;
 }
