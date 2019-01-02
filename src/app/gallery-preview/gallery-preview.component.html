@@ -2,16 +2,28 @@
   <div class='gallery-preview-close' (click)="closePreview()">
     <i class="fas fa-times"></i>
   </div>
-  <div class='gallery-preview-center'>
-    <img src='{{image.url}}' class='gallery-preview-photo'/>
-      <div class='gallery-preview-caption'>
-        <span class='gallery-preview-title'>
-          {{image.title}}
-        </span>
-        <br>
-        <span class='gallery-preview-desc'>
-          {{image.description}}
-        </span>
-      </div>
+  <div class="row">
+    <div class="col-12">
+      <span class="gallery-preview-title">
+        {{image.title}}
+      </span>
+    </div>
+    <div class="col-12">
+      <span class="gallery-preview-desc">
+        Tools: Adobe Photoshop, Adobe Illustrator
+      </span>
+    </div>
+  </div>
+  <div class="row mtb-10">
+    <div class="col-12">
+      <img src='{{image.url}}' class='gallery-preview-photo'/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span class="gallery-preview-desc">
+        {{image.description}}
+      </span>
+    </div>
   </div>
 </div>
