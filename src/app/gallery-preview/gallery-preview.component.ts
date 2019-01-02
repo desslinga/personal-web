@@ -10,8 +10,10 @@ export class GalleryPreviewComponent implements OnInit {
   @Input() image: any;
   @Output() prevEmit: EventEmitter<Object> = new EventEmitter<Object>();
   siteContent: any;
+  closeAnimate: boolean;
 
   constructor() {
+    this.closeAnimate = false;
     console.log(this.image);
   }
 
@@ -21,9 +23,12 @@ export class GalleryPreviewComponent implements OnInit {
   }
 
   closePreview(): void {
-    this.image = "";
-    clearAllBodyScrollLocks();
-    this.prevEmit.emit('close');
+    this.closeAnimate = true;
+    setTimeout(()=> {
+      this.image = "";
+      clearAllBodyScrollLocks();
+      this.prevEmit.emit('close');
+    }, 300);
   }
 
 }

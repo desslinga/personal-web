@@ -26,6 +26,7 @@ export class GalleryComponent implements OnInit {
       default:
         break;
     }
+    console.log(this.openedImage);
   }
 
   constructor(private screenchangeservice: ScreenChangeService) {
