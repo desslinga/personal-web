@@ -112,6 +112,7 @@ export class GalleryComponent implements OnInit {
        and designed on Adobe Illustrator.`],
       ["image-14.png",
        "amacss_gaming_night_1.png",
+       "AMACSS Gaming Night 1 Poster",
        `Poster created for AMACSS' Gaming Night. Illustrated on iPad Pro,
        and designed on Adobe Illustrator.`]
     ];
