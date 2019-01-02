@@ -1,7 +1,7 @@
 <div class='container-fluid site-content' id='home-container'>
   <div class='row'>
     <div class='col-12 col-lg-6' *ngFor="let imgUrl of imageListPrev; index as i">
-      <div class='gallery-photo-container'>
+      <div class='gallery-photo-container' (click)='openPreview(i)'>
         <img src='{{imgUrl}}' class='gallery-photo'/>
       </div>
     </div>

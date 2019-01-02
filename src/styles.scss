@@ -303,7 +303,7 @@ span {
 
 //gallery styles
 .gallery-photo-container {
-  //cursor: pointer;
+  cursor: pointer;
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -316,13 +316,15 @@ span {
 //gallery preview styles
 #gallery-preview-container {
   position: fixed;
-  top: 0; left: 0;
+  top: 0; right: 0;
   height: 100vh;
   width: 100vw;
   background-color: $darker-beige;
-  //background-color: rgba(0,0,0,0.6);
   overflow-x: hidden;
   z-index: 7;
+  @include md {
+    width: 85vw;
+  }
 }
 
 .gallery-preview-title {
@@ -393,4 +395,25 @@ span {
 .work-about-img {
   border-radius: 10px;
   width: 100%;
+}
+
+//scroll bar style
+
+//scroll bar style
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $med-beige;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $med-beige;
 }
