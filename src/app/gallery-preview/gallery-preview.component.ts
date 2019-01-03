@@ -14,6 +14,7 @@ export class GalleryPreviewComponent implements OnInit {
 
   constructor() {
     this.closeAnimate = false;
+    document.body.className="no-scroll";
     console.log(this.image);
   }
 
@@ -24,6 +25,7 @@ export class GalleryPreviewComponent implements OnInit {
 
   closePreview(): void {
     this.closeAnimate = true;
+    document.body.className="";
     setTimeout(()=> {
       this.image = "";
       clearAllBodyScrollLocks();
