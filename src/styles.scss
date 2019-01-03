@@ -232,8 +232,8 @@ span {
 }
 
 .bar {
-  width: 30px;
-  height: 3px;
+  width: 27px;
+  height: 2px;
   background-color: $brown;
   margin: 7px 0;
   transition: 0.4s;
@@ -320,19 +320,20 @@ span {
   top: 0; right: 0;
   height: 100vh;
   width: 100vw;
-  padding: 5% 10% 5% 5%;
+  padding: 5% 5% 5% 5%;
   background-color: $med-beige;
   overflow-x: hidden;
   animation: $a-fade-from-right;
+  --webkit-overflow-scrolling: touch;
   z-index: 7;
   @include sm {
-    width: 85vw;
+    width: 85%;
   }
   @include md {
-    width: 75vw;
+    width: 75%;
   }
   @include lg {
-    width: 65vw;
+    width: 65%;
   }
   transition: $fast-ease;
 }
@@ -376,10 +377,14 @@ span {
   position: absolute;
   z-index: 1;
   cursor: pointer;
-  top: 1.5vw;
-  right: 2vw;
-  font-size: 30px;
-  line-height: 20px;
+  top: 3%;
+  right: 5%;
+  //font-size: 30px;
+  //line-height: 20px;
+  fill: $brown;
+  height: 20px;
+  width: 20px;
+
   @include sm {
     top: 4vw;
     right: 5vw;
@@ -429,8 +434,14 @@ span {
   background: $med-beige;
 }
 
-.animation-canvas {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.bar-close-1 {
+  @extend .bar;
+  -webkit-transform: rotate(-45deg) translate(-8px, 4px);
+  transform: rotate(-45deg) translate(-8px, 4px);
+}
+
+.bar-close-2 {
+  @extend .bar;
+  -webkit-transform: rotate(45deg) translate(-2px, -1px);
+  transform: rotate(45deg) translate(-2px, 1px);
 }
