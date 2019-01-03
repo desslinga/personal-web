@@ -1,32 +1,34 @@
 <div id='gallery-preview-bg' (click)="closePreview()">
-  <div class='container-fluid' id='gallery-preview-container' [ngClass]="{'close-preview': closeAnimate}">
-    <div class='gallery-preview-close' (click)="closePreview()">
-      <div class="bar-close-1"></div>
-      <div class="bar-close-2"></div>
+</div>
+<div class='container-fluid' id='gallery-preview-container' [ngClass]="{'close-preview': closeAnimate}">
+  <div class="row">
+    <div class="col-10 col-sm-11">
+      <span class="gallery-preview-title">
+        {{image.title}}
+      </span>
     </div>
-    <div class="row">
-      <div class="col-12">
-        <span class="gallery-preview-title">
-          {{image.title}}
-        </span>
-      </div>
-      <div class="col-12">
-        <span class="gallery-preview-desc">
-          Tools: Adobe Photoshop, Adobe Illustrator
-        </span>
+    <div class="col-2 col-sm-1">
+      <div class='gallery-preview-close' (click)="closePreview()">
+        <div class="bar-close-1"></div>
+        <div class="bar-close-2"></div>
       </div>
     </div>
-    <div class="row mtb-10">
-      <div class="col-12">
-        <img src='{{image.url}}' class='gallery-preview-photo'/>
-      </div>
+    <div class="col-12">
+      <span class="gallery-preview-desc">
+        Tools: Adobe Photoshop, Adobe Illustrator
+      </span>
     </div>
-    <div class="row">
-      <div class="col-12">
-        <span class="gallery-preview-desc">
-          {{image.description}}
-        </span>
-      </div>
+  </div>
+  <div class="row mtb-10">
+    <div class="col-12">
+      <img src='{{image.url}}' class='gallery-preview-photo'/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span class="gallery-preview-desc">
+        {{image.description}}
+      </span>
     </div>
   </div>
 </div>
