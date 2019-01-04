@@ -23,7 +23,7 @@ To help with some overlay content.
 Before anything, ensure that you've installed the required dependencies running
 `npm-install` in the root folder (personal-web).
 
-Run `ng serve` in the root folder (closetr-web) for a development server.
+Run `ng serve` in the root folder (personal-web) for a development server.
 Navigate to `http://localhost:4200/` to see my website!
 
 The app will automatically reload if you change any of the source files.
