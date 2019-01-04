@@ -1,27 +1,29 @@
 # PersonalWeb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
+This is my personal website, which is a project built with Angular (7.0.4).
+If you see any errors, feel free to let me know or open a pull request. I'd
+really appreciate it.
 
-## Development server
+A stable version here : [fideslinga.com](http://fideslinga.com/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### What I use
 
-## Code scaffolding
+Here is a list of things I use in building this website.
+1. [**Angular 7**](https://angular.io/)
+As a container for my website, and making transitions easy.
+2. [**SCSS**](https://sass-lang.com/)
+As my CSS syntax.
+3. [**Boostrap**](https://getbootstrap.com/)
+To layout my website in a consistent way.
+4. [**body-scroll-lock**](http://fideslinga.com/closeter/)
+To help with some overlay content.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Check it out
 
-## Build
+Before anything, ensure that you've installed the required dependencies running
+`npm-install` in the root folder (personal-web).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng serve` in the root folder (closetr-web) for a development server.
+Navigate to `http://localhost:4200/` to see my website!
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The app will automatically reload if you change any of the source files.
