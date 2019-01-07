@@ -114,7 +114,11 @@ export class GalleryComponent implements OnInit {
        "amacss_gaming_night_1.png",
        "AMACSS Gaming Night 1 Poster",
        `Poster created for AMACSS' Gaming Night. Illustrated on iPad Pro,
-       and designed on Adobe Illustrator.`]
+       and designed on Adobe Illustrator.`],
+       ["image-15.png",
+        "weekly1_flowergirl.PNG",
+        "Flower Girl",
+        `Lorem Ipsum.`]
     ];
 
     this.screenChangeService = screenchangeservice;
