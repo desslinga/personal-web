@@ -14,7 +14,8 @@ export class GalleryPreviewComponent implements OnInit {
 
   constructor() {
     this.closeAnimate = false;
-    document.body.className="no-scroll";
+    //document.body.className="no-scroll";
+    this.siteContent = document.querySelector('#gallery-preview-container');
     console.log(this.image);
   }
 

@@ -13,7 +13,7 @@ body {
 @mixin overlay-pos($width) {
   left: calc((-100vw + #{$width})/2);
   padding-left: calc((100vw - #{$width})/2 + 15px);
-  padding-right: calc((100vw - #{$width})/2 + 15px);
+  padding-right: calc((100vw - #{$width})/2 + 10px);
 }
 
 @mixin sm {
@@ -232,10 +232,10 @@ span {
 }
 
 .bar {
-  width: 27px;
+  width: 30px;
   height: 2px;
   background-color: $brown;
-  margin: 7px 0;
+  margin: 8px 0px;
   transition: 0.4s;
   border-radius: 3px;
 }
@@ -243,8 +243,8 @@ span {
 .bar1 {
   @extend .bar;
   &.change {
-    -webkit-transform: rotate(-45deg) translate(-8px, 4px);
-    transform: rotate(-45deg) translate(-8px, 4px);
+    -webkit-transform: rotate(-45deg) translate(-7px, 3px);
+    transform: rotate(-45deg) translate(-7px, 3px);
   }
 }
 
@@ -258,8 +258,8 @@ span {
 .bar3 {
   @extend .bar;
   &.change {
-    -webkit-transform: rotate(45deg) translate(-10px, -6px);
-    transform: rotate(45deg) translate(-10px, -6px);
+    -webkit-transform: rotate(45deg) translate(-11px, -6px);
+    transform: rotate(45deg) translate(-11px, -6px);
   }
 }
 
@@ -269,13 +269,19 @@ span {
 
 .nav-toggle {
   padding: 0;
-  height: $fides-logo-height;
-  width: $fides-logo-height;
+  margin: 4px 0 4px 0;
+  height: 30px;
+  width: 30px;
   background-color: transparent;
   float: right;
   @include md {
     display: none;
   }
+}
+
+.nav-toggle-open {
+  position: relative;
+  right: 6px;
 }
 
 .fides-icon {
@@ -425,6 +431,7 @@ span {
 ::-webkit-scrollbar {
   z-index: 1000;
   width: 6px;
+  position: overlay;
 }
 
 ::-webkit-scrollbar-track {
