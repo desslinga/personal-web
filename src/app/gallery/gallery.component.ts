@@ -133,7 +133,8 @@ export class GalleryComponent implements OnInit {
         "weekly1_flowergirl.PNG",
         "Flower Girl",
         `Portrait of girl with decorative flowers. Part 1 of some quick studies
-         I am trying to do every week or so.`]
+         I am trying to do every week or so.`,
+        'ProCreate (with iPad Pro)']
     ];
 
     this.screenChangeService = screenchangeservice;
