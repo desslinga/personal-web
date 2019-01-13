@@ -29,10 +29,14 @@ export class NavComponent implements OnInit {
   }
 
   navClick(url): void {
-    this.router.navigate([url]);
-    this.navItemActive = url;
+    var clickUrl = url;
+    if (url == '/about-icon') {
+      clickUrl = '/about';
+    }
+    this.router.navigate([clickUrl]);
+    this.navItemActive = clickUrl;
 
-    if (this.width < this.navMobileWidth) {
+    if (this.width < this.navMobileWidth && url != '/about-icon') {
       this.toggleNavbar();
     }
   }
