@@ -2,7 +2,7 @@
   <div class='row'>
     <div class='col-12'>
       <nav class="custom-nav" [ngClass]="{'nav-overlay':navbarOpen}">
-        <a class="nav-icon" routerLink="/about" (click)="navClick('/about-icon')">
+        <a class="nav-icon icon-link" routerLink="/about" (click)="navClick('/about-icon')">
           <div class="fides-icon">
             <span>F</span>
           </div>
@@ -14,9 +14,9 @@
         </button>
         <div class="nav-container" [ngClass]="{'nav-open':navbarOpen}">
           <ul>
-            <li><a routerLink="/about" [ngClass]="{'nav-item-active': navItemActive == '/about'}" (click)="navClick('/about')">ABOUT</a></li>
-            <li><a routerLink="/work" [ngClass]="{'nav-item-active': navItemActive == '/work'}"  (click)="navClick('/work')">WORK</a></li>
-            <li><a routerLink="/gallery" [ngClass]="{'nav-item-active': navItemActive == '/gallery'}" (click)="navClick('/gallery')">GALLERY</a></li>
+            <li><a routerLink="/about" class="icon-link" [ngClass]="{'nav-item-active': navItemActive == '/about'}" (click)="navClick('/about')">ABOUT</a></li>
+            <li><a routerLink="/work" class="icon-link" [ngClass]="{'nav-item-active': navItemActive == '/work'}"  (click)="navClick('/work')">WORK</a></li>
+            <li><a routerLink="/gallery" class="icon-link" [ngClass]="{'nav-item-active': navItemActive == '/gallery'}" (click)="navClick('/gallery')">GALLERY</a></li>
           </ul>
         </div>
         <div class="d-md-none nav-title" [hidden]="navbarOpen">

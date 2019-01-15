@@ -111,8 +111,6 @@ h1 {
 }
 
 a {
-  font-size: 20px;
-  margin-right: calc(1vw + 15px);
   color: $brown;
 	font-weight: 500;
 	text-decoration: none;
@@ -120,6 +118,11 @@ a {
   &:hover {
     text-decoration: none;
   }
+}
+
+.icon-link {
+  margin-right: calc(1vw + 15px);
+  font-size: 20px;
 }
 
 .fb-fix {
