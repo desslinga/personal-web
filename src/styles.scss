@@ -161,6 +161,9 @@ span {
 
 .nav-overlay {
   position: absolute;
+  overflow-y: scroll;
+  --webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
@@ -347,6 +350,8 @@ span {
   background-color: $med-beige;
   overflow-x: hidden;
   animation: $a-fade-from-right;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   --webkit-overflow-scrolling: touch;
   z-index: 7;
   @include sm {
