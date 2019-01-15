@@ -235,7 +235,7 @@ span {
 }
 
 .bar {
-  width: 30px;
+  width: 31px;
   height: 2px;
   background-color: $brown;
   margin: 8px 0px;
@@ -246,8 +246,8 @@ span {
 .bar1 {
   @extend .bar;
   &.change {
-    -webkit-transform: rotate(-45deg) translate(-7px, 3px);
-    transform: rotate(-45deg) translate(-7px, 3px);
+    -webkit-transform: rotate(-45deg) translate(-6px, 7px);
+    transform: rotate(-45deg) translate(-6px, 7px);
   }
 }
 
@@ -261,8 +261,8 @@ span {
 .bar3 {
   @extend .bar;
   &.change {
-    -webkit-transform: rotate(45deg) translate(-11px, -6px);
-    transform: rotate(45deg) translate(-11px, -6px);
+    -webkit-transform: rotate(45deg) translate(-7px, -8px);
+    transform: rotate(45deg) translate(-7px, -8px);
   }
 }
 
@@ -277,6 +277,8 @@ span {
   width: 34px;
   background-color: transparent;
   float: right;
+  position: relative;
+  top: -3px;
   @include md {
     display: none;
   }
