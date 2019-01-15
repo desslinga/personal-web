@@ -134,7 +134,14 @@ export class GalleryComponent implements OnInit {
         "Flower Girl",
         `Portrait of girl with decorative flowers. Part 1 of some quick studies
          I am trying to do every week or so.`,
-        'ProCreate (with iPad Pro)']
+        'ProCreate (with iPad Pro)'],
+        ["image-16.png",
+         "weekly2_flowerbranch.PNG",
+         "White Orchid",
+         `Study using the one of the original photographs (Orchid) in 'Mapplethorpe
+         Flora: The Complete Flowers' by Robert Mapplethorpe. Part 2 of some quick
+         studies I'm trying to do every week or so.`,
+         'ProCreate (with iPad Pro)']
     ];
 
     this.screenChangeService = screenchangeservice;
