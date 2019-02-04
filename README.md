@@ -9,11 +9,11 @@ A stable version here : [fideslinga.com](http://fideslinga.com/)
 #### What I use
 
 Here is a list of things I use in building this website.
-1. [**Angular 7**](https://angular.io/)
+1. [**Angular (7)**](https://angular.io/)
 As a container for my website, and making transitions easy.
 2. [**SCSS**](https://sass-lang.com/)
 As my CSS syntax.
-3. [**Boostrap**](https://getbootstrap.com/)
+3. [**Bootstrap (4)**](https://getbootstrap.com/)
 To layout my website in a consistent way.
 4. [**body-scroll-lock**](http://fideslinga.com/closeter/)
 To help with some overlay content.
