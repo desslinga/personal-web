@@ -25,6 +25,7 @@ export class NavComponent implements OnInit {
     this.width = window.innerWidth;
     if (this.width > this.navMobileWidth) {
       this.navbarOpen = false;
+      clearAllBodyScrollLocks();
     }
   }
 
