@@ -82,6 +82,20 @@ export class GalleryComponent implements OnInit {
        brochure, as a concept. Created during an internship with
        GO Transit. Designed on Adobe Illustrator.`,
       'Adobe Illustrator'],
+      ["image-17.png",
+       "amacss_coffeehouse.png",
+       "AMACSS Coffee House",
+       `Marketing assets: social media posts, invites, posters
+       that were created for a casual networking event for
+       AMACSS. For this, I decided to go for a coffee-themed
+       palette full of warm tones.`,
+      'Procreate (with iPad Pro), Adobe Illustrator'],
+      ["image-09.png",
+       "girl_with_cats.PNG",
+       "Playing with Cats",
+       `Illustration made with ProCreate on iPad Pro. I really like
+       cats so I made this one!`,
+      'Procreate (with iPad Pro)'],
       ["image-08.png",
        "go_introduction_2.png",
        "GO Introduction Brochure",
@@ -89,12 +103,6 @@ export class GalleryComponent implements OnInit {
        brochure, as a concept. Created during an internship with
        GO Transit. Designed on Adobe Illustrator.`,
       'Adobe Illustrator'],
-      ["image-09.png",
-       "girl_with_cats.PNG",
-       "Playing with Cats",
-       `Illustration made with ProCreate on iPad Pro. I really like
-       cats so I made this one!`,
-      'Procreate (with iPad Pro)'],
       ["image-10.png",
        "amacss_gaming_night_2.PNG",
        "AMACSS Gaming Night 2 Poster",
