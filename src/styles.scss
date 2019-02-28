@@ -40,6 +40,12 @@ body {
   }
 }
 
+@mixin xxl {
+  @media (min-width: #{$screen-xxl-min}) {
+    @content;
+  }
+}
+
 .site-content {
   padding-top: calc(#{$container-pad-top-xs} + 9vh) !important;
   @include lg {
@@ -52,6 +58,7 @@ body {
   width: $width-xs;
   padding-top: $container-pad-top-xs;
   padding-bottom: calc(#{$container-pad-top-xs}*1.5);
+  max-width: $max-width;
     @include sm {
       width: $width-sm;
     }
@@ -65,7 +72,6 @@ body {
     @include xl {
       width: $width-xl;
     }
-
 }
 
 #nav-container {
@@ -82,15 +88,16 @@ body {
     @include overlay-pos($width-sm);
     left: 0;
   }
-  @include md {
-    //@include overlay-pos($width-md);
-  }
   @include lg {
     @include overlay-pos($width-lg);
     left: 0;
   }
   @include xl {
     @include overlay-pos($width-xl);
+    left: 0;
+  }
+  @include xxl {
+    @include overlay-pos($max-width);
     left: 0;
   }
 }
