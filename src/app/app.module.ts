@@ -11,6 +11,7 @@ import { GalleryPreviewComponent } from './gallery-preview/gallery-preview.compo
 import { WorkComponent } from './work/work.component';
 import { ClosetrComponent } from './work/closetr/closetr.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { WafflyComponent } from './work/waffly/waffly.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     GalleryPreviewComponent,
     WorkComponent,
     ClosetrComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    WafflyComponent
   ],
   imports: [
     BrowserModule,
