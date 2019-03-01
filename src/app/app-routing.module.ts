@@ -8,7 +8,7 @@ import { ClosetrComponent } from './work/closetr/closetr.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/about', pathMatch: 'full'},
+  {path: '', redirectTo: '/work', pathMatch: 'full'},
   {path: 'home', redirectTo: '/about', pathMatch: 'full'},
   {path: 'about', component: HomeComponent},
   {path: 'gallery', component: GalleryComponent},
