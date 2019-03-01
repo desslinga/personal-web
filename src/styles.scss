@@ -127,6 +127,15 @@ a {
   }
 }
 
+.subtitle {
+  font-size: 1.7rem;
+  line-height: 3rem;
+  &.sm {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+  }
+}
+
 .icon-link {
   margin-right: calc(1vw + 15px);
   font-size: 20px;
@@ -474,4 +483,14 @@ span {
   @extend .bar;
   -webkit-transform: rotate(45deg) translate(-2px, -1px);
   transform: rotate(45deg) translate(-2px, 1px);
+}
+
+.row-space {
+  margin-top: 15px;
+  margin-bottom: 15px
+}
+
+.subtitle-icon {
+  width: 2rem;
+  display: block;
 }
