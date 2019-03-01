@@ -76,29 +76,35 @@ body {
 
 #nav-container {
   @extend #home-container;
+  max-width: none;
   padding-bottom: 0;
   position: fixed;
   z-index: 1;
   background-color: $beige;
   width: 100%;
   padding-bottom: 1.5vh;
+  width: $width-xs-nav;
   @include overlay-pos($width-xs);
   left: 0;
   @include sm {
     @include overlay-pos($width-sm);
+    width: $width-sm-nav;
     left: 0;
   }
   @include lg {
     @include overlay-pos($width-lg);
+    width: $width-lg-nav;
     left: 0;
   }
   @include xl {
     @include overlay-pos($width-xl);
+    width: $width-xl-nav;
     left: 0;
   }
   @include xxl {
     @include overlay-pos($max-width);
     left: 0;
+    width: 100vw;
   }
 }
 
@@ -156,6 +162,11 @@ span {
   font-size: 18px;
   font-weight: 300;
   color: $dark-brown;
+}
+
+.work-bio-img {
+  border-radius: 10px;
+  width: 160px;
 }
 
 .home-about-img {
