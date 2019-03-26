@@ -348,6 +348,43 @@ span {
   cursor: pointer;
   margin-top: 15px;
   margin-bottom: 15px;
+  line-height: 100%;
+  & .overlay {
+    position: absolute;
+    top: 15px;
+    bottom: 0;
+    left: 15px;
+    right: 0;
+    height: calc(100% - 30px);
+    width: calc(100% - 30px);
+    opacity: 0;
+    border-radius: 10px;
+    & .description {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 2.5rem;
+      transition: $mid-ease;
+    }
+  }
+  &:hover {
+    & .overlay {
+      transition: $fast-ease;
+      background-color: $darker-beige;
+      opacity: 1;
+      & .description {
+        transition: $mid-ease;
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+  }
 }
 
 .gallery-photo {

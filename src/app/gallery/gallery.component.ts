@@ -156,7 +156,9 @@ export class GalleryComponent implements OnInit {
 
     this.imageListPrev = [];
     for (let i = 0; i < this.imageList.length; i++) {
-       this.imageListPrev[i] = "./assets/images/gallery/" + this.imageList[i][0];
+       this.imageListPrev[i] = {};
+       this.imageListPrev[i].imgUrl = "./assets/images/gallery/" + this.imageList[i][0];
+       this.imageListPrev[i].title = this.imageList[i][2];
     }
 
     this.imageListFull = [];
