@@ -14,8 +14,8 @@ export class GalleryComponent implements OnInit {
   screenChangeService: ScreenChangeService;
 
   openPreview(i): void {
-    console.log(this.imageListFull[i]);
-    this.openedImage = this.imageListFull[i];
+    //console.log(this.imageListFull[i]);
+    this.openedImage = this.imageListFull[0];
   }
 
   handlePrevEmit(event): void {

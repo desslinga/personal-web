@@ -12,6 +12,7 @@
   <app-gallery-preview
     *ngIf="openedImage != ''"
     [image]="openedImage"
-    (prevEmit)="handlePrevEmit($event)"
-  ></app-gallery-preview>
+    (prevEmit)="handlePrevEmit($event)">
+    <app-uofthacks-v></app-uofthacks-v>
+  </app-gallery-preview>
 </div>

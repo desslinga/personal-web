@@ -12,6 +12,7 @@ import { WorkComponent } from './work/work.component';
 import { ClosetrComponent } from './work/closetr/closetr.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { WafflyComponent } from './work/waffly/waffly.component';
+import { UofthacksVComponent } from './gallery-preview/previews/uofthacks-v/uofthacks-v.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WafflyComponent } from './work/waffly/waffly.component';
     WorkComponent,
     ClosetrComponent,
     NotFoundComponent,
-    WafflyComponent
+    WafflyComponent,
+    UofthacksVComponent
   ],
   imports: [
     BrowserModule,
