@@ -359,9 +359,11 @@ span {
     width: calc(100% - 30px);
     opacity: 0;
     border-radius: 10px;
+    transition: $fast-ease;
+    background-color: $darker-beige;
     & .description {
       position: absolute;
-      top: 50%;
+      top: 53%;
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
@@ -370,18 +372,19 @@ span {
       font-weight: 500;
       font-size: 2rem;
       line-height: 2.5rem;
-      transition: $mid-ease;
+      transition: $fast-ease;
     }
   }
   &:hover {
+    transition: $fast-ease;
     & .overlay {
       transition: $fast-ease;
-      background-color: $darker-beige;
       opacity: 1;
       & .description {
-        transition: $mid-ease;
-        font-size: 1.5rem;
-        line-height: 2rem;
+        top: 50%;
+        //transition: $mid-ease;
+        //font-size: 1.5rem;
+        //line-height: 2rem;
       }
     }
   }
