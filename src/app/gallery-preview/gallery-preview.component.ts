@@ -31,9 +31,15 @@ export class GalleryPreviewComponent implements OnInit {
     switch(this.project) {
       case 'uofthacks-v':
         this.title = "U of T Hacks V";
-        this.tools = "Adobe Photoshop";
+        this.tools = "Adobe Illustrator, Procreate (with iPad Pro)";
         this.bgColor = "#0a010c";
         this.mainColor = "#eab973";
+        break;
+      case 'potted-plants':
+        this.title = "Potted Plants Series";
+        this.tools = "ProCreate (with iPad Pro)";
+        this.bgColor = "#985c3e";
+        this.mainColor = "#edd39e";
         break;
       default:
         break;

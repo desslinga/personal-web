@@ -9,12 +9,10 @@ import { ScreenChangeService } from '../services/screen-change.service';
 })
 export class GalleryComponent implements OnInit {
   imageList : Array<any>;
-  previewedProject: Object;
   screenChangeService: ScreenChangeService;
 
   openPreview(i): void {
-    this.previewedProject = "uofthacks-v";
-    this.router.navigate(['/work/uofthacks-v']);
+    this.router.navigate([`/work/${this.imageList[i].pageUrl}`]);
   }
 
   constructor(
@@ -22,6 +20,7 @@ export class GalleryComponent implements OnInit {
   ) {
     this.imageList = [
       {squareUrl: "image-04.png",
+       pageUrl: 'uofthacks-v',
        title: `U of T Hacks V`,
        hoverColor: `#0a010c`,
        titleColor: `#eab973`},
@@ -30,6 +29,7 @@ export class GalleryComponent implements OnInit {
        hoverColor: `#ffffff`,
        titleColor: `#7a8e81`},
       {squareUrl: "image-03.png",
+       pageUrl: 'potted-plants',
        title: `Potted Plants Series`,
        hoverColor: `#985c3e`,
        titleColor: `#edd39e`},

@@ -13,6 +13,7 @@ import { ClosetrComponent } from './work/closetr/closetr.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { WafflyComponent } from './work/waffly/waffly.component';
 import { UofthacksVComponent } from './gallery-preview/previews/uofthacks-v/uofthacks-v.component';
+import { PottedPlantsComponent } from './gallery-preview/previews/potted-plants/potted-plants.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UofthacksVComponent } from './gallery-preview/previews/uofthacks-v/uoft
     ClosetrComponent,
     NotFoundComponent,
     WafflyComponent,
-    UofthacksVComponent
+    UofthacksVComponent,
+    PottedPlantsComponent
   ],
   imports: [
     BrowserModule,
