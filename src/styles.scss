@@ -426,6 +426,11 @@ span {
   -webkit-overflow-scrolling: touch;
   --webkit-overflow-scrolling: touch;
   z-index: 7;
+  & .content {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
   @include sm {
     padding-left: 7%;
     padding-right: 7%;

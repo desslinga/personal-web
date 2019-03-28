@@ -8,9 +8,7 @@ import { ScreenChangeService } from '../services/screen-change.service';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  imageList : Array<Array<string>>;
-  imageListPrev : Array<any>;
-  imageListFull: Array<any>;
+  imageList : Array<any>;
   previewedProject: Object;
   screenChangeService: ScreenChangeService;
 
@@ -29,28 +27,35 @@ export class GalleryComponent implements OnInit {
        titleColor: `#eab973`},
       {squareUrl: "image-02.png",
        title: `Toronto Transit Assets`,
-       hoverColor: `red`},
+       hoverColor: `#ffffff`,
+       titleColor: `#7a8e81`},
       {squareUrl: "image-03.png",
        title: `Potted Plants Series`,
-       hoverColor: `green`},
+       hoverColor: `#985c3e`,
+       titleColor: `#edd39e`},
       {squareUrl: "image-10.png",
-       title: `AMACSS Events - Gaming`,
-       hoverColor: `blue`},
+       title: `AMACSS Gaming Events`,
+       hoverColor: `#0e1826`,
+       titleColor: `#ffd37a`},
       {squareUrl: "image-17.png",
        title: `AMACSS Coffee House`,
-       hoverColor: `purple`},
+       hoverColor: `#72a4c1`,
+       titleColor: `#fffaed`},
       {squareUrl: "image-09.png",
        title: `Warm Series`,
-       hoverColor: `white`},
+       hoverColor: `#e9b455`,
+       titleColor: `#652f17`},
       {squareUrl: "image-12.png",
        title: `GO Introduction Brochure`,
-       hoverColor: `teal`},
+       hoverColor: `#2c332c`,
+       titleColor: `#e1e6a3`},
       {squareUrl: "image-13.png",
        title: `AMACSS Events - Other`,
        hoverColor: `black`},
       {squareUrl: "image-16.png",
        title: `Floral Series`,
-       hoverColor: 'orange'}
+       hoverColor: '#30170e',
+       titleColor: `#e28356`}
     ];
 
     this.imageList.map((img) => {

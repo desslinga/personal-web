@@ -9,27 +9,29 @@
     'color': mainColor
   }"
   >
-  <div class="row">
-    <div class="col-10 col-sm-11">
-      <span
-        class="gallery-preview-title">
-        {{title}}
-      </span>
-    </div>
-    <div class="col-2 col-sm-1">
-      <div class='gallery-preview-close' (click)="closePreview()">
-        <div class="bar-close-1"></div>
-        <div class="bar-close-2"></div>
+  <div class="content">
+    <div class="row">
+      <div class="col-10 col-sm-11">
+        <span
+          class="gallery-preview-title">
+          {{title}}
+        </span>
+      </div>
+      <div class="col-2 col-sm-1">
+        <div class='gallery-preview-close' (click)="closePreview()">
+          <div class="bar-close-1"></div>
+          <div class="bar-close-2"></div>
+        </div>
+      </div>
+      <div class="col-12">
+        <span
+          class="gallery-preview-desc">
+          Tools: {{tools}}
+        </span>
       </div>
     </div>
-    <div class="col-12">
-      <span
-        class="gallery-preview-desc">
-        Tools: {{tools}}
-      </span>
-    </div>
+    <app-uofthacks-v
+      *ngIf="project==='uofthacks-v'"
+    ></app-uofthacks-v>
   </div>
-  <app-uofthacks-v
-    *ngIf="project==='uofthacks-v'"
-  ></app-uofthacks-v>
 </div>
