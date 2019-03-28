@@ -15,8 +15,8 @@ export class GalleryComponent implements OnInit {
   screenChangeService: ScreenChangeService;
 
   openPreview(i): void {
-    this.previewedProject = "uofthacks_v";
-    this.router.navigate(['/work/uofthacks_v']);
+    this.previewedProject = "uofthacks-v";
+    this.router.navigate(['/work/uofthacks-v']);
   }
 
   constructor(
@@ -25,7 +25,8 @@ export class GalleryComponent implements OnInit {
     this.imageList = [
       {squareUrl: "image-04.png",
        title: `U of T Hacks V`,
-       hoverColor: `yellow`},
+       hoverColor: `#0a010c`,
+       titleColor: `#eab973`},
       {squareUrl: "image-02.png",
        title: `Toronto Transit Assets`,
        hoverColor: `red`},

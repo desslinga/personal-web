@@ -8,8 +8,6 @@ import { WorkComponent } from './work/work.component';
 import { ClosetrComponent } from './work/closetr/closetr.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
-import { UofthacksVComponent } from './gallery-preview/previews/uofthacks-v/uofthacks-v.component';
-
 const routes: Routes = [
   {path: '', redirectTo: '/work', pathMatch: 'full'},
   {path: 'home', redirectTo: '/about', pathMatch: 'full'},

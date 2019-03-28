@@ -1,9 +1,18 @@
 <div id='gallery-preview-bg' (click)="closePreview()">
 </div>
-<div class='container-fluid' id='gallery-preview-container' [ngClass]="{'close-preview': closeAnimate}">
+<div
+  class='container-fluid'
+  id='gallery-preview-container'
+  [ngClass]="{'close-preview': closeAnimate}"
+  [ngStyle]="{
+    'background-color': bgColor,
+    'color': mainColor
+  }"
+  >
   <div class="row">
     <div class="col-10 col-sm-11">
-      <span class="gallery-preview-title">
+      <span
+        class="gallery-preview-title">
         {{title}}
       </span>
     </div>
@@ -14,25 +23,13 @@
       </div>
     </div>
     <div class="col-12">
-      <span class="gallery-preview-desc">
+      <span
+        class="gallery-preview-desc">
         Tools: {{tools}}
       </span>
     </div>
   </div>
   <app-uofthacks-v
-    *ngIf="project==='uofthacks_v'"
+    *ngIf="project==='uofthacks-v'"
   ></app-uofthacks-v>
-  <!--
-  <div class="row mtb-10">
-    <div class="col-12">
-      <img src='{{image.url}}' class='gallery-preview-photo'/>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <span class="gallery-preview-desc">
-        {{image.description}}
-      </span>
-    </div>
-  </div>-->
 </div>

@@ -161,7 +161,7 @@ a:hover {
 span {
   font-size: 18px;
   font-weight: 300;
-  color: $dark-brown;
+  //color: $dark-brown;
 }
 
 .work-bio-img {
@@ -487,6 +487,11 @@ span {
 .mtb-10 {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.mtb-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 //work styles

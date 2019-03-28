@@ -2,8 +2,12 @@
   <div class='col-12 col-lg-6' *ngFor="let img of imageList, index as i">
     <div class='gallery-photo-container' (click)='openPreview(i)'>
       <img src='{{img.squareUrl}}' class='gallery-photo'/>
-      <div class="overlay" [ngStyle]="{'background-color' : img.hoverColor}">
-        <span class="description">
+      <div
+        class="overlay"
+        [ngStyle]="{'background-color' : img.hoverColor}">
+        <span
+          class="description"
+          [ngStyle]="{'color' : img.titleColor}">
           {{img.title}}
         </span>
       </div>

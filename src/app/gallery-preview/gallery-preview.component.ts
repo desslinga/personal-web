@@ -12,8 +12,10 @@ export class GalleryPreviewComponent implements OnInit {
   @Output() prevEmit: EventEmitter<Object> = new EventEmitter<Object>();
   siteContent: any;
   closeAnimate: boolean;
-  tools: string = "Adobe Photoshop";
-  title: string = "U of T Hacks V";
+  tools: string;
+  title: string;
+  bgColor: string;
+  mainColor: string;
 
   constructor(private router: Router) {
     this.closeAnimate = false;
@@ -25,6 +27,18 @@ export class GalleryPreviewComponent implements OnInit {
   ngOnInit() {
     this.siteContent = document.querySelector('#gallery-preview-container');
     disableBodyScroll(this.siteContent);
+    console.log(this.project);
+    switch(this.project) {
+      case 'uofthacks-v':
+        this.title = "U of T Hacks V";
+        this.tools = "Adobe Photoshop";
+        this.bgColor = "#0a010c";
+        this.mainColor = "#eab973";
+        break;
+      default:
+        break;
+    }
+
   }
 
   closePreview(): void {
