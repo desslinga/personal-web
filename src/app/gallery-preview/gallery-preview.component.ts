@@ -12,6 +12,8 @@ export class GalleryPreviewComponent implements OnInit {
   @Output() prevEmit: EventEmitter<Object> = new EventEmitter<Object>();
   siteContent: any;
   closeAnimate: boolean;
+  tools: string = "Adobe Photoshop";
+  title: string = "U of T Hacks V";
 
   constructor(private router: Router) {
     this.closeAnimate = false;
