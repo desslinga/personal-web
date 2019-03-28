@@ -14,6 +14,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { WafflyComponent } from './work/waffly/waffly.component';
 import { UofthacksVComponent } from './gallery-preview/previews/uofthacks-v/uofthacks-v.component';
 import { PottedPlantsComponent } from './gallery-preview/previews/potted-plants/potted-plants.component';
+import { AmacssGamingComponent } from './gallery-preview/previews/amacss-gaming/amacss-gaming.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PottedPlantsComponent } from './gallery-preview/previews/potted-plants/
     NotFoundComponent,
     WafflyComponent,
     UofthacksVComponent,
-    PottedPlantsComponent
+    PottedPlantsComponent,
+    AmacssGamingComponent
   ],
   imports: [
     BrowserModule,

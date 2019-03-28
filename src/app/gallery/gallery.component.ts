@@ -35,6 +35,7 @@ export class GalleryComponent implements OnInit {
        titleColor: `#edd39e`},
       {squareUrl: "image-10.png",
        title: `AMACSS Gaming Events`,
+       pageUrl: 'amacss-gaming',
        hoverColor: `#0e1826`,
        titleColor: `#ffd37a`},
       {squareUrl: "image-17.png",
