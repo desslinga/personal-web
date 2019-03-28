@@ -8,15 +8,15 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
   styleUrls: ['./gallery-preview.component.scss']
 })
 export class GalleryPreviewComponent implements OnInit {
-  @Input() project: any;
+  project: any = '';
   @Output() prevEmit: EventEmitter<Object> = new EventEmitter<Object>();
   siteContent: any;
   closeAnimate: boolean;
 
   constructor(private router: Router) {
     this.closeAnimate = false;
-    //document.body.className="no-scroll";
     this.siteContent = document.querySelector('#gallery-preview-container');
+    this.project = this.router.url.slice(6);
     console.log(this.project);
   }
 
