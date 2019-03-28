@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { ScreenChangeService } from '../services/screen-change.service';
 
 @Component({
@@ -10,26 +11,30 @@ export class GalleryComponent implements OnInit {
   imageList : Array<Array<string>>;
   imageListPrev : Array<any>;
   imageListFull: Array<any>;
-  openedImage: Object;
+  previewedProject: Object;
   screenChangeService: ScreenChangeService;
 
   openPreview(i): void {
-    //console.log(this.imageListFull[i]);
-    this.openedImage = this.imageListFull[0];
+    this.previewedProject = "uofthacks_v";
+    this.router.navigate(['/work/uofthacks_v']);
+
   }
 
   handlePrevEmit(event): void {
     switch (event) {
       case 'close':
-        this.openedImage = "";
+        this.previewedProject = "";
         break;
       default:
         break;
     }
-    console.log(this.openedImage);
+    console.log(this.previewedProject);
   }
 
-  constructor(private screenchangeservice: ScreenChangeService) {
+  constructor(
+    private router: Router,
+    private screenchangeservice: ScreenChangeService
+  ) {
     this.imageList = [
       ["image-01.png",
        "uoft_hacks_tower.png",
@@ -189,7 +194,7 @@ export class GalleryComponent implements OnInit {
        };
     }
 
-    this.openedImage = "";
+    this.previewedProject = "";
 
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 @Component({
@@ -7,16 +8,16 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
   styleUrls: ['./gallery-preview.component.scss']
 })
 export class GalleryPreviewComponent implements OnInit {
-  @Input() image: any;
+  @Input() project: any;
   @Output() prevEmit: EventEmitter<Object> = new EventEmitter<Object>();
   siteContent: any;
   closeAnimate: boolean;
 
-  constructor() {
+  constructor(private router: Router) {
     this.closeAnimate = false;
     //document.body.className="no-scroll";
     this.siteContent = document.querySelector('#gallery-preview-container');
-    console.log(this.image);
+    console.log(this.project);
   }
 
   ngOnInit() {
@@ -28,9 +29,10 @@ export class GalleryPreviewComponent implements OnInit {
     this.closeAnimate = true;
     document.body.className="";
     setTimeout(()=> {
-      this.image = "";
+      this.project = "";
       clearAllBodyScrollLocks();
       this.prevEmit.emit('close');
+      this.router.navigate(['/work'])
     }, 300);
   }
 

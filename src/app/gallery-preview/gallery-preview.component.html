@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-10 col-sm-11">
       <span class="gallery-preview-title">
-        {{image.title}}
+        <!--{{image.title}}-->
       </span>
     </div>
     <div class="col-2 col-sm-1">
@@ -15,11 +15,13 @@
     </div>
     <div class="col-12">
       <span class="gallery-preview-desc">
-        Tools: {{image.tools}}
+        Tools: <!--{{image.tools}}-->
       </span>
     </div>
   </div>
-  <ng-content></ng-content>
+  <app-uofthacks-v
+    *ngIf="project==='uofthacks_v'"
+  ></app-uofthacks-v>
   <!--
   <div class="row mtb-10">
     <div class="col-12">
