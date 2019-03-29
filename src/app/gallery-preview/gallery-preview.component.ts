@@ -43,9 +43,15 @@ export class GalleryPreviewComponent implements OnInit {
         break;
       case 'amacss-gaming':
         this.title = "AMACSS Gaming Nights";
-        this.tools = "ProCreate (with iPad Pro)";
+        this.tools = "ProCreate (with iPad Pro), Adobe Illustrator";
         this.bgColor = "#0e1826";
         this.mainColor = "#ffd37a";
+        break;
+      case 'amacss-piday':
+        this.title = "AMACSS Pi Day";
+        this.tools = "ProCreate (with iPad Pro), Adobe Illustrator";
+        this.bgColor = "#71331a";
+        this.mainColor = "#ffcc83";
         break;
       default:
         break;

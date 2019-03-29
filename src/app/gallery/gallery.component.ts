@@ -56,7 +56,12 @@ export class GalleryComponent implements OnInit {
       {squareUrl: "image-16.png",
        title: `Floral Series`,
        hoverColor: '#30170e',
-       titleColor: `#e28356`}
+       titleColor: `#e28356`},
+      {squareUrl: "image-18.png",
+       pageUrl: 'amacss-piday',
+       title: `AMACSS Pi Day`,
+       hoverColor: '#71331a',
+       titleColor: `#ffcc83`}
     ];
 
     this.imageList.map((img) => {

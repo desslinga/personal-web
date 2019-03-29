@@ -15,6 +15,7 @@ import { WafflyComponent } from './work/waffly/waffly.component';
 import { UofthacksVComponent } from './gallery-preview/previews/uofthacks-v/uofthacks-v.component';
 import { PottedPlantsComponent } from './gallery-preview/previews/potted-plants/potted-plants.component';
 import { AmacssGamingComponent } from './gallery-preview/previews/amacss-gaming/amacss-gaming.component';
+import { AmacssPidayComponent } from './gallery-preview/previews/amacss-piday/amacss-piday.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AmacssGamingComponent } from './gallery-preview/previews/amacss-gaming/
     WafflyComponent,
     UofthacksVComponent,
     PottedPlantsComponent,
-    AmacssGamingComponent
+    AmacssGamingComponent,
+    AmacssPidayComponent
   ],
   imports: [
     BrowserModule,
