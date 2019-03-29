@@ -419,7 +419,6 @@ span {
   height: 100vh;
   width: 100vw;
   padding: 5% 5% 10vh 5%;
-  background-color: $med-beige;
   overflow-x: hidden;
   animation: $a-fade-from-down;
   overflow-y: scroll;
@@ -531,10 +530,6 @@ span {
 ::-webkit-scrollbar-thumb {
   background: $med-beige;
   border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: $med-beige;
 }
 
 .bar-close-1 {
