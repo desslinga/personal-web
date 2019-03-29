@@ -51,6 +51,7 @@ export class GalleryComponent implements OnInit {
        title: `AMACSS Events - Other`,
        hoverColor: `black`},
       {squareUrl: "image-16.png",
+       pageUrl: 'floral-series',
        title: `Floral Series`,
        hoverColor: '#30170e',
        titleColor: `#e28356`},

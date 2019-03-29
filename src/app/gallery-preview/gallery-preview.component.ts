@@ -59,6 +59,12 @@ export class GalleryPreviewComponent implements OnInit {
         this.bgColor = "#2c332c";
         this.mainColor = "#e1e6a3";
         break;
+      case 'floral-series':
+        this.title = "Warm Floral Series";
+        this.tools = "ProCreate (with iPad Pro)";
+        this.bgColor = "#30170e";
+        this.mainColor = "#e28356";
+        break;
       default:
         break;
     }

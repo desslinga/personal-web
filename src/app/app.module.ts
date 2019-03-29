@@ -17,6 +17,7 @@ import { PottedPlantsComponent } from './gallery-preview/previews/potted-plants/
 import { AmacssGamingComponent } from './gallery-preview/previews/amacss-gaming/amacss-gaming.component';
 import { AmacssPidayComponent } from './gallery-preview/previews/amacss-piday/amacss-piday.component';
 import { GoIntroductionComponent } from './gallery-preview/previews/go-introduction/go-introduction.component';
+import { FloralSeriesComponent } from './gallery-preview/previews/floral-series/floral-series.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { GoIntroductionComponent } from './gallery-preview/previews/go-introduct
     PottedPlantsComponent,
     AmacssGamingComponent,
     AmacssPidayComponent,
-    GoIntroductionComponent
+    GoIntroductionComponent,
+    FloralSeriesComponent
   ],
   imports: [
     BrowserModule,
