@@ -16,6 +16,7 @@ import { UofthacksVComponent } from './gallery-preview/previews/uofthacks-v/uoft
 import { PottedPlantsComponent } from './gallery-preview/previews/potted-plants/potted-plants.component';
 import { AmacssGamingComponent } from './gallery-preview/previews/amacss-gaming/amacss-gaming.component';
 import { AmacssPidayComponent } from './gallery-preview/previews/amacss-piday/amacss-piday.component';
+import { GoIntroductionComponent } from './gallery-preview/previews/go-introduction/go-introduction.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AmacssPidayComponent } from './gallery-preview/previews/amacss-piday/am
     UofthacksVComponent,
     PottedPlantsComponent,
     AmacssGamingComponent,
-    AmacssPidayComponent
+    AmacssPidayComponent,
+    GoIntroductionComponent
   ],
   imports: [
     BrowserModule,

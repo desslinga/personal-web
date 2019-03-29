@@ -24,10 +24,6 @@ export class GalleryComponent implements OnInit {
        title: `U of T Hacks V`,
        hoverColor: `#0a010c`,
        titleColor: `#eab973`},
-      {squareUrl: "image-02.png",
-       title: `Toronto Transit Assets`,
-       hoverColor: `#ffffff`,
-       titleColor: `#7a8e81`},
       {squareUrl: "image-03.png",
        pageUrl: 'potted-plants',
        title: `Potted Plants Series`,
@@ -47,6 +43,7 @@ export class GalleryComponent implements OnInit {
        hoverColor: `#e9b455`,
        titleColor: `#652f17`},
       {squareUrl: "image-12.png",
+       pageUrl: 'go-introduction',
        title: `GO Introduction Brochure`,
        hoverColor: `#2c332c`,
        titleColor: `#e1e6a3`},
@@ -60,8 +57,8 @@ export class GalleryComponent implements OnInit {
       {squareUrl: "image-18.png",
        pageUrl: 'amacss-piday',
        title: `AMACSS Pi Day`,
-       hoverColor: '#71331a',
-       titleColor: `#ffcc83`}
+       hoverColor: '#efc68c',
+       titleColor: `#88391c`}
     ];
 
     this.imageList.map((img) => {
