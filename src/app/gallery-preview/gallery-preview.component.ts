@@ -25,43 +25,43 @@ export class GalleryPreviewComponent implements OnInit {
 
   ngOnInit() {
     this.siteContent = document.querySelector('#gallery-preview-container');
-    disableBodyScroll(this.siteContent);
+    //disableBodyScroll(this.siteContent);
     switch(this.project) {
       case 'uofthacks-v':
         this.title = "U of T Hacks V";
         this.tools = "Adobe Illustrator, Procreate (with iPad Pro)";
-        this.bgColor = "#0a010c";
-        this.mainColor = "#eab973";
         break;
       case 'potted-plants':
         this.title = "Potted Plants Series";
         this.tools = "ProCreate (with iPad Pro)";
-        this.bgColor = "#985c3e";
-        this.mainColor = "#edd39e";
         break;
       case 'amacss-gaming':
         this.title = "AMACSS Gaming Nights";
         this.tools = "ProCreate (with iPad Pro), Adobe Illustrator";
-        this.bgColor = "#0e1826";
-        this.mainColor = "#ffd37a";
         break;
       case 'amacss-piday':
         this.title = "AMACSS Pi Day";
         this.tools = "ProCreate (with iPad Pro), Adobe Illustrator";
-        this.bgColor = "#efc68c";
-        this.mainColor = "#88391c";
         break;
       case 'go-introduction':
         this.title = "GO Introduction Brochure";
         this.tools = "Adobe Illustrator";
-        this.bgColor = "#2c332c";
-        this.mainColor = "#e1e6a3";
         break;
       case 'floral-series':
         this.title = "Warm Floral Series";
         this.tools = "ProCreate (with iPad Pro)";
-        this.bgColor = "#30170e";
-        this.mainColor = "#e28356";
+        break;
+      case 'amacss-coffeehouse':
+        this.title = "AMACSS Coffee House";
+        this.tools = "ProCreate (with iPad Pro), Adobe Illustrator";
+        break;
+      case 'amacss-other':
+        this.title = "AMACSS Events";
+        this.tools = "ProCreate (with iPad Pro), Adobe Illustrator";
+        break;
+      case 'warm-series':
+        this.title = "Warm Series";
+        this.tools = "ProCreate (with iPad Pro)";
         break;
       default:
         break;
@@ -71,9 +71,9 @@ export class GalleryPreviewComponent implements OnInit {
 
   closePreview(): void {
     this.closeAnimate = true;
-    document.body.className="";
+    //document.body.className="";
     setTimeout(()=> {
-      clearAllBodyScrollLocks();
+      //clearAllBodyScrollLocks();
       this.prevEmit.emit('close');
       this.router.navigate([`./work`], {fragment: `${this.project}`});
     }, 300);

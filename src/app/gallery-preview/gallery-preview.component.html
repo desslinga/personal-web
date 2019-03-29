@@ -21,11 +21,12 @@
       </div>
       <div class="col-12">
         <span
-          class="gallery-preview-desc">
+          class="gallery-preview-subtitle">
           Tools: {{tools}}
         </span>
       </div>
     </div>
+    &nbsp;
     <app-uofthacks-v
       *ngIf="project==='uofthacks-v'"
     ></app-uofthacks-v>
@@ -44,5 +45,14 @@
     <app-floral-series
       *ngIf="project==='floral-series'"
     ></app-floral-series>
+    <app-amacss-coffeehouse
+      *ngIf="project==='amacss-coffeehouse'"
+    ></app-amacss-coffeehouse>
+    <app-amacss-other
+      *ngIf="project==='amacss-other'"
+    ></app-amacss-other>
+    <app-warm-series
+      *ngIf="project==='warm-series'"
+    ></app-warm-series>
   </div>
 </div>

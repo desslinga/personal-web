@@ -18,6 +18,9 @@ import { AmacssGamingComponent } from './gallery-preview/previews/amacss-gaming/
 import { AmacssPidayComponent } from './gallery-preview/previews/amacss-piday/amacss-piday.component';
 import { GoIntroductionComponent } from './gallery-preview/previews/go-introduction/go-introduction.component';
 import { FloralSeriesComponent } from './gallery-preview/previews/floral-series/floral-series.component';
+import { AmacssCoffeehouseComponent } from './gallery-preview/previews/amacss-coffeehouse/amacss-coffeehouse.component';
+import { AmacssOtherComponent } from './gallery-preview/previews/amacss-other/amacss-other.component';
+import { WarmSeriesComponent } from './gallery-preview/previews/warm-series/warm-series.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { FloralSeriesComponent } from './gallery-preview/previews/floral-series/
     AmacssGamingComponent,
     AmacssPidayComponent,
     GoIntroductionComponent,
-    FloralSeriesComponent
+    FloralSeriesComponent,
+    AmacssCoffeehouseComponent,
+    AmacssOtherComponent,
+    WarmSeriesComponent
   ],
   imports: [
     BrowserModule,

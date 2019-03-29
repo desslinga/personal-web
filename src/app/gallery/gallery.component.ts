@@ -39,7 +39,7 @@ export class GalleryComponent implements OnInit {
        title: `GO Introduction Brochure`},
       {squareUrl: "image-13.png",
        pageUrl: 'amacss-other',
-       title: `AMACSS Events - Other`},
+       title: `AMACSS Events`},
       {squareUrl: "image-16.png",
        pageUrl: 'floral-series',
        title: `Floral Series`,},
