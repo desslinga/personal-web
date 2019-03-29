@@ -2,6 +2,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "global-variables.scss";
 @import "blog.scss";
+@import "gallery.scss";
 
 body {
   background-color: $beige;
@@ -360,7 +361,6 @@ span {
     opacity: 0;
     border-radius: 10px;
     transition: $fast-ease;
-    background-color: $darker-beige;
     & .description {
       position: absolute;
       top: 53%;

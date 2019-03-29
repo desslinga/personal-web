@@ -4,11 +4,9 @@
     <div class='gallery-photo-container' (click)='openPreview(i)'>
       <img src='{{img.squareUrl}}' class='gallery-photo'/>
       <div
-        class="overlay"
-        [ngStyle]="{'background-color' : img.hoverColor}">
+        class="overlay {{img.pageUrl}}">
         <span
-          class="description"
-          [ngStyle]="{'color' : img.titleColor}">
+          class="description">
           {{img.title}}
         </span>
       </div>

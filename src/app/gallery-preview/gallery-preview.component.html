@@ -1,13 +1,9 @@
 <div id='gallery-preview-bg' (click)="closePreview()">
 </div>
 <div
-  class='container-fluid'
+  class='container-fluid {{project}}'
   id='gallery-preview-container'
   [ngClass]="{'close-preview': closeAnimate}"
-  [ngStyle]="{
-    'background-color': bgColor,
-    'color': mainColor
-  }"
   >
   <div class="content">
     <div class="row">
