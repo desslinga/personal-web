@@ -21,13 +21,11 @@ export class GalleryPreviewComponent implements OnInit {
     this.closeAnimate = false;
     this.siteContent = document.querySelector('#gallery-preview-container');
     this.project = this.router.url.slice(6);
-    console.log(this.project);
   }
 
   ngOnInit() {
     this.siteContent = document.querySelector('#gallery-preview-container');
     disableBodyScroll(this.siteContent);
-    console.log(this.project);
     switch(this.project) {
       case 'uofthacks-v':
         this.title = "U of T Hacks V";
@@ -75,10 +73,9 @@ export class GalleryPreviewComponent implements OnInit {
     this.closeAnimate = true;
     document.body.className="";
     setTimeout(()=> {
-      this.project = "";
       clearAllBodyScrollLocks();
       this.prevEmit.emit('close');
-      this.router.navigate(['/work'])
+      this.router.navigate([`./work`], {fragment: `${this.project}`});
     }, 300);
   }
 

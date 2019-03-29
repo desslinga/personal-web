@@ -1,5 +1,6 @@
 <div class='row'>
   <div class='col-12 col-lg-6' *ngFor="let img of imageList, index as i">
+    <div id="{{img.pageUrl}}" class="image-anchor"></div>
     <div class='gallery-photo-container' (click)='openPreview(i)'>
       <img src='{{img.squareUrl}}' class='gallery-photo'/>
       <div

@@ -39,7 +39,7 @@ import { FloralSeriesComponent } from './gallery-preview/previews/floral-series/
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [ScreenChangeService],
   bootstrap: [AppComponent]
