@@ -1,27 +1,20 @@
-<div id='gallery-preview-bg' (click)="closePreview()">
-</div>
-<div
-  class='container-fluid {{project}}'
-  id='gallery-preview-container'
-  [ngClass]="{'close-preview': closeAnimate}"
-  >
-  <div class="content">
+<app-preview #preview [project]="project">
     <div class="row">
       <div class="col-10 col-sm-11">
         <span
-          class="gallery-preview-title">
+          class="preview-title">
           {{title}}
         </span>
       </div>
       <div class="col-2 col-sm-1">
-        <div class='gallery-preview-close' (click)="closePreview()">
+        <div class='preview-close' (click)="preview.closePreview('./work', project)">
           <div class="bar-close-1"></div>
           <div class="bar-close-2"></div>
         </div>
       </div>
       <div class="col-12">
         <span
-          class="gallery-preview-subtitle">
+          class="preview-subtitle">
           Tools: {{tools}}
         </span>
       </div>
@@ -53,5 +46,4 @@
     <app-warm-series
       *ngIf="project==='warm-series'"
     ></app-warm-series>
-  </div>
-</div>
+</app-preview>

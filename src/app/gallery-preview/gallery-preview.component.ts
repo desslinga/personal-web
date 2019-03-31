@@ -66,12 +66,4 @@ export class GalleryPreviewComponent implements OnInit {
 
   }
 
-  closePreview(): void {
-    this.closeAnimate = true;
-    setTimeout(()=> {
-      this.prevEmit.emit('close');
-      this.router.navigate([`./work`], {fragment: `${this.project}`});
-    }, 300);
-  }
-
 }

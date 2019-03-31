@@ -21,6 +21,7 @@ import { FloralSeriesComponent } from './gallery-preview/previews/floral-series/
 import { AmacssCoffeehouseComponent } from './gallery-preview/previews/amacss-coffeehouse/amacss-coffeehouse.component';
 import { AmacssOtherComponent } from './gallery-preview/previews/amacss-other/amacss-other.component';
 import { WarmSeriesComponent } from './gallery-preview/previews/warm-series/warm-series.component';
+import { PreviewComponent } from './preview/preview.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { WarmSeriesComponent } from './gallery-preview/previews/warm-series/warm
     FloralSeriesComponent,
     AmacssCoffeehouseComponent,
     AmacssOtherComponent,
-    WarmSeriesComponent
+    WarmSeriesComponent,
+    PreviewComponent
   ],
   imports: [
     BrowserModule,
