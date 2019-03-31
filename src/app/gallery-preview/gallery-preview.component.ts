@@ -8,12 +8,8 @@ import { RouterModule, Routes, Router } from '@angular/router';
 })
 export class GalleryPreviewComponent implements OnInit {
   project: any = '';
-  @Output() prevEmit: EventEmitter<Object> = new EventEmitter<Object>();
-  siteContent: any;
   tools: string;
   title: string;
-  bgColor: string;
-  mainColor: string;
 
   constructor(private router: Router) {
     this.project = this.router.url.slice(9);

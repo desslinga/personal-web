@@ -349,7 +349,7 @@ span {
 }
 
 //gallery styles
-.gallery-photo-container {
+.home-photo-container {
   cursor: pointer;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -394,7 +394,7 @@ span {
   }
 }
 
-.gallery-photo {
+.home-photo {
   width: 100%;
   border-radius: 10px;
 }
@@ -512,22 +512,9 @@ span {
   margin-bottom: 10px;
 }
 
-//work styles
-
-.work-about-img-container {
-  @extend .home-about-img-container;
+.mb-10 {
+  margin-bottom: 10px;
 }
-
-.work-about-txt-container {
-  @extend .home-about-txt-container;
-}
-
-.work-about-img {
-  border-radius: 10px;
-  width: 100%;
-}
-
-//scroll bar style
 
 //scroll bar style
 

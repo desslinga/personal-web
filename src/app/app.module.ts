@@ -22,6 +22,7 @@ import { AmacssCoffeehouseComponent } from './gallery-preview/previews/amacss-co
 import { AmacssOtherComponent } from './gallery-preview/previews/amacss-other/amacss-other.component';
 import { WarmSeriesComponent } from './gallery-preview/previews/warm-series/warm-series.component';
 import { PreviewComponent } from './preview/preview.component';
+import { WorkPreviewComponent } from './work-preview/work-preview.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PreviewComponent } from './preview/preview.component';
     AmacssCoffeehouseComponent,
     AmacssOtherComponent,
     WarmSeriesComponent,
-    PreviewComponent
+    PreviewComponent,
+    WorkPreviewComponent
   ],
   imports: [
     BrowserModule,

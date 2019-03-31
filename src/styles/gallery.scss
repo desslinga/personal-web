@@ -1,4 +1,4 @@
-@mixin custom-preview($bgColor, $color) {
+@mixin custom-preview($bgColor, $color, $accent) {
   background-color: $bgColor;
   color: $color;
   &::-webkit-scrollbar-thumb {
@@ -7,40 +7,55 @@
   & .bar {
     background-color: $color;
   }
+  & .btn-sim {
+    border: 1px solid $accent;
+    color: $color;
+  }
+  & hr {
+    border-top: 1px solid $accent;
+  }
 }
 
 .uofthacks-v {
-  @include custom-preview(#0a010c, #da907c);
+  @include custom-preview(#0a010c, #da907c, #fff);
 }
 
 .amacss-coffeehouse {
-  @include custom-preview(#72a4c1, #fffaed);
+  @include custom-preview(#72a4c1, #fffaed, #fff);
 }
 
 .potted-plants {
-  @include custom-preview(#985c3e, #edd39e);
+  @include custom-preview(#985c3e, #edd39e, #fff);
 }
 
 .amacss-gaming {
-  @include custom-preview(#0e1826, #ffd37a);
+  @include custom-preview(#0e1826, #ffd37a, #fff);
 }
 
 .warm-series {
-  @include custom-preview(#9b6b44, #fed886);
+  @include custom-preview(#9b6b44, #fed886, #fff);
 }
 
 .go-introduction {
-  @include custom-preview(#2c332c, #e1e6a3);
+  @include custom-preview(#2c332c, #e1e6a3, #fff);
 }
 
 .amacss-other {
-  @include custom-preview(#0e1826, #f0ca9d);
+  @include custom-preview(#0e1826, #f0ca9d, #fff);
 }
 
 .floral-series {
-  @include custom-preview(#30170e, #e28356);
+  @include custom-preview(#30170e, #e28356, #fff);
 }
 
 .amacss-piday {
-  @include custom-preview(#efc68c, #88391c);
+  @include custom-preview(#efc68c, #88391c, #fff);
+}
+
+.waffly {
+  @include custom-preview(#0e1826, #e6d9b7, #29313f);
+}
+
+.closetr {
+  @include custom-preview(#334143, #e6ecef, #5a7b80);
 }

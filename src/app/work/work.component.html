@@ -21,18 +21,18 @@
         <br>
       </span>
     </div>
-    <div class='col-12 col-lg-6'>
-      <div class='work-about-img-container'>
-        <a routerLink='/work/closetr'>
-          <img src='./assets/images/work/closetr-showcase-img.png' class='work-about-img'/>
-        </a>
-      </div>
-    </div>
-    <div class='col-12 col-lg-6'>
-      <div class='work-about-img-container'>
-        <a href='http://fideslinga.com/waffly'>
-          <img src='./assets/images/work/waffly-showcase-img.png' class='work-about-img'/>
-        </a>
+    <div class='col-12 col-lg-6' *ngFor="let img of imageList; index as i">
+      <div
+        class='home-photo-container'
+        (click)='openPreview(i)'>
+        <img src='{{img.squareUrl}}' class='home-photo'/>
+        <div
+          class="overlay {{img.pageUrl}}">
+          <span
+            class="description">
+            {{img.title}}
+          </span>
+        </div>
       </div>
     </div>
   </div>
