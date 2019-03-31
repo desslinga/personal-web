@@ -13,9 +13,9 @@ const routes: Routes = [
   {path: 'home', redirectTo: '/about', pathMatch: 'full'},
   {path: 'about', component: HomeComponent},
   {path: 'gallery', component: GalleryComponent},
+  {path: 'work/closetr', component: ClosetrComponent},
   {path: 'work/:id', component: GalleryPreviewComponent},
   {path: 'work', component: WorkComponent },
-  {path: 'work/closetr', component: ClosetrComponent},
   {path: '404', component: NotFoundComponent},
   {path: '**', redirectTo: '/404', pathMatch: 'prefix'}
 ];

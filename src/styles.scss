@@ -135,17 +135,21 @@ a {
 }
 
 .subtitle {
-  font-size: 1.7rem;
-  line-height: 3rem;
+  font-size: 1.5rem;
+  line-height: 2.8rem;
   &.sm {
-    font-size: 1.4rem;
-    line-height: 2.5rem;
+    font-size: 1.2rem;
+    line-height: 2.0rem;
   }
 }
 
 .icon-link {
   margin-right: calc(1vw + 15px);
   font-size: 20px;
+}
+
+.font-link {
+  color: #E7BF0A;
 }
 
 .fb-fix {
@@ -180,7 +184,7 @@ span {
 }
 
 .home-about-txt-container {
-  margin-top: 1vw;
+  margin-top: 0.5vw;
   margin-bottom: 4vw;
 }
 
@@ -501,6 +505,11 @@ span {
 .mtb-20 {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.mt20-b10 {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 //work styles
