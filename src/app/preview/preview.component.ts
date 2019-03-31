@@ -8,7 +8,8 @@ import { RouterModule, Routes, Router } from '@angular/router';
 })
 export class PreviewComponent implements OnInit {
   @Input() project: string;
-
+  closeAnimate: boolean;
+  
   constructor(private router: Router) { }
 
   ngOnInit() {

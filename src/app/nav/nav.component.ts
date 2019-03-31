@@ -32,7 +32,7 @@ export class NavComponent implements OnInit {
   navClick(url): void {
     var clickUrl = url;
     if (url == '/about-icon') {
-      clickUrl = '/work';
+      clickUrl = '/home';
     }
     this.router.navigate([clickUrl]);
     this.navItemActive = clickUrl;
@@ -59,8 +59,6 @@ export class NavComponent implements OnInit {
   setNavItemActive(): void {
     if (this.navItemActive.startsWith('/about')) {
       this.navItemActive = '/about';
-    } else if (this.navItemActive.startsWith('/gallery')) {
-      this.navItemActive = '/gallery';
     } else if (this.navItemActive.startsWith('/work')) {
       this.navItemActive = '/work';
     }

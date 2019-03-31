@@ -12,7 +12,7 @@ export class GalleryComponent implements OnInit {
   screenChangeService: ScreenChangeService;
 
   openPreview(i): void {
-    this.router.navigate([`/work/${this.imageList[i].pageUrl}`]);
+    this.router.navigate([`/gallery/${this.imageList[i].pageUrl}`]);
   }
 
   constructor(

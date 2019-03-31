@@ -10,15 +10,13 @@ export class GalleryPreviewComponent implements OnInit {
   project: any = '';
   @Output() prevEmit: EventEmitter<Object> = new EventEmitter<Object>();
   siteContent: any;
-  closeAnimate: boolean;
   tools: string;
   title: string;
   bgColor: string;
   mainColor: string;
 
   constructor(private router: Router) {
-    this.closeAnimate = false;
-    this.project = this.router.url.slice(6);
+    this.project = this.router.url.slice(9);
   }
 
   ngOnInit() {
@@ -35,11 +33,6 @@ export class GalleryPreviewComponent implements OnInit {
         this.title = "AMACSS Gaming Nights";
         this.tools = "ProCreate (with iPad Pro), Adobe Illustrator";
         break;
-      /*
-      case 'amacss-piday':
-        this.title = "AMACSS Pi Day";
-        this.tools = "ProCreate (with iPad Pro), Adobe Illustrator";
-        break;*/
       case 'go-introduction':
         this.title = "GO Introduction Brochure";
         this.tools = "Adobe Illustrator";
