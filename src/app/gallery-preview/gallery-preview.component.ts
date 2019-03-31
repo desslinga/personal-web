@@ -35,10 +35,11 @@ export class GalleryPreviewComponent implements OnInit {
         this.title = "AMACSS Gaming Nights";
         this.tools = "ProCreate (with iPad Pro), Adobe Illustrator";
         break;
+      /*
       case 'amacss-piday':
         this.title = "AMACSS Pi Day";
         this.tools = "ProCreate (with iPad Pro), Adobe Illustrator";
-        break;
+        break;*/
       case 'go-introduction':
         this.title = "GO Introduction Brochure";
         this.tools = "Adobe Illustrator";

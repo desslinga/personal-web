@@ -32,7 +32,7 @@ export class NavComponent implements OnInit {
   navClick(url): void {
     var clickUrl = url;
     if (url == '/about-icon') {
-      clickUrl = '/about';
+      clickUrl = '/work';
     }
     this.router.navigate([clickUrl]);
     this.navItemActive = clickUrl;
@@ -69,7 +69,6 @@ export class NavComponent implements OnInit {
   constructor(private screenchangeservice: ScreenChangeService,
               private router: Router,
               private location: Location) {
-    //enableBodyScroll();
     this.navbarOpen = false;
     this.width = window.innerWidth;
     this.screenChangeService = screenchangeservice;

@@ -43,9 +43,10 @@ export class GalleryComponent implements OnInit {
       {squareUrl: "image-16.png",
        pageUrl: 'floral-series',
        title: `Floral Series`,},
+      /*
       {squareUrl: "image-18.png",
        pageUrl: 'amacss-piday',
-       title: `AMACSS Pi Day`}
+       title: `AMACSS Pi Day`}*/
     ];
 
     this.imageList.map((img) => {
