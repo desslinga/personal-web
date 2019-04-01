@@ -49,9 +49,6 @@ body {
 
 .site-content {
   padding-top: calc(#{$container-pad-top-xs} + 9vh) !important;
-  @include lg {
-    padding-top: calc(#{$container-pad-top-xs} + 12vh) !important;
-  }
 }
 
 #home-container {
@@ -64,10 +61,10 @@ body {
       width: $width-sm;
     }
     @include md {
+      padding-top: $container-pad-top-lg;
       width: $width-sm;
     }
     @include lg {
-      padding-top: $container-pad-top-lg;
       width: $width-lg;
     }
     @include xl {
@@ -137,9 +134,17 @@ a {
 .subtitle {
   font-size: 1.5rem;
   line-height: 2.8rem;
+  @include sm {
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+  }
   &.sm {
-    font-size: 1.2rem;
-    line-height: 2.0rem;
+    font-size: 1.1rem;
+    line-height: 1.9rem;
+    @include sm {
+      font-size: 1.2rem;
+      line-height: 2.0rem;
+    }
   }
 }
 
