@@ -49,6 +49,9 @@ body {
 
 .site-content {
   padding-top: calc(#{$container-pad-top-xs} + 9vh) !important;
+  @include md {
+    padding-top: calc(#{$container-pad-top-xs} + 10vh) !important;
+  }
 }
 
 #home-container {

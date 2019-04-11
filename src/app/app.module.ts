@@ -23,6 +23,7 @@ import { AmacssOtherComponent } from './gallery-preview/previews/amacss-other/am
 import { WarmSeriesComponent } from './gallery-preview/previews/warm-series/warm-series.component';
 import { PreviewComponent } from './preview/preview.component';
 import { WorkPreviewComponent } from './work-preview/work-preview.component';
+import { SparknodesComponent } from './work/previews/sparknodes/sparknodes.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { WorkPreviewComponent } from './work-preview/work-preview.component';
     AmacssOtherComponent,
     WarmSeriesComponent,
     PreviewComponent,
-    WorkPreviewComponent
+    WorkPreviewComponent,
+    SparknodesComponent
   ],
   imports: [
     BrowserModule,
