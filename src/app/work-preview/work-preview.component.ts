@@ -23,6 +23,9 @@ export class WorkPreviewComponent implements OnInit {
       case 'waffly':
         this.title = "Waffly";
         break;
+      case 'sparknodes':
+        this.title = "Sparknodes";
+        break;
       default:
         break;
     }

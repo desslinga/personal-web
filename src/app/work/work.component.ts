@@ -14,9 +14,12 @@ export class WorkComponent implements OnInit {
       {squareUrl: "closetr-showcase-img.png",
        pageUrl: 'closetr',
        title: `Closetr`},
-     {squareUrl: "waffly-showcase-img.png",
-      pageUrl: 'waffly',
-      title: `Waffly`}
+      {squareUrl: "waffly-showcase-img.png",
+       pageUrl: 'waffly',
+       title: `Waffly`},
+      {squareUrl: "sparknodes-showcase-img.png",
+       pageUrl: 'sparknodes',
+       title: `Sparknodes`}
     ];
 
     this.imageList.map((img) => {

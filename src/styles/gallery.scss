@@ -59,3 +59,7 @@
 .closetr {
   @include custom-preview(#334143, #e6ecef, #5a7b80);
 }
+
+.sparknodes {
+  @include custom-preview(#1b1b1b, #ffffff, #616161);
+}
