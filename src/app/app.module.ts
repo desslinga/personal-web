@@ -24,6 +24,7 @@ import { WarmSeriesComponent } from './gallery-preview/previews/warm-series/warm
 import { PreviewComponent } from './preview/preview.component';
 import { WorkPreviewComponent } from './work-preview/work-preview.component';
 import { SparknodesComponent } from './work/previews/sparknodes/sparknodes.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { SparknodesComponent } from './work/previews/sparknodes/sparknodes.compo
     WarmSeriesComponent,
     PreviewComponent,
     WorkPreviewComponent,
-    SparknodesComponent
+    SparknodesComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
