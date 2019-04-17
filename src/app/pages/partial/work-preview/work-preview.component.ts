@@ -8,7 +8,6 @@ import { RouterModule, Routes, Router } from '@angular/router';
 })
 export class WorkPreviewComponent implements OnInit {
   @Input() project: string;
-  tools: string;
   title: string;
 
   constructor(private router: Router) {
