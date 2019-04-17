@@ -1,18 +1,4 @@
-<app-preview #preview [project]="project">
-    <div class="row mb-10">
-      <div class="col-10 col-sm-11">
-        <span
-          class="preview-title">
-          {{title}}
-        </span>
-      </div>
-      <div class="col-2 col-sm-1">
-        <div class='preview-close' (click)="preview.closePreview('./home', project)">
-          <div class="bar-close-1"></div>
-          <div class="bar-close-2"></div>
-        </div>
-      </div>
-    </div>
+<app-preview [project]="project">
     <div class="row">
       <div class="col-12">
         <span

@@ -1,0 +1,24 @@
+<div
+  class='container-fluid {{project}}'
+  id='preview-container'
+  [ngClass]="{'close-preview': closeAnimate}"
+  >
+  <div class="content">
+    <div class="row mb-10">
+      <div class="col-10 col-sm-11">
+        <span
+          class="preview-title">
+          {{title}}
+        </span>
+      </div>
+      <div class="col-2 col-sm-1">
+        <div
+          class='preview-close'
+          (click)="closePreview('./home', project)">
+          <div class="bar-close-1"></div>
+          <div class="bar-close-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
