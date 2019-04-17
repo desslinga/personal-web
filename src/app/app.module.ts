@@ -1,30 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
-
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { NavComponent } from './nav/nav.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { ScreenChangeService } from './services/screen-change.service';
-import { GalleryPreviewComponent } from './gallery-preview/gallery-preview.component';
-import { WorkComponent } from './work/work.component';
-import { ClosetrComponent } from './work/previews/closetr/closetr.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { WafflyComponent } from './work/previews/waffly/waffly.component';
-import { UofthacksVComponent } from './gallery-preview/previews/uofthacks-v/uofthacks-v.component';
-import { PottedPlantsComponent } from './gallery-preview/previews/potted-plants/potted-plants.component';
-import { AmacssGamingComponent } from './gallery-preview/previews/amacss-gaming/amacss-gaming.component';
-import { AmacssPidayComponent } from './gallery-preview/previews/amacss-piday/amacss-piday.component';
-import { GoIntroductionComponent } from './gallery-preview/previews/go-introduction/go-introduction.component';
-import { FloralSeriesComponent } from './gallery-preview/previews/floral-series/floral-series.component';
-import { AmacssCoffeehouseComponent } from './gallery-preview/previews/amacss-coffeehouse/amacss-coffeehouse.component';
-import { AmacssOtherComponent } from './gallery-preview/previews/amacss-other/amacss-other.component';
-import { WarmSeriesComponent } from './gallery-preview/previews/warm-series/warm-series.component';
-import { PreviewComponent } from './preview/preview.component';
-import { WorkPreviewComponent } from './work-preview/work-preview.component';
-import { SparknodesComponent } from './work/previews/sparknodes/sparknodes.component';
-import { BlogComponent } from './blog/blog.component';
+
+// full pages
+import { HomeComponent } from './pages/full/home/home.component';
+import { WorkComponent } from './pages/full/work/work.component';
+import { NotFoundComponent } from './pages/full/not-found/not-found.component';
+import { BlogComponent } from './pages/full/blog/blog.component';
+
+// partial pages
+import { NavComponent } from './pages/partial/nav/nav.component';
+import { GalleryPreviewComponent } from './pages/partial/gallery-preview/gallery-preview.component';
+import { WorkPreviewComponent } from './pages/partial/work-preview/work-preview.component';
+
+// components
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { PreviewComponent } from './components/preview/preview.component';
+
+// work previews
+import { ClosetrComponent } from './pages/partial/work-preview/previews/closetr/closetr.component';
+import { WafflyComponent } from './pages/partial/work-preview/previews/waffly/waffly.component';
+import { SparknodesComponent } from './pages/partial/work-preview/previews/sparknodes/sparknodes.component';
+
+// gallery previews
+import { UofthacksVComponent } from './pages/partial/gallery-preview/previews/uofthacks-v/uofthacks-v.component';
+import { PottedPlantsComponent } from './pages/partial/gallery-preview/previews/potted-plants/potted-plants.component';
+import { AmacssGamingComponent } from './pages/partial/gallery-preview/previews/amacss-gaming/amacss-gaming.component';
+import { AmacssPidayComponent } from './pages/partial/gallery-preview/previews/amacss-piday/amacss-piday.component';
+import { GoIntroductionComponent } from './pages/partial/gallery-preview/previews/go-introduction/go-introduction.component';
+import { FloralSeriesComponent } from './pages/partial/gallery-preview/previews/floral-series/floral-series.component';
+import { AmacssCoffeehouseComponent } from './pages/partial/gallery-preview/previews/amacss-coffeehouse/amacss-coffeehouse.component';
+import { AmacssOtherComponent } from './pages/partial/gallery-preview/previews/amacss-other/amacss-other.component';
+import { WarmSeriesComponent } from './pages/partial/gallery-preview/previews/warm-series/warm-series.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +63,6 @@ import { BlogComponent } from './blog/blog.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ScreenChangeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

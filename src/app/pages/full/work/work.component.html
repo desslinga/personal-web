@@ -21,21 +21,11 @@
         <br>
       </span>
     </div>
-    <div class='col-12 col-lg-6' *ngFor="let img of imageList; index as i">
-      <div
-        class='home-photo-container'
-        (click)='openPreview(i)'>
-        <img src='{{img.squareUrl}}' class='home-photo'/>
-        <div
-          class="overlay {{img.pageUrl}}">
-          <span
-            class="description">
-            {{img.title}}
-          </span>
-        </div>
-      </div>
-    </div>
   </div>
+  <app-gallery
+    type="work"
+    [imageList]="projectImageList"
+  ></app-gallery>
   <div class="row">
     <div class="col-12">
       <hr>
@@ -50,5 +40,8 @@
       </span>
     </div>
   </div>
-  <app-gallery></app-gallery>
+  <app-gallery
+    type="gallery"
+    [imageList]="designImageList"
+  ></app-gallery>
 </div>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ScreenChangeService } from '../services/screen-change.service';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +6,7 @@ import { ScreenChangeService } from '../services/screen-change.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  screenChangeService: ScreenChangeService;
-
-  constructor(private screenchangeservice: ScreenChangeService) {
-    document.body.className = "";
-    this.screenChangeService = screenchangeservice;
-
-  }
+  constructor() { }
 
   ngOnInit() {
 

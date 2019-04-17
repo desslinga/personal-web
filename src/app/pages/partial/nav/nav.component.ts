@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { ScreenChangeService } from '../services/screen-change.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
@@ -14,7 +13,6 @@ export class NavComponent implements OnInit {
   navbarOpen: boolean;
   width: number;
   navItemActive : string;
-  screenChangeService: ScreenChangeService;
   navMobileWidth : number;
   navTitle: Object;
   navOverlay: any;
@@ -64,12 +62,10 @@ export class NavComponent implements OnInit {
     }
   }
 
-  constructor(private screenchangeservice: ScreenChangeService,
-              private router: Router,
+  constructor(private router: Router,
               private location: Location) {
     this.navbarOpen = false;
     this.width = window.innerWidth;
-    this.screenChangeService = screenchangeservice;
     this.siteContent = document.querySelector('#home-container');
     this.navMobileWidth = 768;
 
