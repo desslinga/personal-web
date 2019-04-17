@@ -3,6 +3,7 @@
 @import "global-variables.scss";
 @import "blog.scss";
 @import "gallery.scss";
+@import "./partial/button.scss";
 
 body {
   background-color: $beige;
@@ -227,6 +228,7 @@ span {
     font-weight: 400;
     color: $brown;
     transition: $fast-ease;
+    float: right;
     &.nav-item-active {
       font-weight: 700;
     }
@@ -252,6 +254,8 @@ span {
     display: inline;
     & a {
       font-size: 25px;
+      float: none;
+      margin-left: 0;
     }
     & ul li:first-child {
       margin-top: calc(#{$fides-logo-height}/2);

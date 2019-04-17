@@ -23,11 +23,11 @@
           <ul>
             <li>
               <a
-                routerLink="/work"
+                routerLink="/notes"
                 class="nav-menu-link"
-                [ngClass]="{'nav-item-active': navItemActive == '/home'}"
-                (click)="navClick('/home')"
-               >WORK</a>
+                [ngClass]="{'nav-item-active': navItemActive == '/notes'}"
+                (click)="navClick('/notes')"
+              >NOTES</a>
             </li>
             <li>
               <a
@@ -39,11 +39,11 @@
             </li>
             <li>
               <a
-                routerLink="/notes"
+                routerLink="/work"
                 class="nav-menu-link"
-                [ngClass]="{'nav-item-active': navItemActive == '/notes'}"
-                (click)="navClick('/notes')"
-              >NOTES</a>
+                [ngClass]="{'nav-item-active': navItemActive == '/home'}"
+                (click)="navClick('/home')"
+               >WORK</a>
             </li>
           </ul>
         </div>

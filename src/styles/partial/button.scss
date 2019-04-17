@@ -1,0 +1,12 @@
+.btn-sim {
+  @extend .mtb-10;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid $darker-beige;
+  color: $brown;
+  line-height: 37px;
+}
