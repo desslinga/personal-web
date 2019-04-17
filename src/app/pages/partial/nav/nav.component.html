@@ -2,20 +2,49 @@
   <div class='row'>
     <div class='col-12'>
       <nav class="custom-nav" [ngClass]="{'nav-overlay':navbarOpen}">
-        <a class="nav-icon icon-link" routerLink="/home" (click)="navClick('/about-icon')">
+        <a
+          class="nav-icon icon-link"
+          routerLink="/home"
+          (click)="navClick('/about-icon')">
           <div class="fides-icon">
             <span>F</span>
           </div>
         </a>
-        <button type="button" class="btn nav-toggle" [ngClass]="{'nav-toggle-open':navbarOpen}" (click)="toggleNavbar()">
+        <button
+          type="button"
+          class="btn nav-toggle"
+          [ngClass]="{'nav-toggle-open':navbarOpen}"
+          (click)="toggleNavbar()">
           <div class="bar1" [ngClass]="{'change':navbarOpen}"></div>
           <div class="bar2" [ngClass]="{'change':navbarOpen}"></div>
           <div class="bar3" [ngClass]="{'change':navbarOpen}"></div>
         </button>
         <div class="nav-container" [ngClass]="{'nav-open':navbarOpen}">
           <ul>
-            <li><a routerLink="/work" class="icon-link" [ngClass]="{'nav-item-active': navItemActive == '/home'}"  (click)="navClick('/home')">WORK</a></li>
-            <li><a routerLink="/about" class="icon-link" [ngClass]="{'nav-item-active': navItemActive == '/about'}" (click)="navClick('/about')">ABOUT</a></li>
+            <li>
+              <a
+                routerLink="/work"
+                class="nav-menu-link"
+                [ngClass]="{'nav-item-active': navItemActive == '/home'}"
+                (click)="navClick('/home')"
+               >WORK</a>
+            </li>
+            <li>
+              <a
+                routerLink="/about"
+                class="nav-menu-link"
+                [ngClass]="{'nav-item-active': navItemActive == '/about'}"
+                (click)="navClick('/about')"
+              >ABOUT</a>
+            </li>
+            <li>
+              <a
+                routerLink="/notes"
+                class="nav-menu-link"
+                [ngClass]="{'nav-item-active': navItemActive == '/notes'}"
+                (click)="navClick('/notes')"
+              >NOTES</a>
+            </li>
           </ul>
         </div>
         <div class="d-md-none nav-title" [hidden]="navbarOpen">

@@ -7,11 +7,13 @@ import { GalleryPreviewComponent } from './pages/partial/gallery-preview/gallery
 import { WorkPreviewComponent } from './pages/partial/work-preview/work-preview.component';
 import { WorkComponent } from './pages/full/work/work.component';
 import { NotFoundComponent } from './pages/full/not-found/not-found.component';
+import { NotesComponent } from './pages/full/notes/notes.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: WorkComponent},
   {path: 'about', component: HomeComponent},
+  {path: 'notes', component: NotesComponent},
   {path: 'gallery/:id', component: GalleryPreviewComponent},
   {path: 'work/:id', component: WorkPreviewComponent},
   {path: '404', component: NotFoundComponent},

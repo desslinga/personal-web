@@ -11,10 +11,14 @@ body {
   overflow-y: overlay;
 }
 
-@mixin overlay-pos($width) {
-  left: calc((-100vw + #{$width})/2);
+@mixin overlay-pad($width) {
   padding-left: calc((100vw - #{$width})/2 + 15px);
-  padding-right: calc((100vw - #{$width})/2 + 10px);
+  padding-right: calc((100vw - #{$width})/2 + 15px);
+}
+
+@mixin overlay-pos-pad($width) {
+  @include overlay-pad($width);
+  left: calc((-100vw + #{$width})/2);
 }
 
 @mixin sm {
@@ -48,23 +52,15 @@ body {
 }
 
 .site-content {
-  padding-top: calc(#{$container-pad-top-xs} + 9vh) !important;
-  @include md {
-    padding-top: calc(#{$container-pad-top-xs} + 10vh) !important;
-  }
+  padding-top: calc(#{$container-pad-top} + 25px);
 }
 
 #home-container {
   animation: $a-fade-from-down;
   width: $width-xs;
-  padding-top: $container-pad-top-xs;
   padding-bottom: calc(#{$container-pad-top-xs}*1.5);
   max-width: $max-width;
     @include sm {
-      width: $width-sm;
-    }
-    @include md {
-      padding-top: $container-pad-top-lg;
       width: $width-sm;
     }
     @include lg {
@@ -76,36 +72,26 @@ body {
 }
 
 #nav-container {
-  @extend #home-container;
+  padding-top: $container-pad-top-xs;
   max-width: none;
   padding-bottom: 0;
   position: fixed;
   z-index: 1;
   background-color: $beige;
-  width: 100%;
+  width: 100vw;
   padding-bottom: 1.5vh;
-  width: $width-xs-nav;
-  @include overlay-pos($width-xs);
-  left: 0;
+  @include overlay-pad($width-xs);
   @include sm {
-    @include overlay-pos($width-sm);
-    width: $width-sm-nav;
-    left: 0;
+    @include overlay-pad($width-sm);
   }
   @include lg {
-    @include overlay-pos($width-lg);
-    width: $width-lg-nav;
-    left: 0;
+    @include overlay-pad($width-lg);
   }
   @include xl {
-    @include overlay-pos($width-xl);
-    width: $width-xl-nav;
-    left: 0;
+    @include overlay-pad($width-xl);
   }
   @include xxl {
-    @include overlay-pos($max-width);
-    left: 0;
-    width: 100vw;
+    @include overlay-pad($max-width);
   }
 }
 
@@ -153,6 +139,11 @@ a {
 
 .icon-link {
   margin-right: calc(1vw + 15px);
+  font-size: 20px;
+}
+
+.nav-menu-link {
+  margin-left: calc(1vw + 15px);
   font-size: 20px;
 }
 
@@ -214,12 +205,12 @@ span {
   top: -$container-pad-top-xs;
   padding-top: $container-pad-top-xs;
   background-color: $beige;
-  @include overlay-pos($width-xs);
+  @include overlay-pos-pad($width-xs);
   @include sm {
-    @include overlay-pos($width-sm);
+    @include overlay-pos-pad($width-sm);
   }
   @include md {
-    @include overlay-pos($width-md);
+    @include overlay-pos-pad($width-md);
   }
 }
 

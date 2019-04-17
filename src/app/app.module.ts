@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/full/home/home.component';
 import { WorkComponent } from './pages/full/work/work.component';
 import { NotFoundComponent } from './pages/full/not-found/not-found.component';
-import { BlogComponent } from './pages/full/blog/blog.component';
+import { NotesComponent } from './pages/full/notes/notes.component';
 
 // partial pages
 import { NavComponent } from './pages/partial/nav/nav.component';
@@ -57,7 +57,7 @@ import { WarmSeriesComponent } from './pages/partial/gallery-preview/previews/wa
     PreviewComponent,
     WorkPreviewComponent,
     SparknodesComponent,
-    BlogComponent
+    NotesComponent
   ],
   imports: [
     BrowserModule,
