@@ -1,45 +1,188 @@
 <div class='blog'>
   <div class="row">
     <div class="col-12">
-      <h3>What it is</h3>
-      <p>Closetr is a closet tracker that helps you have a better sense of your style,
-      and spending. We want to make it easier to know what to wear next, and to give
-      you insight on which clothes work (and don't work) for you.</p>
+      <h3>1. What does a DOCTYPE do?</h3>
+      <p>Short form of 'Document Type,' it specifies which <span class="def">
+        Document Type Definition (DTD)</span> should be followed.</p>
+      <p>For the case of web-pages, you can specify which HTML version
+        the document follows. To specify that an html file respects HTML5
+        standards, we declare &lt;!DOCTYPE html&gt;. If the DOCTYPE is not
+        specified, then quirks mode will be triggered. In quirks mode, content
+        may display in unexpected ways. If it is specified, then no-quirks mode
+        is activated.</p>
       <hr>
-      <h3>Why we made this</h3>
-      <h4>... a tool that we needed.</h4>
-      <p>Closetr is meant to help with organizing your closet, whether you have too much
-      or too little.</p>
-      <h4>... a project to help us learn.</h4>
-      <p>We also wanted to get started on a project together and learn how to build a
-      web application with a new stack we have no previous experience on.</p>
+      <h3>2. How do you serve a page with content in multiple languages?</h3>
+      <p>When an HTTP request is sent to a server, the request usually contains
+        info about language preferences (Accept-Language header). The server
+        uses this information to return a version of the HTML document to match
+        the language needed. Usually, the html will have an attribute lang.
+        E.g. &lt;html lang="en"&gt;&lt;/html&gt;</p>
       <hr>
-      <h3>Core functionality</h3>
-      <p>There were a ton of things we wanted Closetr to do for us, but we decided to
-      start out with the things (dubbed "widgets") that were most important.</p>
+      <h3>3. What kind of things must you be wary of when designing/developing
+        for multilingual sites?</h3>
+      <p>Some things that should be kept in mind:</p>
       <ol>
-        <li><p><strong>Closet Widget</strong>
-        First, the obvious: we wanted to keep track of what's in our closet. This
-        feature allowed us to add new clothes in our closet, and then look through them
-        (with basic filters and sorts too). Basic maintenance functions such as editing
-        deleting are included too.</p></li>
-        <li><p><strong>Spending Widget</strong>
-        The second widget tracks spending. Keeping within a budget was important to us
-        when it came to buying clothes, so we wanted this widget to help keep us
-        accountable. It would list what we've purchased during the last month (or whatever
-        period of time), and let us know if we're still in budget.</p></li>
-        <li><p><strong>Today Widget</strong>
-        This widget makes everyday decisions about clothing easier. It tells you the
-        weather, which hopefully will help with dressing more appropriately for it. You
-        can also log what you're wearing for a particular day, which over time will tell
-        you about your style: what you tend to wear (and otherwise.)</p></li>
+        <li><p>Using lang attribute in HTML, to specify language.</p></li>
+        <li><p>UX: Allow users to easily change into their native language,
+          possibly by modal.</p></li>
+        <li><p>Text in images are NOT scalable.</p></li>
+        <li><p>Sentence length: some sentences are much longer in some
+          languages than others.</p></li>
+        <li><p>Date and currency formatting are different for some
+          countries/langues.</p></li>
+        <li><p>Text reading direction: some are right-to-left, and others
+          are left-to-right.</p></li>
       </ol>
       <hr>
-      <h3>Look and feel</h3>
-      <p>When coming up with the design for Closetr, we knew we wanted to start with
-      something simple and friendly. We liked flat designs with meaningful interactions,
-      which was the principle we went by in designing the initial screens for our
-      web application.</p>
+      <h3>4. What are data- attributes good for?</h3>
+      <p>A method of storing extra data before JavaScript frameworks became
+        more mainstream. Using data- attributes allowed to store data in the
+        DOM itself. It is not recommended because users can simply change
+        these attributes via inspect element.</p>
+      <hr>
+      <h3>Consider HTML5 as an open web platform. What are the building blocks
+        of HTML5?</h3>
+      <p>New and important stuff in HTML5:</p>
+      <ol>
+        <li><p>
+          Semantics: more specific ways to define content. New tags such as
+          &lt;footer&gt; and &lt;aside&gt; to better describe content.
+        </p></li>
+        <li><p>
+          Connectivity: new ways to communicate with server. Web sockets,
+          server-sent events (as compared to client having to send data first).
+        </p></li>
+        <li><p>
+          Offline and Storage: webpages can now store client-side data more
+          efficiently. Multimedia: video and audio now have their own tags.
+          Thus can operate offline better.
+        <p></li>
+        <li><p>
+          2D-3D graphics/effects: more diverse presentation. Canvas, SVG, WebGL.
+        <p></li>
+        <li><p>
+          Performance and Integration: for better speed and optimization. Web
+          workers for background threads (!). History API, manipulating browser
+          history.
+        <p></li>
+        <li><p>
+          Device Access: More options for input and output. Styling: extension
+          of CSS to CSS3. Touch events, camera API, device orientation.
+        <p></li>
+      </ol>
+      <hr>
+      <h3>6. Describe the difference between a cookie, sessionStorage, and
+        localStorage.</h3>
+      <p>
+        All three are key-value storage options on the client side. They can
+        store values as strings (must use JSON.stringify and JSON.parse for
+        objects).
+      </p>
+      <p>
+        cookie: Client or server can initiate storage. Servers must use
+        'Set-Cookie' header. Data expiry is set by initiator, and can be set
+        to persist across browser sessions (or otherwise). Cookies are sent to
+        server with every HTTP request, with a 'Cookie' header. They can hold
+        4kb per domain, and are accessible by any window.
+      </p>
+      <p>
+        localStorage and sessionStorage similarities: Initiated on the client
+        side. Data stored in either are not sent to server with every HTTP
+        request. They both store 5 MB per domain.
+      </p>
+      <p>
+        localStorage: Once set, lasts forever (until removed by user or some
+        application), thus it is persistent across browser sessions.
+        localStorage is accessible by any window.
+      </p>
+      <p>
+        sessionStorage: Once set, lasts until tab closes. Data doesn't persist
+        across browser sessions, and is only accessible by the same tab in a
+        window.
+      </p>
+      <hr>
+      <h3> 7. Describe the difference between &lt;script&gt;, &lt;script async&gt; and
+        &lt;script defer&gt;</h3>
+      <p>&lt;script&gt; : HTML parsing is blocked and the script is downloaded. The
+        script must finish downloading before parsing resumes.</p>
+      <p>
+        &lt;script async&gt; : HTML keeps parsing, and script is downloaded in
+        parallel. The script is executed once it is available. It is a good
+        idea to use this when the script is independent of other scripts, or
+        the DOM.
+      </p>
+      <p>
+        &lt;script defer&gt; : HTML keeps parsing, and script is downloaded in
+        parallel. The script is executed once HTML is done parsing. It is
+        good idea to use this when script relies on DOM.
+      </p>
+      <hr>
+      <h3>8. Why is it good to position CSS &lt;link&lt; between &lt;head&gt;
+        &lt;/head &gt; tags, and JS &lt; script &gt; just before &lt;/body&gt; ?
+        Any exceptions?</h3>
+      <p>
+        CSS : When placing &lt;link&gt; inside the &lt;head&gt;&lt;/head&gt;
+        tags, then the HTML and CSS are being parsed simultaneously. Both the
+        DOM and CSSOM are created, and used to create the website visuals. It
+        also allows for progressive rendering. If the CSS link is placed at the
+        bottom, the styles are parsed after the HTML is... which will prevent
+        progressive rendering in many browsers. This is because browsers block
+        rendering so as to not have to restyle elements as their styles change.
+      </p>
+      <p>
+        SCRIPT : Using just &lt;script&gt; halts HTML parsing until the script
+        has been downloaded. This means users have to wait (not good), so the
+        solution is to load scripts after HTML is parsed, before the ending
+        &lt; /body &gt; tag. Using &lt; script defer &gt; in the head is better
+        and achieves the same effect, but there are a few browsers that don't
+        support it.
+      </p>
+      <hr>
+      <h3>9. What is progressive rendering?</h3>
+      <p>
+        Progressive rendering is are the sets of techniques to render content
+        for display as fast as possible. This is to improve webpage
+        performance.</p>
+      <p>Some examples of progressive rendering:</p>
+      <ol>
+        <li><p>
+          Image Lazy Loading: only loading images once they are about to be
+          displayed.
+        </p></li>
+        <li><p>
+          Above-the-fold Rendering: prioritize rendering content that is going
+          to be visible immediately. Other content can be rendered after,
+          or later.
+        </p></li>
+        <li><p>
+          Async HTML fragments: Rendering HTML elements to the browser, while
+          the page is made in the back-end.
+        </p></li>
+      </ol>
+      <hr>
+      <h3>Why would you use a srcset attribute in an image tag? Explain how
+        the browser evaluates the content of this attribute.</h3>
+      <p>Using srcset is for when we want to use differently sizes images
+        depending on the user's device width. We display higher resolution
+        images for higher resolution displays, and otherwise.</p>
+      <p>Use it like so:
+        <br>
+        &lt;img srcset="small.png 500w, medium.png 1000w, large.png 2000w" src="..."&gt;
+      </p>
+      <p>
+        Where the number beside 'w' denotes the width of that image in pixels.
+        Then for device width of 400px, srcset makes these calculations:
+        <br>
+        500/400 = 1.25
+        <br>
+        1000/400 = 2.5
+        <br>
+        2000/400 = 5
+      </p>
+      <p>
+        And it chooses the image for which the evaluated number is closest to 1.
+        That would be small.png with 1.25 for this case.
+      </p>
     </div>
   </div>
 </div>
