@@ -63,3 +63,8 @@
 .sparknodes {
   @include custom-preview(#1b1b1b, #ffffff, #616161);
 }
+
+.notes {
+  //@include custom-preview($beige, $brown, $darker-beige);
+  @include custom-preview(#1b1b1b, #ffffff, #616161);
+}

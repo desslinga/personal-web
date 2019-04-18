@@ -4,52 +4,15 @@
 @import "blog.scss";
 @import "gallery.scss";
 @import "./partial/button.scss";
+@import "mixins.scss";
+@import "fonts.scss";
 
 body {
   background-color: $beige;
   color: $brown;
+  font-weight: $font-light;
   font-family: $font-main;
   overflow-y: overlay;
-}
-
-@mixin overlay-pad($width) {
-  padding-left: calc((100vw - #{$width})/2 + 15px);
-  padding-right: calc((100vw - #{$width})/2 + 15px);
-}
-
-@mixin overlay-pos-pad($width) {
-  @include overlay-pad($width);
-  left: calc((-100vw + #{$width})/2);
-}
-
-@mixin sm {
-  @media (min-width: #{$screen-sm-min}) {
-    @content;
-  }
-}
-
-@mixin md {
-  @media (min-width: #{$screen-md-min}) {
-    @content;
-  }
-}
-
-@mixin lg {
-  @media (min-width: #{$screen-lg-min}) {
-    @content;
-  }
-}
-
-@mixin xl {
-  @media (min-width: #{$screen-xl-min}) {
-    @content;
-  }
-}
-
-@mixin xxl {
-  @media (min-width: #{$screen-xxl-min}) {
-    @content;
-  }
 }
 
 .max-width {
@@ -130,21 +93,6 @@ body {
   }
 }
 
-h1, span {
-  padding: 0;
-  margin: 0;
-}
-
-h1 {
-  font-size: 25px;
-  padding-bottom: 20px;
-  font-weight: 700;
-  & a {
-    font-size: 25px;
-    font-weight: 700;
-  }
-}
-
 a {
   color: $brown;
 	font-weight: 500;
@@ -152,23 +100,6 @@ a {
   transition: 0.3s ease-in-out;
   &:hover {
     text-decoration: none;
-  }
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  line-height: 2.8rem;
-  @include sm {
-    font-size: 1.4rem;
-    line-height: 2.6rem;
-  }
-  &.sm {
-    font-size: 1.1rem;
-    line-height: 1.9rem;
-    @include sm {
-      font-size: 1.2rem;
-      line-height: 2.0rem;
-    }
   }
 }
 

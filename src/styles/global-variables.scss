@@ -16,8 +16,23 @@ $darker-brown: #371B0B;
 $darker-blue: #173054;
 
 $font-main: 'Work Sans', sans-serif;
-//$font-logo: 'Playfair Display', serif;
 $font-logo: 'Aleo', serif;
+
+// fonts sizes
+$font-xs: 1.1rem;
+$font-xs-line-height: 1.9rem;
+$font-sm: 1.2rem;
+$font-sm-line-height: 2.0rem;
+$font-md: 1.4rem;
+$font-md-line-height: 2.6rem;
+$font-lg: 1.5rem;
+$font-lg-line-height: 2.8rem;
+
+// font weights
+$font-light: 300;
+$font-regular: 500;
+$font-semibold: 600;
+$font-bold: 700;
 
 $width-xs: 90vw;
 $width-sm: 80vw;

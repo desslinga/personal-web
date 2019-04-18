@@ -1,3 +1,7 @@
-<p>
-  notes-preview works!
-</p>
+<app-preview
+  [project]="'notes'"
+  [title]="title">
+    <app-frontend-questions-html
+      *ngIf="project==='frontend-questions-html'"
+    ></app-frontend-questions-html>
+</app-preview>

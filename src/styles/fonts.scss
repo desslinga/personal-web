@@ -1,0 +1,72 @@
+h1, span {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin font-xs {
+  font-size: $font-xs;
+  line-height: $font-xs-line-height;
+}
+
+@mixin font-sm {
+  font-size: $font-sm;
+  line-height: $font-sm-line-height;
+}
+
+@mixin font-md {
+  font-size: $font-md;
+  line-height: $font-md-line-height;
+}
+
+@mixin font-lg {
+  font-size: $font-lg;
+  line-height: $font-lg-line-height;
+}
+
+.font-xs {
+  @include font-xs;
+}
+
+.font-sm {
+  @include font-sm;
+}
+
+.font-md {
+  @include font-md;
+}
+
+.font-lg {
+  @include font-lg;
+}
+
+.subtitle {
+  @include font-md;
+  @include sm {
+    @include font-lg;
+  }
+  &.sm {
+    @include font-xs;
+    @include sm {
+      @include font-sm;
+    }
+  }
+}
+
+h1 {
+  @extend .font-lg;
+  font-weight: $font-bold;
+}
+
+h3 {
+  @extend .font-md;
+  font-weight: $font-semibold;
+}
+
+h4 {
+  @extend .font-sm;
+  font-weight: $font-light;
+}
+
+p {
+  @extend .font-xs;
+}
