@@ -245,6 +245,13 @@ span {
   top: -$container-pad-top-xs;
   padding-top: $container-pad-top-xs;
   background-color: $beige;
+  @include overlay-pad($width-xs);
+  @include sm {
+    @include overlay-pad($width-sm);
+  }
+  @include md {
+    @include overlay-pad($width-md);
+  }
 }
 
 .nav-title {
@@ -394,7 +401,10 @@ span {
   animation: $a-fade-from-down;
   overflow-y: scroll;
   z-index: 7;
-  padding: $container-pad-top 0 $container-pad-top 0;
+  padding: $container-pad-top-xs 0 $container-pad-top-xs 0;
+  @include sm {
+    padding: $container-pad-top 0 $container-pad-top 0;
+  }
   & .content {
     width: 100%;
     margin: 0 auto;

@@ -57,8 +57,10 @@ export class NavComponent implements OnInit {
   setNavItemActive(): void {
     if (this.navItemActive.startsWith('/about')) {
       this.navItemActive = '/about';
-    } else if (this.navItemActive.startsWith('/work')) {
-      this.navItemActive = '/work';
+    } else if (this.navItemActive.startsWith('/home')) {
+      this.navItemActive = '/home';
+    } else if (this.navItemActive.startsWith('/notes')) {
+      this.navItemActive = '/notes';
     }
   }
 
@@ -71,8 +73,8 @@ export class NavComponent implements OnInit {
 
     this.navTitle = {
       '/about':'ABOUT',
-      '/gallery':'GALLERY',
-      '/work':'WORK'
+      '/notes':'NOTES',
+      '/home':'WORK'
     }
 
     this.navItemActive = this.location.path();
