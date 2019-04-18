@@ -6,6 +6,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
   templateUrl: './preview.component.html'
 })
 export class PreviewComponent implements OnInit {
+  @Input() prevUrl: string;
   @Input() project: string;
   @Input() title: string;
   closeAnimate: boolean;
@@ -15,10 +16,10 @@ export class PreviewComponent implements OnInit {
   ngOnInit() {
   }
 
-  closePreview(url: string, fragment: string): void {
+  closePreview(): void {
     this.closeAnimate = true;
     setTimeout(()=> {
-      this.router.navigate([`${url}`], {fragment: `${fragment}`});
+      this.router.navigate([`${this.prevUrl}`], {fragment: `${this.project}`});
     }, 300);
   }
 

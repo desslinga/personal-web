@@ -1,6 +1,7 @@
 <app-preview
-  [project]="'notes'"
-  [title]="title">
+  project="notes"
+  [title]="title"
+  prevUrl="/notes">
     <app-frontend-questions-html
       *ngIf="project==='frontend-questions-html'"
     ></app-frontend-questions-html>
