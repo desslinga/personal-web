@@ -3,8 +3,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-gallery',
-  templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.scss']
+  templateUrl: './gallery.component.html'
 })
 export class GalleryComponent implements OnInit {
   @Input() type: string;

@@ -3,8 +3,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-gallery-preview',
-  templateUrl: './gallery-preview.component.html',
-  styleUrls: ['./gallery-preview.component.scss']
+  templateUrl: './gallery-preview.component.html'
 })
 export class GalleryPreviewComponent implements OnInit {
   project: any = '';

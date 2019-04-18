@@ -3,8 +3,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-preview',
-  templateUrl: './preview.component.html',
-  styleUrls: ['./preview.component.scss']
+  templateUrl: './preview.component.html'
 })
 export class PreviewComponent implements OnInit {
   @Input() project: string;

@@ -3,8 +3,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-work-preview',
-  templateUrl: './work-preview.component.html',
-  styleUrls: ['./work-preview.component.scss']
+  templateUrl: './work-preview.component.html'
 })
 export class WorkPreviewComponent implements OnInit {
   @Input() project: string;

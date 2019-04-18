@@ -33,6 +33,8 @@ import { FloralSeriesComponent } from './pages/partial/gallery-preview/previews/
 import { AmacssCoffeehouseComponent } from './pages/partial/gallery-preview/previews/amacss-coffeehouse/amacss-coffeehouse.component';
 import { AmacssOtherComponent } from './pages/partial/gallery-preview/previews/amacss-other/amacss-other.component';
 import { WarmSeriesComponent } from './pages/partial/gallery-preview/previews/warm-series/warm-series.component';
+import { NotesPreviewComponent } from './pages/partial/notes-preview/notes-preview.component';
+import { FrontendQuestionsHtmlComponent } from './pages/partial/notes-preview/previews/frontend-questions-html/frontend-questions-html.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { WarmSeriesComponent } from './pages/partial/gallery-preview/previews/wa
     PreviewComponent,
     WorkPreviewComponent,
     SparknodesComponent,
-    NotesComponent
+    NotesComponent,
+    NotesPreviewComponent,
+    FrontendQuestionsHtmlComponent
   ],
   imports: [
     BrowserModule,

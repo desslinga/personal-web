@@ -3,8 +3,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-work',
-  templateUrl: './work.component.html',
-  styleUrls: ['./work.component.scss']
+  templateUrl: './work.component.html'
 })
 export class WorkComponent implements OnInit {
   designImageList: Array<any>;

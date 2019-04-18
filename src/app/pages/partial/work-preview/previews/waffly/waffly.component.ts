@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-waffly',
-  templateUrl: './waffly.component.html',
-  styleUrls: ['./waffly.component.scss']
+  templateUrl: './waffly.component.html'
 })
 export class WafflyComponent implements OnInit {
 

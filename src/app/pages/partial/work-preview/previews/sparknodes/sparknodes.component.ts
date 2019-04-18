@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sparknodes',
-  templateUrl: './sparknodes.component.html',
-  styleUrls: ['./sparknodes.component.scss']
+  templateUrl: './sparknodes.component.html'
 })
 export class SparknodesComponent implements OnInit {
 
