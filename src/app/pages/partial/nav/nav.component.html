@@ -1,7 +1,9 @@
-<div class='container-fluid' id='nav-container'>
+<div class='nav-container'>
   <div class='row'>
     <div class='col-12'>
-      <nav class="custom-nav" [ngClass]="{'nav-overlay':navbarOpen}">
+      <nav
+        class="container-fluid nav-overlay-container"
+        [ngClass]="{'nav-overlay':navbarOpen}">
         <a
           class="nav-icon icon-link"
           routerLink="/home"
@@ -19,7 +21,7 @@
           <div class="bar2" [ngClass]="{'change':navbarOpen}"></div>
           <div class="bar3" [ngClass]="{'change':navbarOpen}"></div>
         </button>
-        <div class="nav-container" [ngClass]="{'nav-open':navbarOpen}">
+        <div class="nav-content" [ngClass]="{'nav-open':navbarOpen}">
           <ul>
             <li>
               <a
