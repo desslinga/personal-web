@@ -9,7 +9,16 @@
     width: 100%;
     border-radius: 5px;
   }
-  & .def {
+  & .defn {
     color: $lime;
+  }
+  & .loc {
+    @extend .font-xxs;
+    font-family: $font-code;
+    color: #fbfff2;
+    background-color: #4e4e4e;
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
+    border: 1px solid #868585;
   }
 }

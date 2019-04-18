@@ -3,6 +3,11 @@ h1, span {
   margin: 0;
 }
 
+@mixin font-xxs {
+  font-size: $font-xxs;
+  line-height: $font-xxs-line-height;
+}
+
 @mixin font-xs {
   font-size: $font-xs;
   line-height: $font-xs-line-height;
@@ -21,6 +26,10 @@ h1, span {
 @mixin font-lg {
   font-size: $font-lg;
   line-height: $font-lg-line-height;
+}
+
+.font-xxs {
+  @include font-xxs;
 }
 
 .font-xs {

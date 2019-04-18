@@ -2,11 +2,12 @@
   <div class="row">
     <div class="col-12">
       <h3>1. What does a DOCTYPE do?</h3>
-      <p>Short form of 'Document Type,' it specifies which <span class="def">
-        Document Type Definition (DTD)</span> should be followed.</p>
+      <p>Short form of 'Document Type,' it specifies which <defn>
+        Document Type Definition (DTD)</defn> should be followed.</p>
       <p>For the case of web-pages, you can specify which HTML version
         the document follows. To specify that an html file respects HTML5
-        standards, we declare &lt;!DOCTYPE html&gt;. If the DOCTYPE is not
+        standards, we declare <loc>&lt;!DOCTYPE html&gt;</loc>. If the DOCTYPE
+        is not
         specified, then quirks mode will be triggered. In quirks mode, content
         may display in unexpected ways. If it is specified, then no-quirks mode
         is activated.</p>
@@ -16,7 +17,7 @@
         info about language preferences (Accept-Language header). The server
         uses this information to return a version of the HTML document to match
         the language needed. Usually, the html will have an attribute lang.
-        E.g. &lt;html lang="en"&gt;&lt;/html&gt;</p>
+        E.g. <loc>&lt;html lang="en"&gt;&lt;/html&gt;</loc></p>
       <hr>
       <h3>3. What kind of things must you be wary of when designing/developing
         for multilingual sites?</h3>
@@ -46,7 +47,8 @@
       <ol>
         <li><p>
           Semantics: more specific ways to define content. New tags such as
-          &lt;footer&gt; and &lt;aside&gt; to better describe content.
+          <loc>&lt;footer&gt;</loc> and <loc>&lt;aside&gt;</loc> to better
+          describe content.
         </p></li>
         <li><p>
           Connectivity: new ways to communicate with server. Web sockets,
@@ -71,71 +73,74 @@
         <p></li>
       </ol>
       <hr>
-      <h3>6. Describe the difference between a cookie, sessionStorage, and
-        localStorage.</h3>
+      <h3>6. Describe the difference between a <defn>cookie</defn>,
+        <defn>sessionStorage</defn>, and <defn>localStorage</defn>.</h3>
       <p>
         All three are key-value storage options on the client side. They can
         store values as strings (must use JSON.stringify and JSON.parse for
         objects).
       </p>
       <p>
-        cookie: Client or server can initiate storage. Servers must use
-        'Set-Cookie' header. Data expiry is set by initiator, and can be set
+        <defn>cookie</defn>: Client or server can initiate storage. Servers must
+        use 'Set-Cookie' header. Data expiry is set by initiator, and can be set
         to persist across browser sessions (or otherwise). Cookies are sent to
         server with every HTTP request, with a 'Cookie' header. They can hold
         4kb per domain, and are accessible by any window.
       </p>
       <p>
-        localStorage and sessionStorage similarities: Initiated on the client
-        side. Data stored in either are not sent to server with every HTTP
-        request. They both store 5 MB per domain.
+        <defn>localStorage</defn> and <defn>sessionStorage</defn> similarities:
+        Initiated on the client side. Data stored in either are not sent to
+        server with every HTTP request. They both store 5 MB per domain.
       </p>
       <p>
-        localStorage: Once set, lasts forever (until removed by user or some
-        application), thus it is persistent across browser sessions.
-        localStorage is accessible by any window.
+        <defn>localStorage</defn>: Once set, lasts forever (until removed by
+        user or some application), thus it is persistent across browser sessions.
+        It is accessible by any window.
       </p>
       <p>
-        sessionStorage: Once set, lasts until tab closes. Data doesn't persist
-        across browser sessions, and is only accessible by the same tab in a
-        window.
+        <defn>sessionStorage</defn>: Once set, lasts until tab closes. Data
+        doesn't persist across browser sessions, and is only accessible by the
+        same tab in a window.
       </p>
       <hr>
-      <h3> 7. Describe the difference between &lt;script&gt;, &lt;script async&gt; and
-        &lt;script defer&gt;</h3>
-      <p>&lt;script&gt; : HTML parsing is blocked and the script is downloaded. The
-        script must finish downloading before parsing resumes.</p>
-      <p>
-        &lt;script async&gt; : HTML keeps parsing, and script is downloaded in
-        parallel. The script is executed once it is available. It is a good
-        idea to use this when the script is independent of other scripts, or
-        the DOM.
+      <h3> 7. Describe the difference between <loc>&lt;script&gt;</loc>,
+        <loc>&lt;script async&gt;</loc> and <loc>&lt;script defer&gt;</loc></h3>
+      <p><loc>&lt;script&gt;</loc> : HTML parsing is blocked and the script is
+        downloaded. The script must finish downloading before parsing resumes.
       </p>
       <p>
-        &lt;script defer&gt; : HTML keeps parsing, and script is downloaded in
-        parallel. The script is executed once HTML is done parsing. It is
-        good idea to use this when script relies on DOM.
+        <loc>&lt;script async&gt;</loc> : HTML keeps parsing, and script is
+        downloaded in parallel. The script is executed once it is available.
+        It is a good idea to use this when the script is independent of other
+        scripts, or the DOM.
+      </p>
+      <p>
+        <loc>&lt;script defer&gt;</loc> : HTML keeps parsing, and script is
+        downloaded in parallel. The script is executed once HTML is done parsing.
+        It is a good idea to use this when script relies on DOM.
       </p>
       <hr>
-      <h3>8. Why is it good to position CSS &lt;link&lt; between &lt;head&gt;
-        &lt;/head &gt; tags, and JS &lt; script &gt; just before &lt;/body&gt; ?
+      <h3>8. Why is it good to position CSS <loc>&lt;link&gt;</loc> between
+        <loc>&lt;head&gt;&lt;/head &gt;</loc> tags, and JS
+        <loc>&lt;script &gt;</loc> just before <loc>&lt;/body&gt;</loc> ?
         Any exceptions?</h3>
       <p>
-        CSS : When placing &lt;link&gt; inside the &lt;head&gt;&lt;/head&gt;
-        tags, then the HTML and CSS are being parsed simultaneously. Both the
-        DOM and CSSOM are created, and used to create the website visuals. It
-        also allows for progressive rendering. If the CSS link is placed at the
-        bottom, the styles are parsed after the HTML is... which will prevent
-        progressive rendering in many browsers. This is because browsers block
+        CSS : When placing <loc>&lt;link&gt;</loc> inside the
+        <loc>&lt;head&gt;&lt;/head&gt;</loc> tags, then the HTML and CSS are
+        being parsed simultaneously. Both the DOM and CSSOM are created, and
+        used to create the website visuals. It also allows for progressive
+        rendering. If the CSS link is placed at the bottom, the styles are
+        parsed after the HTML is... which will prevent <defn> progressive
+        rendering</defn> in many browsers. This is because browsers block
         rendering so as to not have to restyle elements as their styles change.
       </p>
       <p>
-        SCRIPT : Using just &lt;script&gt; halts HTML parsing until the script
-        has been downloaded. This means users have to wait (not good), so the
-        solution is to load scripts after HTML is parsed, before the ending
-        &lt; /body &gt; tag. Using &lt; script defer &gt; in the head is better
-        and achieves the same effect, but there are a few browsers that don't
-        support it.
+        SCRIPT : Using just <loc>&lt;script&gt;</loc> halts HTML parsing until
+        the script has been downloaded. This means users have to wait
+        (not good), so the solution is to load scripts after HTML is parsed,
+        before the ending <loc>&lt;/body&gt;</loc> tag. Using
+        <loc>&lt;script defer&gt;</loc> in the head is better and achieves the
+        same effect, but there are a few browsers that don't support it.
       </p>
       <hr>
       <h3>9. What is progressive rendering?</h3>
@@ -146,17 +151,17 @@
       <p>Some examples of progressive rendering:</p>
       <ol>
         <li><p>
-          Image Lazy Loading: only loading images once they are about to be
-          displayed.
+          <defn>Image Lazy Loading</defn>: only loading images once they are
+          about to be displayed.
         </p></li>
         <li><p>
-          Above-the-fold Rendering: prioritize rendering content that is going
-          to be visible immediately. Other content can be rendered after,
-          or later.
+        <defn>Above-the-fold Rendering</defn>: prioritize rendering content
+        that is going to be visible immediately. Other content can be rendered
+        after, or later.
         </p></li>
         <li><p>
-          Async HTML fragments: Rendering HTML elements to the browser, while
-          the page is made in the back-end.
+        <defn>Async HTML fragments</defn>: Rendering HTML elements to the
+        browser, while the page is made in the back-end.
         </p></li>
       </ol>
       <hr>
@@ -167,7 +172,7 @@
         images for higher resolution displays, and otherwise.</p>
       <p>Use it like so:
         <br>
-        &lt;img srcset="small.png 500w, medium.png 1000w, large.png 2000w" src="..."&gt;
+        <loc>&lt;img srcset="small.png 500w, medium.png 1000w, large.png 2000w" src="..."&gt;</loc>
       </p>
       <p>
         Where the number beside 'w' denotes the width of that image in pixels.

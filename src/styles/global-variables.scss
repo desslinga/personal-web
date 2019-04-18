@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300');
+
 $screen-sm-min: 576px;
 $screen-md-min: 768px;
 $screen-lg-min: 992px;
@@ -17,8 +19,11 @@ $lime: #dbff96;
 
 $font-main: 'Work Sans', sans-serif;
 $font-logo: 'Aleo', serif;
+$font-code: 'Source Code Pro', monospace;
 
 // fonts sizes
+$font-xxs: 1rem;
+$font-xxs-line-height: 1.8rem;
 $font-xs: 1.1rem;
 $font-xs-line-height: 1.9rem;
 $font-sm: 1.2rem;
