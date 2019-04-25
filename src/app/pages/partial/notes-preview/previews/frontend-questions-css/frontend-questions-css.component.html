@@ -107,6 +107,73 @@
           </p>
         </li>
       </ul>
+      <hr>
+      <h3>
+        Describe <defn>z-index</defn>, and how a <defn>stacking context</defn>
+        is formed.
+      </h3>
+      <p>
+        <loc>z-index</loc> controls the vertical stacking order of elements.
+        They only affect elements that don't have <loc>position: static</loc>
+        (which is the default position property).
+      </p>
+      <p>
+        When there is no <loc>z-index</loc> specified, then elements are
+        stacked in the order that they appear in the DOM (top-level at the
+        bottom). Elements that don't have <loc>position: static</loc> always
+        appear on top over those that do.
+      </p>
+      <p>
+        A <defn>stacking context</defn> is a parent element containing more
+        elements. The <loc>z-index</loc> of a <defn>stacking context</defn>'s
+        child elements are only relevent within their parent element (read:
+        they don't affect other elements outside the
+        <defn>stacking context</defn>.)
+      </p>
+      <p>
+        There are many ways to trigger a <defn>stacking context</defn>, such
+        as having <loc>opacity</loc> less than 1, and <loc>filter</loc> that is
+        not <loc>none</loc>
+      </p>
+      <hr>
+      <h3>Describe <defn>Block Formatting Context</defn> and how it works.</h3>
+      <p>
+        A <defn>Block Formatting Context</defn> is caused by:
+      </p>
+      <ul>
+        <li>
+          <p>
+            <loc>float</loc> value other than <loc>none</loc>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <loc>position</loc> value that isn't <loc>static</loc> or
+            <loc>none</loc>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <loc>display</loc> value of <loc>table-cell</loc>,
+            <loc>table-caption</loc>, <loc>inline-block</loc>, or
+            <loc>inline-flex</loc>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <loc>overflow</loc> value that isn't <loc>visible</loc>.
+          </p>
+        </li>
+      </ul>
+      <p>
+        Each box element contained inside a <defn>BFC</defn> has its left side
+        touching the left edge of the <defn>BFC.</defn>
+      </p>
+      <p>
+        Also, vertical margins on stacking elements don't take the sum of the
+        margins. Instead, they take only the largest of the two, combining
+        them to form a single margin.
+      </p>
     </div>
   </div>
 </div>
