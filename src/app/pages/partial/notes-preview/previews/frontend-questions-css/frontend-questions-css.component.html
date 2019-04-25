@@ -1,0 +1,64 @@
+<div class='blog'>
+  <div class="row">
+    <div class="col-12">
+      <h3>1. What is <defn>CSS selector specificity</defn> and how does
+        it work? </h3>
+      <p>
+        Specificity is a property of each CSS rule that has matched a
+        particular element. For this, we assume that the browser knows which
+        CSS rules match some particular element. The specificity for these
+        matched rules are determined by four comma-separated values:
+        <defn>(a, b, c, d)</defn>.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <defn>a: </defn>
+            1 if the rule is an inline style, 0 otherwise.
+            <br>
+            <loc>&lt;h1 style="color: #fff"&gt;</loc> would get a score of
+            <defn>a = 1</defn>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <defn>b: </defn>
+            number of ID selectors.
+            <br>
+            <loc>#card #small</loc> has two id selectors, getting a score
+            of <defn>b = 2</defn>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <defn>c: </defn>
+            number of classes, attributes, and pseudo-class selectors.
+            <br>
+            <loc>.select-container .selector input[type="text"]</loc> has two
+            class selectors <loc>.select-container</loc> and <loc>.selector</loc>,
+            and one attribute selector <loc>[type="text"]</loc>, getting a score
+            of <defn>c = 3</defn>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <defn>d: </defn>
+            number of tags, and pseudo-element selectors.
+            <br>
+            <loc>label:before</loc> has one element <loc>label</loc> and one
+            pseudo-element selector <loc>:before</loc> , getting a score of
+            <defn>d = 2</defn>.
+          </p>
+        </li>
+      </ul>
+      <p>
+        The resulting specificity for each rule is matched column by column.
+        We go from <defn>a</defn> to <defn>d</defn>, and compare which rules
+        have the highest value. So, all rules with <defn>a = 1</defn>, override
+        all rules with <defn>a = 0 </defn>no matter what each of them get for
+        <defn>b</defn>, <defn>c</defn>, or <defn>d</defn>.
+      </p>
+      <hr>
+    </div>
+  </div>
+</div>
