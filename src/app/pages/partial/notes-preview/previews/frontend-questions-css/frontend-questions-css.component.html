@@ -59,6 +59,54 @@
         <defn>b</defn>, <defn>c</defn>, or <defn>d</defn>.
       </p>
       <hr>
+      <h3>
+        What's the difference between <defn>"resetting"</defn> and
+        <defn>"normalizing"</defn> CSS? Which would you choose, and why?
+      </h3>
+      <p>
+        <defn>Resetting: </defn> gets completely rid of the default browser
+        styling of elements. This means that you have to re-declare all rules
+        from scratch, even the basic ones!
+      </p>
+      <p>
+        <defn>Normalizing: </defn> doesn't get rid of all default styling.
+        Rather, it keeps the 'useful' ones. It also corrects some browser bugs.
+      </p>
+      <p>
+        Which to choose? Use reset if we are designing an unconventional
+        site, and normalize otherwise.
+      </p>
+      <hr>
+      <h3>
+        Describe <defn>floats</defn> and how they work.
+      </h3>
+      <p>
+        <defn>Float</defn> is a css positioning property. <loc>float</loc> can
+        take a value of <loc>left</loc> or <loc>right</loc> which stick the
+        elements in those directions respectively. Floated elements remain in
+        the <defn>flow </defn> of a page -- meaning they will affect the
+        positioning of other elements. <loc>float</loc> can also takes values
+        <loc>none</loc> and <loc>inherit</loc> , which are self explanatory.
+      </p>
+      <p>
+        If a floated element A is inline beside a floated element B, you can
+        use <loc>clear</loc> on any one of those elements to move it to the
+        next line.
+      </p>
+      <p>
+        If some elements contain only floated elements, then it will have 0
+        height. We can fix this in a couple of ways:
+      </p>
+      <ul>
+        <li>
+          <p>Set the parent's content to <loc>overflow: auto</loc></p>
+        </li>
+        <li>
+          <p>Add an element with <loc>clear: both</loc> before the close of the
+            container
+          </p>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
