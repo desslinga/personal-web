@@ -7,9 +7,13 @@
 @import "mixins.scss";
 @import "fonts.scss";
 
+.main-colors {
+  background-color: $c-primary;
+  color: $c-accent;
+}
+
 body {
-  background-color: $beige;
-  color: $brown;
+  @extend .main-colors;
   font-weight: $font-light;
   font-family: $font-main;
   overflow-y: overlay;
@@ -57,10 +61,10 @@ body {
 }
 
 .nav-container {
+  @extend .main-colors;
   padding-top: $container-pad-top-xs;
   position: fixed;
   z-index: 1;
-  background-color: $beige;
   padding-bottom: 1.5vh;
   width: 100vw;
   & ul {
@@ -94,7 +98,7 @@ body {
 }
 
 a {
-  color: $brown;
+  color: $c-accent;
 	font-weight: 500;
 	text-decoration: none;
   transition: 0.3s ease-in-out;
@@ -113,14 +117,14 @@ a {
   font-size: 20px;
   font-family: $font-main;
   font-weight: 400;
-  color: $brown;
+  color: $c-accent;
   transition: $fast-ease;
   float: right;
   &.nav-item-active {
     font-weight: 700;
   }
   &:hover {
-    color: $browner;
+    color: $c-accent;
     transition: $fast-ease;
   }
 }
@@ -160,6 +164,7 @@ a:hover {
 }
 
 .nav-overlay {
+  @extend .main-colors;
   @extend .overflow-scrolling-touch;
   position: absolute;
   overflow-y: scroll;
@@ -169,7 +174,6 @@ a:hover {
   z-index: 6;
   top: -$container-pad-top-xs;
   padding-top: $container-pad-top-xs;
-  background-color: $beige;
   @include overlay-pad($width-xs);
   @include sm {
     @include overlay-pad($width-sm);
@@ -185,9 +189,9 @@ a:hover {
 }
 
 .bar {
+  background-color: $c-accent;
   width: 31px;
   height: 2px;
-  background-color: $brown;
   margin: 8px 0px;
   transition: 0.4s;
   border-radius: 3px;
@@ -242,11 +246,11 @@ a:hover {
 .fides-icon {
   width: $fides-logo-height;
   height: $fides-logo-height;
-  background-color: $darker-beige;
+  background-color: $c-secondary;
   border-radius: 3px;
   & span {
     font-family: $font-logo;
-    color: white;
+    color: $c-primary;
     position: relative;
     font-size: 27px;
     top: 2px;
@@ -255,12 +259,8 @@ a:hover {
 }
 
 .no-scroll {
-  //position: absolute;
-  //top: 0;
-  //left: 0;
   overflow: hidden;
   cursor: hidden;
-  //max-height: 100vh;
 }
 
 //gallery styles
@@ -301,9 +301,6 @@ a:hover {
       opacity: 1;
       & .description {
         top: 50%;
-        //transition: $mid-ease;
-        //font-size: 1.5rem;
-        //line-height: 2rem;
       }
     }
   }
@@ -315,7 +312,6 @@ a:hover {
 }
 
 //gallery preview styles
-
 .preview-container {
   @extend .overflow-scrolling-touch;
   position: absolute;
@@ -358,12 +354,6 @@ a:hover {
 .preview-photo {
   width: 100%;
   border-radius: 5px;
-  //border-top: 2px solid $beige;
-  //border-bottom: 2px solid $beige;
-}
-
-.preview-caption {
-
 }
 
 .preview-close {
@@ -372,16 +362,9 @@ a:hover {
   cursor: pointer;
   top: 3px;
   right: 10px;
-  //font-size: 30px;
-  //line-height: 20px;
   fill: $brown;
   height: 27px;
   width: 27px;
-
-  @include sm {
-    //top: 4vw;
-    //right: 5vw;
-  }
 }
 
 // small fixes
@@ -417,7 +400,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $med-beige;
+  background: $c-accent;
   border-radius: 3px;
 }
 
@@ -444,7 +427,7 @@ a:hover {
 }
 
 hr {
-  border-top: 1px solid $darker-beige;
+  border-top: 1px solid $c-secondary;
 }
 
 .image-anchor {
