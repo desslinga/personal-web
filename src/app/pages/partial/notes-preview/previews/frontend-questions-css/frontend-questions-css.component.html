@@ -141,29 +141,21 @@
         A <defn>Block Formatting Context</defn> is caused by:
       </p>
       <ul>
-        <li>
-          <p>
-            <loc>float</loc> value other than <loc>none</loc>.
-          </p>
-        </li>
-        <li>
-          <p>
-            <loc>position</loc> value that isn't <loc>static</loc> or
+        <li><p>
+          <loc>float</loc> value other than <loc>none</loc>.
+        </p></li>
+        <li><p>
+          <loc>position</loc> value that isn't <loc>static</loc> or
             <loc>none</loc>.
-          </p>
-        </li>
-        <li>
-          <p>
-            <loc>display</loc> value of <loc>table-cell</loc>,
-            <loc>table-caption</loc>, <loc>inline-block</loc>, or
-            <loc>inline-flex</loc>.
-          </p>
-        </li>
-        <li>
-          <p>
-            <loc>overflow</loc> value that isn't <loc>visible</loc>.
-          </p>
-        </li>
+        </p></li>
+        <li><p>
+          <loc>display</loc> value of <loc>table-cell</loc>,
+          <loc>table-caption</loc>, <loc>inline-block</loc>, or
+          <loc>inline-flex</loc>.
+        </p></li>
+        <li><p>
+          <loc>overflow</loc> value that isn't <loc>visible</loc>.
+        </p></li>
       </ul>
       <p>
         Each box element contained inside a <defn>BFC</defn> has its left side
@@ -174,6 +166,80 @@
         margins. Instead, they take only the largest of the two, combining
         them to form a single margin.
       </p>
+      <hr>
+      <h3>
+        What are the various <defn>clearing</defn> techniques and which is
+        appropriate for each context?
+      </h3>
+      <p>
+        This is about floated elements. You can clear them by using:
+      </p>
+      <ul>
+        <li><p>
+            An empty <loc>div</loc> with <loc>clear: both</loc>.
+        </p></li>
+        <li><p>
+            The <loc>clearfix</loc> class.
+        </p></li>
+        <li><p>
+            <loc>overflow: auto</loc> or <loc>overflow: hidden</loc>, which
+            establishes a BFC.
+        </p></li>
+      </ul>
+      <hr>
+      <h3>
+        How would you approach fixing browser-specific styling issues?
+      </h3>
+      <p>You can fix these issues by using:</p>
+      <ul>
+        <li><p>
+          A separate stylesheet that loads only for a specific browser.
+        </p></li>
+        <li><p>
+          Libraries that do this for you, such as <defn>Bootstrap</defn>
+        </p></li>
+        <li><p>
+          <defn>Reset CSS</defn> or <defn>Normalize CSS</defn>
+        </p></li>
+      </ul>
+      <hr>
+      <h3>
+        How do you serve your pages for <defn>feature-constrained</defn>
+        browsers? What techniques should you use?
+      </h3>
+      <p>Some ways:</p>
+      <ul>
+        <li><p>
+          <defn>Graceful degradation: </defn> build the web-app for modern
+          browsers first, but ensure that it is functional for older browsers.
+        </p></li>
+        <li><p>
+          <defn>Progressive enhancement: </defn> implement the web-app with the
+          base-level of user experience, then add more functionality for modern
+          browsers (that can support features).
+        </p></li>
+      </ul>
+      <hr>
+      <h3>
+        What are the different ways to <defn>visually hide content</defn> (and
+        make it available only for screen readers)?
+      </h3>
+      <p>Some ways:</p>
+      <ul>
+        <li><p>
+          <loc>visibility: hidden</loc>, where element will still take up space.
+        </p></li>
+        <li><p>
+          <loc>width: 0, height: 0</loc>, where element won't take up space.
+        </p></li>
+        <li><p>
+          <loc>position: absolute, left: -9999px</loc>, where element is taken
+          off the flow of the page, and positioned off-screen.
+        </p></li>
+        <li><p>
+          <defn>WAI-ARIA</defn>, using <loc>aria-hidden: true</loc>.
+        </p></li>
+      </ul>
     </div>
   </div>
 </div>
