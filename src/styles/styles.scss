@@ -130,7 +130,7 @@ a {
 }
 
 .font-link {
-  color: #E7BF0A;
+  color: $c-special-2;
 }
 
 .fb-fix {
@@ -140,7 +140,7 @@ a {
 }
 
 a:hover {
-  color: $browner;
+  color: $c-accent;
   transition: 0.3s ease-in-out;
 }
 

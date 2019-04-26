@@ -6,7 +6,8 @@
   display: block;
   text-align: center;
   font-weight: 500;
-  border: 1px solid $c-secondary;
+  //border: 1px solid $c-secondary;
+  background-color: $c-special;
   color: $c-accent;
   line-height: 37px;
 }
