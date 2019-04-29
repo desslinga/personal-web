@@ -129,7 +129,7 @@
       </p>
       <hr>
       <h3>
-        Explain how a browser determines what elements <defn>match</defn> a
+        17. Explain how a browser determines what elements <defn>match</defn> a
         <defn>CSS selector</defn>.
       </h3>
       <p>
@@ -149,6 +149,132 @@
           Ensure that the <defn>right-most (key) selector</defn> in a chain
           doesn't match a lot of elements (like <defn>universal</defn> or
           <defn>tag</defn> selectors).
+        </p></li>
+      </ul>
+      <hr>
+      <h3>
+        18. Describe <defn>pseudo-elements</defn> and discuss what they are
+        used for.
+      </h3>
+      <p>
+        CSS <defn>pseudo-elements</defn> are selectors that allow to style a
+        specific part of an element. They allow for
+        <defn>styling/content</defn> changes <defn>without modifying HTML</defn>.
+      </p>
+      <p>
+        Examples:
+      </p>
+      <ul>
+        <li><p>
+          <code>:first-line</code> and <code>first-letter</code> for
+          decorating text.
+        </p></li>
+        <li><p>
+          <code>.clearfix</code> for adding a zero-space element (without
+          changing markup!).
+        </p></li>
+        <li><p>
+          <code>:before</code> and <code>:after</code> (combined with <code>
+          content</code>) for adding elements that appear to be in the DOM
+          (without changing markup!)
+        </p></li>
+      </ul>
+      <pre class="language-css"><code>h1::after &#123;
+  content: "hello"
+&#125;</code></pre>
+      <p>Appears like:</p>
+      <pre class="language-html"><code>&lt;h1&gt;
+  Other h1 content
+  hello
+&lt;/h1&gt;</code></pre>
+      <p>
+        When using <code>::before</code>, then the content will appear
+        <defn>before</defn> the rest of the content in the element.
+      </p>
+      <pre class="language-css"><code>h1::before &#123;
+  content: "hello"
+&#125;</code></pre>
+      <p>appears like:</p>
+      <pre class="language-html"><code>&lt;h1&gt;
+  hello
+  Other h1 content
+&lt;/h1&gt;</code></pre>
+      <hr>
+      <h3>
+        19. Explain your understanding of the <defn>box model</defn> and how you
+        would tell the browser in CSS to <defn>render</defn> your layout in
+        <defn>different box models</defn>.
+      </h3>
+      <p>
+        HTML elements are represented by <defn>rectangular boxes</defn>.
+        Each box contains:
+      </p>
+      <ul>
+        <li><p>
+          <defn>Content area: </defn> where text, images, and divs are
+          contained.
+        </p></li>
+        <li><p>
+          <defn>Padding area (optional): </defn> an area surrounding <defn>
+          content</defn>, separating them from the <defn>border</defn>.
+        </p></li>
+        <li><p>
+          <defn>Border area (optional): </defn> an area consisting of the
+          <defn>border</defn>, which surrounds the <defn>padding</defn> area.
+        </p></li>
+        <li><p>
+          <defn>Margin area (optional): </defn> an area surrounding the
+          <defn>border</defn>, separating the box from other content.
+        </p></li>
+      </ul>
+      <p>
+        The <defn>box model</defn> is responsible for some calculations about
+        these boxes. The calculations:
+      </p>
+      <ul>
+        <li><p>
+          Amount of <defn>space</defn> taken up by the block element.
+        </p></li>
+        <li><p>
+          Whether or not the <defn>borders/margins overlap</defn> (the sum
+          of two adjacent margins are combined) or <defn>collapse</defn>
+          (two adjacent margins collapse to one margin).
+        </p></li>
+        <li><p>
+          <defn>Dimensions</defn> of the box.
+        </p></li>
+      </ul>
+      <p><defn>Box model</defn> rules for block elements:</p>
+      <ul>
+        <li><p>
+          <defn>Dimensions</defn> are calculated using the <code>width</code>,
+          <code> height</code>, <code>padding</code>, <code>border</code> and
+          <code>margin</code>.
+        </p></li>
+        <li><p>
+          When no <code>height</code> is specified: element will take
+          <code>height</code> of its <defn>content</defn>, plus
+          <code>padding</code> (exception: <defn>floats</defn>).
+        </p></li>
+        <li><p>
+          When no <code>width</code> is specified: element will take
+          <code>width</code> of its <defn>parent</defn>, minus
+          <code>padding</code> (exception: <defn>floats</defn>).
+        </p></li>
+        <li><p>
+          <defn>Height</defn> of element = <code>height</code> of its
+          <defn>content</defn> (default with <code>box-model:
+            content-box</code>).
+        </p></li>
+        <li><p>
+          <defn>Width</defn> of element = <code>width</code> of its
+          <defn>content</defn> (default with <code>box-model:
+            content-box</code>).
+        </p></li>
+        <li><p>
+          By default, <code>border</code> and <code>padding</code> are not
+          used in calculating an element's <code>width</code> and
+          <code>height</code>.
         </p></li>
       </ul>
     </div>
