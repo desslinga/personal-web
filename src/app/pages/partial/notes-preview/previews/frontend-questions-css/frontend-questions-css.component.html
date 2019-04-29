@@ -25,8 +25,8 @@
             <defn>b: </defn>
             number of ID selectors.
             <br>
-            <code class="lang-css">#card #small &#123; &#125;</code> has two id selectors,
-            getting a score of <defn>b = 2</defn>.
+            <code class="lang-css">#card #small &#123; &#125;</code> has two
+            id selectors, getting a score of <defn>b = 2</defn>.
           </p>
         </li>
         <li>
@@ -34,11 +34,12 @@
             <defn>c: </defn>
             number of classes, attributes, and pseudo-class selectors.
             <br>
-            <code class="language-css">.select-container .selector input[type="text"] &#123; &#125;</code>
+            <code class="language-css">
+              .select-container .selector input[type="text"] &#123; &#125;
+            </code>
             has two class selectors <code>.select-container</code> and
-            <code>.selector</code>, and one attribute selector <code>[type="text"]</code>,
-            getting a score
-            of <defn>c = 3</defn>.
+            <code>.selector</code>, and one attribute selector
+            <code>[type="text"]</code>, getting a score of <defn>c = 3</defn>.
           </p>
         </li>
         <li>
@@ -103,15 +104,16 @@
           <p>Set the parent's content to <code>overflow: auto</code></p>
         </li>
         <li>
-          <p>Add an element with <code>clear: both</code> before the close of the
-            container
+          <p>
+            Add an element with <code>clear: both</code> before the close
+            of the container
           </p>
         </li>
       </ul>
       <hr>
       <h3>
-        4. Describe <defn>z-index</defn>, and how a <defn>stacking context</defn>
-        is formed.
+        4. Describe <defn>z-index</defn>, and how a <defn>stacking
+        context</defn> is formed.
       </h3>
       <p>
         <code>z-index</code> controls the vertical stacking order of elements.
@@ -133,11 +135,12 @@
       </p>
       <p>
         There are many ways to trigger a <defn>stacking context</defn>, such
-        as having <code>opacity</code> less than 1, and <code>filter</code> that is
-        not <code>none</code>
+        as having <code>opacity</code> less than 1, and <code>filter</code>
+        that is not <code>none</code>
       </p>
       <hr>
-      <h3>5. Describe <defn>Block Formatting Context</defn> and how it works.</h3>
+      <h3>5. Describe <defn>Block Formatting Context</defn> and how it
+        works.</h3>
       <p>
         A <defn>Block Formatting Context</defn> is caused by:
       </p>
@@ -169,7 +172,7 @@
       </p>
       <hr>
       <h3>
-        What are the various <defn>clearing</defn> techniques and which is
+        6. What are the various <defn>clearing</defn> techniques and which is
         appropriate for each context?
       </h3>
       <p>
@@ -189,7 +192,7 @@
       </ul>
       <hr>
       <h3>
-        How would you approach fixing browser-specific styling issues?
+        7. How would you approach fixing browser-specific styling issues?
       </h3>
       <p>You can fix these issues by using:</p>
       <ul>
@@ -222,20 +225,21 @@
       </ul>
       <hr>
       <h3>
-        9. What are the different ways to <defn>visually hide content</defn> (and
-        make it available only for screen readers)?
+        9. What are the different ways to <defn>visually hide content</defn>
+        (and make it available only for screen readers)?
       </h3>
       <p>Some ways:</p>
       <ul>
         <li><p>
-          <code>visibility: hidden</code>, where element will still take up space.
+          <code>visibility: hidden</code>, where element will still take up
+          space.
         </p></li>
         <li><p>
           <code>width: 0, height: 0</code>, where element won't take up space.
         </p></li>
         <li><p>
-          <code>position: absolute, left: -9999px</code>, where element is taken
-          off the flow of the page, and positioned off-screen.
+          <code>position: absolute, left: -9999px</code>, where element is
+          taken off the flow of the page, and positioned off-screen.
         </p></li>
         <li><p>
           <defn>WAI-ARIA</defn>, using <code>aria-hidden: true</code>.
@@ -243,7 +247,7 @@
       </ul>
       <hr>
       <h3>
-        Have you ever used a <defn>grid system</defn>? If so, which do you
+        10. Have you ever used a <defn>grid system</defn>? If so, which do you
         prefer?
       </h3>
       <p>
@@ -253,7 +257,7 @@
       </p>
       <hr>
       <h3>
-        Have you used or implemented <defn>media queries</defn> or mobile
+        11. Have you used or implemented <defn>media queries</defn> or mobile
         specific layouts/CSS?
       </h3>
       <p>
@@ -263,20 +267,24 @@
       </p>
       <hr>
       <h3>
-        Are you familiar with styling <defn>SVG</defn>?
+        12. Are you familiar with styling <defn>SVG</defn>?
       </h3>
       <p>
         Yes: attributes can be used on inline styles in the HTML. Like so:
-        <code>&lt;rect x="10" y="10" width="100" height="100" fill="purple"&gt;</code>
+        <code class="language-svg">
+          &lt;rect x="10" y="10" width="100" height="100" fill="purple"&gt;
+        </code>
       </p>
       <p>
         Styling can also be applied through JavaScript, like so:
-        <code>("rect").attr("x", 10).attr("y", 10).attr("width", 100)
-        .attr("height", 100).attr("fill", "purple")</code>
+        <code class="language-javascript">
+          ("rect").attr("x", 10).attr("y", 10).attr("width", 100)
+          .attr("height", 100).attr("fill", "purple")
+        </code>
       </p>
       <hr>
       <h3>
-        Can you give an example of an <defn>@media</defn> property other
+        13. Can you give an example of an <defn>@media</defn> property other
         than <defn>screen</defn>?
       </h3>
       <p>
@@ -302,16 +310,16 @@
       </p>
       <hr>
       <h3>
-        What are some of "gotchas" for writing efficient CSS?
+        14. What are some of "gotchas" for writing efficient CSS?
       </h3>
       <p>
         Browsers <defn>match selectors</defn> from the <defn>right-most
         selector</defn>, then proceeds leftwards. In a selector such as
-        <code>.card .title span</code>, the browser tries to match <code>span</code>
-        first, and then filters all <code>span</code> elements by
-        <code>.title</code>, and so on. This is not good because <code>span</code>
-        matches a lot of elements! We try to avoid having key selectors that
-        are <defn>tag</defn> or <defn>universal</defn>.
+        <code>.card .title span</code>, the browser tries to match
+        <code>span</code> first, and then filters all <code>span</code>
+        elements by <code>.title</code>, and so on. This is not good because
+        <code>span</code> matches a lot of elements! We try to avoid having key
+        selectors that are <defn>tag</defn> or <defn>universal</defn>.
       </p>
       <p>
         We must also be aware which CSS properties trigger <defn>reflow</defn>,
