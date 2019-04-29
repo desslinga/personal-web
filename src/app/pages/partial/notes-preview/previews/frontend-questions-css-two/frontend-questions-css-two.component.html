@@ -277,6 +277,39 @@
           <code>height</code>.
         </p></li>
       </ul>
+      <hr>
+      <h3>
+        20. What does <code class="language-css">
+          *&#123; box-sizing: border-box; &#125;
+        </code> do? What are its advantages?
+      </h3>
+      <p>By default:</p>
+      <ul>
+        <li><p>
+          Elements have <code>box-sizing: content-box</code>.
+        </p></li>
+        <li><p>
+          <code>border</code> and <code>padding</code> are not used in
+          calculating an element's <code>width</code> and <code>height</code>.
+        </p></li>
+      </ul>
+      <p>With <code class="language-css">*&#123; box-sizing: border-box; &#125;
+      </code>:</p>
+      <ul>
+        <li><p>
+          <defn>Height</defn> of element = <code>height</code> of it's content
+          + vertical <code>padding</code> + vertical <code>border</code> width.
+        </p></li>
+        <li><p>
+          <defn>Width</defn> of element = <code>width</code> of it's content
+          + horizontal <code>padding</code> + horizontal <code>border</code>
+          width.
+        </p></li>
+      </ul>
+      <p>
+        Why is this better? It is more inline with how designers view
+        content boxes.
+      </p>
     </div>
   </div>
 </div>

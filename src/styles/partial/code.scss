@@ -2,4 +2,9 @@
   & code {
     font-size: $font-xxs;
   }
+  & h3 {
+    & code {
+      font-size: $font-sm;
+    }
+  }
 }
