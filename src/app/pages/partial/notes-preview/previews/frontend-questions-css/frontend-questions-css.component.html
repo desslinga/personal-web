@@ -25,8 +25,8 @@
             <defn>b: </defn>
             number of ID selectors.
             <br>
-            <loc>#card #small</loc> has two id selectors, getting a score
-            of <defn>b = 2</defn>.
+            <code class="lang-css">#card #small &#123; &#125;</code> has two id selectors,
+            getting a score of <defn>b = 2</defn>.
           </p>
         </li>
         <li>
@@ -34,9 +34,10 @@
             <defn>c: </defn>
             number of classes, attributes, and pseudo-class selectors.
             <br>
-            <loc>.select-container .selector input[type="text"]</loc> has two
-            class selectors <loc>.select-container</loc> and <loc>.selector</loc>,
-            and one attribute selector <loc>[type="text"]</loc>, getting a score
+            <code class="language-css">.select-container .selector input[type="text"] &#123; &#125;</code>
+            has two class selectors <code>.select-container</code> and
+            <code>.selector</code>, and one attribute selector <code>[type="text"]</code>,
+            getting a score
             of <defn>c = 3</defn>.
           </p>
         </li>
@@ -45,8 +46,8 @@
             <defn>d: </defn>
             number of tags, and pseudo-element selectors.
             <br>
-            <loc>label:before</loc> has one element <loc>label</loc> and one
-            pseudo-element selector <loc>:before</loc> , getting a score of
+            <code>label:before</code> has one element <code>label</code> and one
+            pseudo-element selector <code>:before</code> , getting a score of
             <defn>d = 2</defn>.
           </p>
         </li>
@@ -81,16 +82,16 @@
         Describe <defn>floats</defn> and how they work.
       </h3>
       <p>
-        <defn>Float</defn> is a css positioning property. <loc>float</loc> can
-        take a value of <loc>left</loc> or <loc>right</loc> which stick the
+        <defn>Float</defn> is a css positioning property. <code>float</code> can
+        take a value of <code>left</code> or <code>right</code> which stick the
         elements in those directions respectively. Floated elements remain in
         the <defn>flow </defn> of a page -- meaning they will affect the
-        positioning of other elements. <loc>float</loc> can also takes values
-        <loc>none</loc> and <loc>inherit</loc> , which are self explanatory.
+        positioning of other elements. <code>float</code> can also takes values
+        <code>none</code> and <code>inherit</code> , which are self explanatory.
       </p>
       <p>
         If a floated element A is inline beside a floated element B, you can
-        use <loc>clear</loc> on any one of those elements to move it to the
+        use <code>clear</code> on any one of those elements to move it to the
         next line.
       </p>
       <p>
@@ -99,10 +100,10 @@
       </p>
       <ul>
         <li>
-          <p>Set the parent's content to <loc>overflow: auto</loc></p>
+          <p>Set the parent's content to <code>overflow: auto</code></p>
         </li>
         <li>
-          <p>Add an element with <loc>clear: both</loc> before the close of the
+          <p>Add an element with <code>clear: both</code> before the close of the
             container
           </p>
         </li>
@@ -113,27 +114,27 @@
         is formed.
       </h3>
       <p>
-        <loc>z-index</loc> controls the vertical stacking order of elements.
-        They only affect elements that don't have <loc>position: static</loc>
+        <code>z-index</code> controls the vertical stacking order of elements.
+        They only affect elements that don't have <code>position: static</code>
         (which is the default position property).
       </p>
       <p>
-        When there is no <loc>z-index</loc> specified, then elements are
+        When there is no <code>z-index</code> specified, then elements are
         stacked in the order that they appear in the DOM (top-level at the
-        bottom). Elements that don't have <loc>position: static</loc> always
+        bottom). Elements that don't have <code>position: static</code> always
         appear on top over those that do.
       </p>
       <p>
         A <defn>stacking context</defn> is a parent element containing more
-        elements. The <loc>z-index</loc> of a <defn>stacking context</defn>'s
+        elements. The <code>z-index</code> of a <defn>stacking context</defn>'s
         child elements are only relevent within their parent element (read:
         they don't affect other elements outside the
         <defn>stacking context</defn>.)
       </p>
       <p>
         There are many ways to trigger a <defn>stacking context</defn>, such
-        as having <loc>opacity</loc> less than 1, and <loc>filter</loc> that is
-        not <loc>none</loc>
+        as having <code>opacity</code> less than 1, and <code>filter</code> that is
+        not <code>none</code>
       </p>
       <hr>
       <h3>Describe <defn>Block Formatting Context</defn> and how it works.</h3>
@@ -142,19 +143,19 @@
       </p>
       <ul>
         <li><p>
-          <loc>float</loc> value other than <loc>none</loc>.
+          <code>float</code> value other than <code>none</code>.
         </p></li>
         <li><p>
-          <loc>position</loc> value that isn't <loc>static</loc> or
-            <loc>none</loc>.
+          <code>position</code> value that isn't <code>static</code> or
+            <code>none</code>.
         </p></li>
         <li><p>
-          <loc>display</loc> value of <loc>table-cell</loc>,
-          <loc>table-caption</loc>, <loc>inline-block</loc>, or
-          <loc>inline-flex</loc>.
+          <code>display</code> value of <code>table-cell</code>,
+          <code>table-caption</code>, <code>inline-block</code>, or
+          <code>inline-flex</code>.
         </p></li>
         <li><p>
-          <loc>overflow</loc> value that isn't <loc>visible</loc>.
+          <code>overflow</code> value that isn't <code>visible</code>.
         </p></li>
       </ul>
       <p>
@@ -176,13 +177,13 @@
       </p>
       <ul>
         <li><p>
-            An empty <loc>div</loc> with <loc>clear: both</loc>.
+            An empty <code>div</code> with <code>clear: both</code>.
         </p></li>
         <li><p>
-            The <loc>clearfix</loc> class.
+            The <code>clearfix</code> class.
         </p></li>
         <li><p>
-            <loc>overflow: auto</loc> or <loc>overflow: hidden</loc>, which
+            <code>overflow: auto</code> or <code>overflow: hidden</code>, which
             establishes a BFC.
         </p></li>
       </ul>
@@ -227,17 +228,17 @@
       <p>Some ways:</p>
       <ul>
         <li><p>
-          <loc>visibility: hidden</loc>, where element will still take up space.
+          <code>visibility: hidden</code>, where element will still take up space.
         </p></li>
         <li><p>
-          <loc>width: 0, height: 0</loc>, where element won't take up space.
+          <code>width: 0, height: 0</code>, where element won't take up space.
         </p></li>
         <li><p>
-          <loc>position: absolute, left: -9999px</loc>, where element is taken
+          <code>position: absolute, left: -9999px</code>, where element is taken
           off the flow of the page, and positioned off-screen.
         </p></li>
         <li><p>
-          <defn>WAI-ARIA</defn>, using <loc>aria-hidden: true</loc>.
+          <defn>WAI-ARIA</defn>, using <code>aria-hidden: true</code>.
         </p></li>
       </ul>
       <hr>
@@ -266,12 +267,12 @@
       </h3>
       <p>
         Yes: attributes can be used on inline styles in the HTML. Like so:
-        <loc>&lt;rect x="10" y="10" width="100" height="100" fill="purple"&gt;</loc>
+        <code>&lt;rect x="10" y="10" width="100" height="100" fill="purple"&gt;</code>
       </p>
       <p>
         Styling can also be applied through JavaScript, like so:
-        <loc>("rect").attr("x", 10).attr("y", 10).attr("width", 100)
-        .attr("height", 100).attr("fill", "purple")</loc>
+        <code>("rect").attr("x", 10).attr("y", 10).attr("width", 100)
+        .attr("height", 100).attr("fill", "purple")</code>
       </p>
       <hr>
       <h3>
@@ -306,9 +307,9 @@
       <p>
         Browsers <defn>match selectors</defn> from the <defn>right-most
         selector</defn>, then proceeds leftwards. In a selector such as
-        <loc>.card .title span</loc>, the browser tries to match <loc>span</loc>
-        first, and then filters all <loc>span</loc> elements by
-        <loc>.title</loc>, and so on. This is not good because <loc>span</loc>
+        <code>.card .title span</code>, the browser tries to match <code>span</code>
+        first, and then filters all <code>span</code> elements by
+        <code>.title</code>, and so on. This is not good because <code>span</code>
         matches a lot of elements! We try to avoid having key selectors that
         are <defn>tag</defn> or <defn>universal</defn>.
       </p>
