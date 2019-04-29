@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~prismjs/plugins/toolbar/prism-toolbar.css";
+@import "~prismjs/themes/prism-okaidia";
+
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "global-variables.scss";
 @import "blog.scss";
