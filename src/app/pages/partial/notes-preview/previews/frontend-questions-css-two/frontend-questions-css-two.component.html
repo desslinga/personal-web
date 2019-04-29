@@ -76,6 +76,81 @@
         that trigger <defn>repaint</defn> and <defn>reflow</defn>, because
         those require the browser to do more work).
       </p>
+      <h3>
+        15. What are the advantages and disadvantages of using <defn> CSS
+        preprocessors</defn> ?
+      </h3>
+      <p>Advantages:</p>
+      <ul>
+        <li><p>
+          Maintainable and legible CSS.
+        </p></li>
+        <li><p>
+          Easier to write <defn>nested selectors</defn>.
+        </p></li>
+        <li><p>
+          <defn>Variables</defn> for theming.
+        </p></li>
+        <li><p>
+          <defn>Mixins</defn> for repeated/patterned CSS.
+        </p></li>
+        <li><p>
+          <defn>Modular: </defn> CSS codebase can be split into different
+          files and then imported.
+        </p></li>
+      </ul>
+      <p>Disadvantages:</p>
+      <ul>
+        <li><p>
+          Need tools for <defn>preprocessing</defn> to write production
+          ready CSS.
+        </p></li>
+      </ul>
+      <hr>
+      <h3>
+        16. How would you implement a web design comp that uses non-standard
+        fonts?
+      </h3>
+      <p>We can either:</p>
+      <ul>
+        <li><p>
+          Use <code>@font-face</code> to get the desired
+          font from a url (or locally).
+        </p></li>
+        <li><p>
+          Import the font from a url through
+          <code>@import</code>.
+        </p></li>
+      </ul>
+      <p>
+        And then we define the <code>font-family</code>,
+        and <code>font-weight</code> for the element(s)
+        that require different font styling.
+      </p>
+      <hr>
+      <h3>
+        Explain how a browser determines what elements <defn>match</defn> a
+        <defn>CSS selector</defn>.
+      </h3>
+      <p>
+        Explained already above: the browser matches a CSS selector from the
+        <defn>right-most selector</defn> on the chain, the finds all the
+        DOM elements matching it. Then from those matching elements, the
+        browser <defn>filters</defn> them out by the <defn>next selector (left)
+        </defn>, and so on, until it has matched all appropriate elements
+        (or browser has filtered down to one or no elements).
+      </p>
+      <p>Efficiency tips:</p>
+      <ul>
+        <li><p>
+          Write <defn>shorter</defn> CSS selector chains.
+        </p></li>
+        <li><p>
+          Ensure that the <defn>right-most (key) selector</defn> in a chain
+          doesn't match a lot of elements (like <defn>universal</defn> or
+          <defn>tag</defn> selectors).
+        </p></li>
+      </ul>
     </div>
   </div>
 </div>
