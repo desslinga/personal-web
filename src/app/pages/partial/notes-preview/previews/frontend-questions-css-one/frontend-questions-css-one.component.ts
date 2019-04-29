@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { HighlightService } from '../../../../../services/highlight.service';
 
 @Component({
-  selector: 'app-frontend-questions-css',
-  templateUrl: './frontend-questions-css.component.html'
+  selector: 'app-frontend-questions-css-one',
+  templateUrl: './frontend-questions-css-one.component.html'
 })
-export class FrontendQuestionsCssComponent implements OnInit {
+export class FrontendQuestionsCssOneComponent implements OnInit {
   myCode;
 
   constructor(private highlightService: HighlightService) { }

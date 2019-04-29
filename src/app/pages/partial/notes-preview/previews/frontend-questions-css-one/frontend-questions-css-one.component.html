@@ -1,6 +1,9 @@
 <div class='blog'>
   <div class="row">
     <div class="col-12">
+      <h3>Questions 1-10</h3>
+    </div>
+    <div class="col-12">
       <h3>1. What is <defn>CSS selector specificity</defn> and how does
         it work? </h3>
       <p>
@@ -255,80 +258,6 @@
         systems. <defn>Float</defn> has the most browser support, although
         <defn>flex</defn> and <defn>grid</defn> are preferred nowadays.
       </p>
-      <hr>
-      <h3>
-        11. Have you used or implemented <defn>media queries</defn> or mobile
-        specific layouts/CSS?
-      </h3>
-      <p>
-        Yes: collapsing navigation into a hamburger menu (with popup) for
-        mobile devices. This layout is applied when the screen width is
-        small enough.
-      </p>
-      <hr>
-      <h3>
-        12. Are you familiar with styling <defn>SVG</defn>?
-      </h3>
-      <p>
-        Yes: attributes can be used on inline styles in the HTML. Like so:
-        <code class="language-svg">
-          &lt;rect x="10" y="10" width="100" height="100" fill="purple"&gt;
-        </code>
-      </p>
-      <p>
-        Styling can also be applied through JavaScript, like so:
-        <code class="language-javascript">
-          ("rect").attr("x", 10).attr("y", 10).attr("width", 100)
-          .attr("height", 100).attr("fill", "purple")
-        </code>
-      </p>
-      <hr>
-      <h3>
-        13. Can you give an example of an <defn>@media</defn> property other
-        than <defn>screen</defn>?
-      </h3>
-      <p>
-        There are four types:
-      </p>
-      <ul>
-        <li><p>
-          <defn>all: </defn> all media type devices.
-        </p></li>
-        <li><p>
-          <defn>print: </defn> printers.
-        </p></li>
-        <li><p>
-          <defn>speech: </defn> screen-readers that "read" a page out loud.
-        </p></li>
-        <li><p>
-          <defn>screen: </defn> device screens.
-        </p></li>
-      </ul>
-      <p>
-        When using these <defn>@media</defn> properties, you specify a style
-        just for those specific media outputs.
-      </p>
-      <hr>
-      <h3>
-        14. What are some of "gotchas" for writing efficient CSS?
-      </h3>
-      <p>
-        Browsers <defn>match selectors</defn> from the <defn>right-most
-        selector</defn>, then proceeds leftwards. In a selector such as
-        <code>.card .title span</code>, the browser tries to match
-        <code>span</code> first, and then filters all <code>span</code>
-        elements by <code>.title</code>, and so on. This is not good because
-        <code>span</code> matches a lot of elements! We try to avoid having key
-        selectors that are <defn>tag</defn> or <defn>universal</defn>.
-      </p>
-      <p>
-        We must also be aware which CSS properties trigger <defn>reflow</defn>,
-        <defn>repaint</defn>, and <defn>compositing</defn>. We want to only
-        apply proprties that trigger <defn>compositing</defn> (and avoid ones
-        that trigger <defn>repaint</defn> and <defn>reflow</defn>, because
-        those require the browser to do more work).
-      </p>
     </div>
   </div>
 </div>
-/div>
