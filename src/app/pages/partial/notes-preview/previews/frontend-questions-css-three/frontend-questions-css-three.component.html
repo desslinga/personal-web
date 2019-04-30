@@ -80,6 +80,88 @@
           element (such that <code>block</code> properties apply.)
         </p></li>
       </ul>
+      <hr>
+      <h3>
+        What's the difference between a <code>relative</code>,
+        <code>fixed</code>, <code>absolute</code>, and <code>static</code>-ally
+        positioned element?
+      </h3>
+      <p>
+        A <defn>positioned</defn> element: has a <code>position</code>
+        property that is set to either <code>relative</code>,
+        <code>fixed</code>, <code>absolute</code> or <code>sticky</code>
+        (aka anything but <code>static</code>).
+      </p>
+      <p>
+        The possible values for a <code>position</code> property:
+      </p>
+      <ul>
+        <li><p>
+          <code>static</code>: this is the default setting; the element is in
+          the <defn>flow</defn> of the page. The <code>top</code>,
+          <code>right</code>, <code>bottom</code>, <code>left</code> and
+          <code>z-index</code> properties are ignored if set.
+        </p></li>
+        <li><p>
+          <code>relative</code>: element's position is adjusted from where it
+          was originally (if it was <code>static</code>). <defn>Layout</defn>
+          is <defn>not changed</defn> from this adjustment
+          (<defn>flow</defn> is the same).
+        </p></li>
+        <li><p>
+          <code>absolute</code>: element is positioned as specified (by
+          <code>top</code>, <code>left</code>, <code>bottom</code>, and/or
+          <code>left</code> properties) based on its closest ancestor that is
+          also positioned (not <code>static</code>). If this element dosen't
+          exist, it is positioned relative to its parent. An
+          <code>absolute</code> element can have a <code>margin</code>, and
+          don't affect the positioning of other elements (read: they are
+          <defn>removed</defn> from the <defn>flow</defn> of the page).
+        </p></li>
+        <li><p>
+          <code>fixed</code>: element is positioned as specified, relative to
+          the <defn>viewport</defn> (visible screen). A <code>fixed</code>
+          element <defn>does not move</defn> as the window <defn>scrolls</defn>.
+          It is also <defn>removed</defn> from the <defn>flow</defn> of the
+          page.
+        </p></li>
+        <li><p>
+          <code>sticky</code>: element is <code>relatively</code> positioned --
+          until it passes a specified <defn>scroll height</defn>. After that
+          it is <code>fixed</code> positioned.
+        </p></li>
+      </ul>
+      <hr>
+      <h3>
+        What existing <defn>CSS frameworks</defn> have you used locally, or in
+        production? Any comments on them?
+      </h3>
+      <p>
+        A couple of popular <defn>CSS frameworks</defn>:
+      </p>
+      <ul>
+        <li><p>
+          <defn>Bootstrap</defn>: easy to learn and customize for your
+          own theme.
+        </p></li>
+        <li><p>
+          <defn>Semantic UI</defn>: difficult to learn, and difficult to
+          customize.
+        </p></li>
+      </ul>
+      <hr>
+      <h3>
+        Have you played around with the new <defn>CSS Flexbox</defn> or
+        <defn>Grid</defn> specs?
+      </h3>
+      <p>
+        <defn>Flexbox</defn> and <defn>CSS Grid</defn> is used to layout
+        content. <defn>Flexbox</defn> solves common CSS issues, such as
+        vertical centering of elements in a container. It is used by
+        <defn>Bootstrap</defn>. Using the <defn>Grid</defn> system is more
+        intuitive, but it doesn't have as much browser support as
+        <defn>Flexbox</defn> yet.
+      </p>
     </div>
   </div>
 </div>
