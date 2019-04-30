@@ -30,7 +30,6 @@
               "src/styles/styles.scss"
             ],
             "scripts": [
-              "../node_modules/primsjs/prism.js"
             ]
           },
           "configurations": {

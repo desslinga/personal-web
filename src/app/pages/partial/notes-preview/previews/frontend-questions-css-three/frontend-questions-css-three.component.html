@@ -20,9 +20,9 @@
         <li><p>
           <code>table</code>, <code>table-row</code>, <code>table-cell</code>,
           <code>list-item</code> (these let the element behave the like the
-          respective html tags these refer to: <code>&gt;table&lt;</code>,
-          <code>&gt;tr&lt;</code>, <code>&gt;td&lt;</code>,
-          <code>&gt;li&lt;</code>)
+          respective html tags these refer to: <code>&lt;table&gt;</code>,
+          <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>,
+          <code>&lt;li&gt;</code>)
         </p></li>
       </ul>
       <hr>
@@ -30,196 +30,56 @@
         22. What's the difference between <code>inline</code> and
         <code>inline-block</code>?
       </h3>
-      <p>
-        <defn>Resetting: </defn> gets completely rid of the default browser
-        styling of elements. This means that you have to re-declare all rules
-        from scratch, even the basic ones!
-      </p>
-      <p>
-        <defn>Normalizing: </defn> doesn't get rid of all default styling.
-        Rather, it keeps the 'useful' ones. It also corrects some browser bugs.
-      </p>
-      <p>
-        Which to choose? Use reset if we are designing an unconventional
-        site, and normalize otherwise.
-      </p>
-      <hr>
-      <h3>
-        3. Describe <defn>floats</defn> and how they work.
-      </h3>
-      <p>
-        <defn>Float</defn> is a css positioning property. <code>float</code> can
-        take a value of <code>left</code> or <code>right</code> which stick the
-        elements in those directions respectively. Floated elements remain in
-        the <defn>flow </defn> of a page -- meaning they will affect the
-        positioning of other elements. <code>float</code> can also takes values
-        <code>none</code> and <code>inherit</code> , which are self explanatory.
-      </p>
-      <p>
-        If a floated element A is inline beside a floated element B, you can
-        use <code>clear</code> on any one of those elements to move it to the
-        next line.
-      </p>
-      <p>
-        If some elements contain only floated elements, then it will have 0
-        height. We can fix this in a couple of ways:
-      </p>
-      <ul>
-        <li>
-          <p>Set the parent's content to <code>overflow: auto</code></p>
-        </li>
-        <li>
-          <p>
-            Add an element with <code>clear: both</code> before the close
-            of the container
-          </p>
-        </li>
-      </ul>
-      <hr>
-      <h3>
-        4. Describe <defn>z-index</defn>, and how a <defn>stacking
-        context</defn> is formed.
-      </h3>
-      <p>
-        <code>z-index</code> controls the vertical stacking order of elements.
-        They only affect elements that don't have <code>position: static</code>
-        (which is the default position property).
-      </p>
-      <p>
-        When there is no <code>z-index</code> specified, then elements are
-        stacked in the order that they appear in the DOM (top-level at the
-        bottom). Elements that don't have <code>position: static</code> always
-        appear on top over those that do.
-      </p>
-      <p>
-        A <defn>stacking context</defn> is a parent element containing more
-        elements. The <code>z-index</code> of a <defn>stacking context</defn>'s
-        child elements are only relevent within their parent element (read:
-        they don't affect other elements outside the
-        <defn>stacking context</defn>.)
-      </p>
-      <p>
-        There are many ways to trigger a <defn>stacking context</defn>, such
-        as having <code>opacity</code> less than 1, and <code>filter</code>
-        that is not <code>none</code>
-      </p>
-      <hr>
-      <h3>5. Describe <defn>Block Formatting Context</defn> and how it
-        works.</h3>
-      <p>
-        A <defn>Block Formatting Context</defn> is caused by:
-      </p>
+      <p><code>block</code>:</p>
       <ul>
         <li><p>
-          <code>float</code> value other than <code>none</code>.
+          element's <code>width</code> = parent's <code>width</code>
         </p></li>
         <li><p>
-          <code>position</code> value that isn't <code>static</code> or
-            <code>none</code>.
+          element starts on a <defn>new line</defn>, and does not let other
+          elements to sit <defn>inline</defn> with it.
         </p></li>
         <li><p>
-          <code>display</code> value of <code>table-cell</code>,
-          <code>table-caption</code>, <code>inline-block</code>, or
-          <code>inline-flex</code>.
-        </p></li>
-        <li><p>
-          <code>overflow</code> value that isn't <code>visible</code>.
+          cannot use the <code>vertical-align</code> property on it.
         </p></li>
       </ul>
-      <p>
-        Each box element contained inside a <defn>BFC</defn> has its left side
-        touching the left edge of the <defn>BFC.</defn>
-      </p>
-      <p>
-        Also, vertical margins on stacking elements don't take the sum of the
-        margins. Instead, they take only the largest of the two, combining
-        them to form a single margin.
-      </p>
-      <hr>
-      <h3>
-        6. What are the various <defn>clearing</defn> techniques and which is
-        appropriate for each context?
-      </h3>
-      <p>
-        This is about floated elements. You can clear them by using:
-      </p>
+      <p><code>block</code> and <code>inline-block</code> similarities:</p>
       <ul>
         <li><p>
-            An empty <code>div</code> with <code>clear: both</code>.
+          can specify <code>width</code> and <code>height</code> of element.
         </p></li>
         <li><p>
-            The <code>clearfix</code> class.
-        </p></li>
-        <li><p>
-            <code>overflow: auto</code> or <code>overflow: hidden</code>, which
-            establishes a BFC.
+          all side of <code>margin</code> and <code>padding</code> are
+          respected, if applied.
         </p></li>
       </ul>
-      <hr>
-      <h3>
-        7. How would you approach fixing browser-specific styling issues?
-      </h3>
-      <p>You can fix these issues by using:</p>
+      <p><code>inline-block</code> and <code>inline</code> similarities:</p>
       <ul>
         <li><p>
-          A separate stylesheet that loads only for a specific browser.
+          element's <defn>size</defn> depends on it's <defn>content</defn>
         </p></li>
         <li><p>
-          Libraries that do this for you, such as <defn>Bootstrap</defn>
+          element allows other elements to sit <defn>inline</defn> with it.
         </p></li>
         <li><p>
-          <defn>Reset CSS</defn> or <defn>Normalize CSS</defn>
+          can use the <code>vertical-align</code> property on it.
         </p></li>
       </ul>
-      <hr>
-      <h3>
-        8. How do you serve your pages for <defn>feature-constrained</defn>
-        browsers? What techniques should you use?
-      </h3>
-      <p>Some ways:</p>
+      <p><code>inline</code>:</p>
       <ul>
         <li><p>
-          <defn>Graceful degradation: </defn> build the web-app for modern
-          browsers first, but ensure that it is functional for older browsers.
+          ignores <code>width</code> and <code>height</code> properties,
+          if set.
         </p></li>
         <li><p>
-          <defn>Progressive enhancement: </defn> implement the web-app with the
-          base-level of user experience, then add more functionality for modern
-          browsers (that can support features).
+          only horizontal sides of <code>margin</code> and <code>padding</code>
+          are respected, if applied.
+        </p></li>
+        <li><p>
+          when applying <code>float</code>, it acts like a <code>block</code>
+          element (such that <code>block</code> properties apply.)
         </p></li>
       </ul>
-      <hr>
-      <h3>
-        9. What are the different ways to <defn>visually hide content</defn>
-        (and make it available only for screen readers)?
-      </h3>
-      <p>Some ways:</p>
-      <ul>
-        <li><p>
-          <code>visibility: hidden</code>, where element will still take up
-          space.
-        </p></li>
-        <li><p>
-          <code>width: 0, height: 0</code>, where element won't take up space.
-        </p></li>
-        <li><p>
-          <code>position: absolute, left: -9999px</code>, where element is
-          taken off the flow of the page, and positioned off-screen.
-        </p></li>
-        <li><p>
-          <defn>WAI-ARIA</defn>, using <code>aria-hidden: true</code>.
-        </p></li>
-      </ul>
-      <hr>
-      <h3>
-        10. Have you ever used a <defn>grid system</defn>? If so, which do you
-        prefer?
-      </h3>
-      <p>
-        There are <defn>float</defn>, <defn>flex</defn>, and <defn>grid</defn>
-        systems. <defn>Float</defn> has the most browser support, although
-        <defn>flex</defn> and <defn>grid</defn> are preferred nowadays.
-      </p>
     </div>
   </div>
 </div>
