@@ -82,7 +82,7 @@
       </ul>
       <hr>
       <h3>
-        What's the difference between a <code>relative</code>,
+        23. What's the difference between a <code>relative</code>,
         <code>fixed</code>, <code>absolute</code>, and <code>static</code>-ally
         positioned element?
       </h3>
@@ -133,7 +133,7 @@
       </ul>
       <hr>
       <h3>
-        What existing <defn>CSS frameworks</defn> have you used locally, or in
+        24. What existing <defn>CSS frameworks</defn> have you used locally, or in
         production? Any comments on them?
       </h3>
       <p>
@@ -151,7 +151,7 @@
       </ul>
       <hr>
       <h3>
-        Have you played around with the new <defn>CSS Flexbox</defn> or
+        25. Have you played around with the new <defn>CSS Flexbox</defn> or
         <defn>Grid</defn> specs?
       </h3>
       <p>
@@ -162,6 +162,94 @@
         intuitive, but it doesn't have as much browser support as
         <defn>Flexbox</defn> yet.
       </p>
+      <hr>
+      <h3>
+        26. Can you explain the difference between coding a website to be
+        <defn>responsive</defn>, versus using a <defn>mobile-first</defn>
+        strategy?
+      </h3>
+      <p>
+        These two approaches are similar, but with one key difference.
+        <defn>Responsive</defn> design means elements are designed such that
+        they <defn>adapt</defn> to different device widths and heights
+        (typically only width). This is done through <code>@media</code>
+        queries, for example.
+      </p>
+      <p>
+        A <defn>mobile-first</defn> strategy follows <defn>responsive</defn>
+        design, but defines its default styles for <defn>mobile displays
+        first</defn>. Then, elements can be adapted for non-mobile devices.
+      </p>
+      <p>
+        Advantages of <defn>mobile-first</defn>:
+      </p>
+      <ul>
+        <li><p>
+          <defn>Better performance for mobile</defn>: CSS rules are applied by
+          default, and don't need to be checked by <code>@media</code> queries.
+        </p></li>
+        <li><p>
+          <defn>Cleaner code</defn>.
+        </p></li>
+      </ul>
+      <p><defn>Responsive</defn>:</p>
+      <pre class="language-css"><code>@media (min-width: 601px) &#123;
+  .my-class &#123;
+    font-size: 24px;
+  &#125;
+&#125;
+@media (max-width: 600px) &#123;
+  .my-class &#123;
+    font-size: 12px;
+  &#125;
+&#125;</code></pre>
+      <p><defn>Mobile-first</defn>:</p>
+      <pre class="language-css"><code>.my-class &#123;
+  font-size: 12px;
+&#125;
+@media (min-width: 601px) &#123;
+  .my-class &#123;
+    font-size: 24px;
+  &#125;
+&#125;</code></pre>
+      <hr>
+      <h3>
+        27. How is <defn>responsive</defn> design different from
+        <defn>adaptive</defn> design?
+      </h3>
+      <p>
+        <defn>Similarities</defn>: both approaches try to <defn>optimize</defn>
+        user experience for <defn>different devices</defn> (viewport size,
+        resolution, inputs).
+      </p>
+      <p><defn>Responsive</defn> design tries to make its web-app flexible:</p>
+      <ul>
+        <li><p>
+          <defn>One website design</defn> that is made to <defn>adapt</defn> to
+          different devices.
+        </p></li>
+        <li><p>
+          Website <defn>adjusts</defn> its layout; not exactly delivering an
+          entirely new layout for each device.
+        </p></li>
+        <li><p>
+          Using <code>@media</code> quesries, grid systems, responsive images,
+          etc.
+        </p></li>
+      </ul>
+      <p><defn>Adaptive</defn> design creates a new layout for different
+      devices.</p>
+      <ul>
+        <li><p>
+          Website <defn>detects device</defn> being used, then delivers a
+          <defn>pre-defined layout</defn> that it has created for that type
+          of device.
+        </p></li>
+        <li><p>
+          Instead of adjusting one layout, deliverys an entirely <defn>new
+          layout</defn> for each device.
+        </p></li>
+      </ul>
     </div>
   </div>
 </div>
