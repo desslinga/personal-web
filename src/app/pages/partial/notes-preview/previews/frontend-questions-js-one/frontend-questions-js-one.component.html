@@ -168,6 +168,96 @@ obj.fn(); // &#123; value: 'hello', fn: f &#125;</code></pre>
         verbose, and often unnecessary because JavaScript files are usually
         bundled, thus not benefiting from asynchronous loading.
       </p>
+      <hr>
+      <h3>
+        5. Explain why the following won't work as an <defn>IIFE</defn>:
+        <code class="language-javascript">function()&#123;&#125;();</code>.
+        What needs to be changed to properly make it an <defn>IIFE</defn>?
+      </h3>
+      <p>
+        <defn>IIFE</defn>: <defn>Immediately Invoked Function
+        Expressions</defn>.
+      </p>
+      <p>
+        This won't work because the parser reads
+        <code class="language-javascript">function()&#123;&#125;</code>, and
+        then <code class="language-javascript">();</code>. In other words,
+        it sees a <defn>function declaration</defn>, and then
+        <code class="language-javascript">();</code> which is an attempt to
+        call a function... but there is no function! Statements that start
+        with <code>function</code> are intepreted as <defn>function
+        declarations</defn>.
+      </p>
+      <p>How to solve</p>
+      <ul>
+        <li><p>
+          Wrap <code class="language-javascript">function()&#123;&#125;</code>
+          in <code>()</code> brackets to that the parse reads it as a
+          <defn>function expression</defn> instead of a <defn>function
+          declaration</defn>. Then <code class="language-javascript">
+          (function()&#123;&#125;)();</code> calls it immediately.
+        </p></li>
+        <li><p>
+          The other option is wrapping the entire declaration and call in
+          brackets: <code class="language-javascript">
+          (function()&#123;&#125;);</code>, which achieves the same effect.
+        </p></li>
+      </ul>
+      <hr>
+      <h3>
+        6. What's the difference between a variable that is <code>null</code>,
+        <code>undefined</code>, or <defn>undeclared</defn>? How would you
+        go about checking for any of these states?
+      </h3>
+      <p>
+        <defn>Undeclared variables</defn>: are created when assigning a value
+        to a variable that has not been previously created with
+        <code>var</code>, <code>let</code>, or <code>const</code> (read:
+        <defn>undeclared</defn>). They become <defn>global variables</defn>
+        (not good!), and in <defn>strict mode</defn>, a <code>ReferenceError
+        </code> is thrown.
+      </p>
+      <p>
+        <code>undefined</code><defn> variables</defn>: are variables that have been
+        <defn>declared</defn> (using <code>var</code>, <code>let</code>, or
+        <code>const</code>) but have not been explicity <defn>assigned</defn>
+        a value. They have a value of <code>undefined</code> until then.
+      </p>
+      <p>Check for <code>undefined</code><defn> variables</defn> by using:</p>
+      <ul>
+        <li><p>
+          Strict equality: <code class="language-javascript">foo === undefined
+          </code>. Note: using <code>==</code> will return true for
+          <code class="language-javascript">foo = undefined</code>, but also for
+          <code class="language-javascript">foo = null</code>.
+        </p></li>
+        <li><p>
+          Using <code>typeof</code>: <code class="language-javascript">typeof
+          foo === 'undefined'</code>.
+        </p></li>
+      </ul>
+      <p>
+         <code>null</code><defn> variables</defn>: are variables that have been
+         explicitly assigned <code>null</code>. It represents no value. It is
+         not <code>undefined</code>, because it is technicall defined... with
+         no value.
+      </p>
+      <p>Check for <code>null</code><defn> variables</defn> by using:</p>
+      <ul>
+        <li><p>
+          Strict equality: <code class="language-javascript">foo === null
+          </code>.
+        </p></li>
+        <li><p>
+          Using <code>typeof</code>: <code class="language-javascript">typeof
+          foo === 'null'</code>.
+        </p></li>
+      </ul>
+      <p>
+        What is good practice? Don't leave variables <defn>undeclared</defn>
+        or <code>undefined</code>... When declaring a variable with no value in
+        mind, set it to <code>null</code>!
+      </p>
     </div>
   </div>
 </div>
