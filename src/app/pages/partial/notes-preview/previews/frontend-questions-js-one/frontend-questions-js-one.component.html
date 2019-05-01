@@ -332,6 +332,110 @@ obj.fn(); // &#123; value: 'hello', fn: f &#125;</code></pre>
         mutate it. Otherwise, <code>.forEach</code> is a generic iterato when
         no other array helpers fit the job.
       </p>
+      <hr>
+      <h3>
+        9. What's a typical use case for <defn>anonymous functions</defn>?
+      </h3>
+      <p>
+        An <defn>anonymous function</defn>: is declared with a <defn>function
+        operator</defn> instead of a <defn>function declaration</defn>.
+        <code class="language-javascript">function() &#123;&#125;</code> is a
+        <defn>function operator</defn>, and <code class="language-javascript">
+        function namedFunction() &#123;&#125;</code> is a <defn>named
+        function</defn>.
+      </p>
+      <p>
+        <defn>Function operators</defn> are <defn>hoisted</defn> globally
+        (read: moved to the top.)
+      </p>
+      <p>
+        You may want to use <defn>anonymous functions</defn> when...
+      </p>
+      <ul>
+        <li><p>
+          You want to use an <defn>IIFE (Immediately Invoked Function
+          Expression)</defn> so that variables declared inside it are not
+          accessible outside the scope.
+        </p></li>
+        <li><p>
+          Creating a <defn>callback</defn> that is only used once, thus not
+          needing to be named and reused elsewhere. This makes them more
+          readable too.
+        </p></li>
+        <li><p>
+          As above: a <defn>callback</defn> to functional programming
+          constructs (like <code>.map</code>, <code>.forEach</code>).
+        </p></li>
+      </ul>
+      <hr>
+      <h3>
+        10. How do you organize your code? (<defn>module pattern</defn>, <defn>
+        classical inheritance</defn>?)
+      </h3>
+      <p>
+        <defn>Classical inheritance</defn> should be avoided, in favour of the
+        tried and tested <defn>MVC pattern</defn> or the newer <defn>Flux
+        architecture</defn>.
+      </p>
+      <p>
+        <defn>MVC</defn>: Stands for <defn>model-view-controller</defn>, is a
+        pattern used in many web-apps. It separates the <defn>controller</defn>,
+        <defn>view</defn>, and <defn>model</defn>.
+      </p>
+      <ul>
+        <li><p>
+          <defn>Controller</defn>: takes user input, which maniputes the
+          <defn>model</defn>, causing the <defn>view</defn> to update.
+        </p></li>
+        <li><p>
+          <defn>Model</defn>: defines the behavious and data of the app.
+        </p></li>
+        <li><p>
+          <defn>View</defn>: a visual representation of the <defn>model</defn>
+          on the UI.
+        </p></li>
+      </ul>
+      <p>
+        In <defn>MVC</defn>, both the <defn>model</defn> and the
+        <defn>view</defn> can communicate with the <defn>controller</defn>
+        directly. And the <defn>controller</defn> is responsible for updating
+        both the <defn>model</defn> and the <defn>view</defn> (read: multiple
+        directions of flow). Some <defn>MVC</defn> patterns support
+        <defn>bi-directional flow</defn> of data!
+      </p>
+      <p>
+        <defn>Flux</defn>: revolves around the idea of <defn>uni-directional
+        flow</defn> of data.
+      </p>
+      <ul>
+        <li><p>
+          <defn>Actions</defn>: are objects that have a <defn>type</defn>
+          property, and <defn>data</defn> (payload).
+        </p></li>
+        <li><p>
+          <defn>Store</defn>: contains the application <defn>state</defn>, and
+          static data/logic if any. The store is only the place that the
+          <defn>view</defn> can recieve data that it needs to render.
+        </p></li>
+        <li><p>
+          <defn>Dispatcher</defn>: takes actions and then handles them with
+          the appropriate <defn>callback</defn>. Those <defn>callbacks</defn>
+          may update the <defn>store</defn> (and they are the only ones that
+          can do so!)
+        </p></li>
+        <li><p>
+          <defn>Views</defn>: can be described as <defn>controller-views</defn>.
+          Similarly to <defn>MVCs</defn>, they are updated via changes to
+          <defn>stores</defn>. They can also send new <defn>actions</defn> to
+          update the <defn>store</defn>.
+        </p></li>
+      </ul>
+      <p>
+        <defn>Uni-directional data flow</defn>: all requests to change the
+        <defn>store</defn> (or otherwise) are sent to <defn>dispatcher</defn>.
+        Only the <defn>dispatcher</defn> can modify the <defn>store</defn>.
+        And only the <defn>store</defn> can modify the <defn>view</defn>!
+      </p>
     </div>
   </div>
 </div>
