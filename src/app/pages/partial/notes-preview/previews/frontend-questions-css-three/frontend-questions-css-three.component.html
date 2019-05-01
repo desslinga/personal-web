@@ -1,7 +1,7 @@
 <div class='blog'>
   <div class="row">
     <div class="col-12">
-      <h3>Questions 21-30</h3>
+      <h3>Questions 21-29</h3>
     </div>
     <div class="col-12">
       <h3>
@@ -250,6 +250,43 @@
           layout</defn> for each device.
         </p></li>
       </ul>
+      <hr>
+      <h3>
+        28. Have you ever worked with <defn>retina</defn> graphics? If so, when
+        and what techniques did you use?
+      </h3>
+      <p>
+        <defn>Retina</defn> screens have resolutions where the <defn>pixel
+        ratio</defn> is greater than 1. Note that browsers render DOM
+        elements based on the device's resolution, with the exception of
+        images.
+      </p>
+      <p>
+        In order to optimize images for <defn>retina</defn> displays,
+        we need to use high-resolution images (but only for these
+        <defn>retina</defn> displays!). For that, we can use
+        <code>srcset</code> to display <defn>responsive</defn> images, as
+        discussed previously.
+      </p>
+      <hr>
+      <h3>
+        29. Is there any reason you'd want to use <code>translate()</code>
+        instead of <code>absolute</code> positioning, or vice-versa? And why?
+      </h3>
+      <p>
+        <code>translate()</code> is used for the CSS <code>transform</code>
+        property. It is good becuse it does not trigger <defn>reflow</defn> or
+        <defn>repaint</defn>. It only triggers <defn>composition</defn>.
+        On the other hand, <code>absolute</code> positioning triggers
+        <defn>reflow</defn>... which uses CPU resources, and it thus
+        inefficient.
+      </p>
+      <p>
+        The other difference is that when using <code>translate()</code>,
+        the element remains in the <defn>flow</defn> of the webpage (read:
+        takes up space). As discussed, <code>absolute</code> positioning takes
+        elements out of the <defn>flow</defn> of the page.
+      </p>
     </div>
   </div>
 </div>
