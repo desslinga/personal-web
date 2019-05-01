@@ -1,0 +1,36 @@
+<div class="blog">
+  <div class="row">
+    <div class="col-12">
+      <h3>Questions 1-10</h3>
+    </div>
+    <div class="col-12">
+      <h3>
+        1. Explain <defn>event delegation</defn>.
+      </h3>
+      <p>
+        This is a technique that involves putting one <defn>event handler</defn>
+        to a parent element, to prevent having to add multiple
+        <defn>event handlers</defn> to child elements. For example, if we have
+        a list container, containing multiple list elements, and want to do
+        something on a <defn>click</defn> event, we can put one <defn>event
+        handler</defn> on the list container.
+      </p>
+      <p>
+        Since there is <defn>event delegation</defn>, when any one of the list
+        elements are clicked, that event <defn>bubbles</defn> up to some
+        parent container where it is handled by an <defn>event handler</defn>.
+      </p>
+      <p>Benefits:</p>
+      <ul>
+        <li><p>
+          <defn>Cleaner</defn>, more <defn>efficient</defn> because one handler
+          on a parent element can handle events evoked for any of its children.
+        </p></li>
+        <li><p>
+          No need to <defn>unbind</defn> handler when elements are removed (and
+          otherwise when new elements are introduced).
+        </p></li>
+      </ul>
+    </div>
+  </div>
+</div>
