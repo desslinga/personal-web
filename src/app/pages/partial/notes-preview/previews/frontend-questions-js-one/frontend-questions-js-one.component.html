@@ -31,6 +31,94 @@
           otherwise when new elements are introduced).
         </p></li>
       </ul>
+      <hr>
+      <h3>
+        2. Explain how <code>this</code> works in JavaScript.
+      </h3>
+      <p>
+        Put simply: the value of <code>this</code> is determined by which
+        function calls it (the <defn>call site</defn>), and where the function
+        is called.
+      </p>
+      <p>The rules:</p>
+      <ol>
+        <li>
+          <p>
+            If the function containing <code>this</code> is called with the
+            <code>new</code> keyword, the <code>this</code> inside the function
+            references a new object.
+          </p>
+          <pre class="language-javascript"><code>function Example() &#123;
+  console.log(this);
+  this.value = 10;
+  console.log(this);
+&#125;
+new Example();
+// prints &#123;&#125;
+// prints &#123; value: 10 &#125;</code></pre>
+        </li>
+        <li>
+          <p>
+            If the function containing <code>this</code> is called with
+            <code>.apply()</code>, <code>.call()</code> or <code>.bind()</code>,
+            then <code>this</code> inside the function references the object
+            passed as an argument.
+          </p>
+          <pre class="language-javascript"><code>function fn() &#123;
+  console.log(this);
+&#125;
+var obj = &#123; value: 5 &#125;
+var boundFn = fn.bind(obj);
+boundFn(); // &#123; value: 5 &#125;
+fn.call(obj); // &#123; value: 5 &#125;</code></pre>
+        </li>
+        <li>
+          <p>
+            If the function containing <code>this</code> is called as a
+            <defn>method</defn>, then <code>this</code> inside the function
+            refereces the object that the <defn>method</defn> belongs to.
+          </p>
+          <pre class="language-javascript"><code>var obj = &#123;
+  value: 5,
+  print: function() &#123;
+   console.log(this);
+  &#125;
+&#125;
+obj.print(); // &#123; value:5, print: f &#125; (this is obj)</code></pre>
+        </li>
+        <li>
+          <p>
+            If the function containing <code>this</code> is called as a
+            <defn>free function invocation</defn> (read: not matching any of
+            the first 3 conditions), then <code>this</code> inside the function
+            is the <defn>global object</defn>. For a browser, this is
+            <code>window</code>.
+          </p>
+          <pre class="language-javascript"><code>function fn() &#123;
+  console.log(this);
+&#125;
+// if it was called in the browser:
+fn(); // Window &#123; stop: f, open: f ... &#125;</code></pre>
+        </li>
+        <li><p>
+          If <defn>multiple</defn> of the above rules apply, the
+          <defn>higher</defn> one wins (and sets the definition of
+          <code>this</code>).
+        </p></li>
+        <li>
+          <p>
+            If function containing <code>this</code> is an <defn>arrow function
+            </defn>, then all the above rules are ignored. <code>this</code>
+            inside the function is the immediate <defn>scope</defn> outside
+            where the function is declared.
+          </p>
+          <pre class="language-javascript"><code>const obj = &#123;
+  value: 'hello',
+  fn: () =&gt; console.log(this);
+&#125;
+obj.fn(); // &#123; value: 'hello', fn: f &#125;</code></pre>
+        </li>
+      </ol>
     </div>
   </div>
 </div>
