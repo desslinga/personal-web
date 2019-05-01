@@ -119,6 +119,55 @@ fn(); // Window &#123; stop: f, open: f ... &#125;</code></pre>
 obj.fn(); // &#123; value: 'hello', fn: f &#125;</code></pre>
         </li>
       </ol>
+      <hr>
+      <h3>
+        3. Explain how <defn>prototypal inheritance</defn> works.
+      </h3>
+      <p>
+        All JavaScript objects have a <defn>prototype</defn> property, which is
+        a reference to another object (which is its <defn>'parent'</defn>).
+        When we try to access an object's property, and that property isn't
+        defined in the object, then the JavaScript engine goes to that object's
+        <defn>prototype</defn>. It looks for the property there, and so on
+        (until the property is found).
+      </p>
+      <p>
+        Note that this looks like <defn>classical inheritance</defn>, but
+        actually behaves differently. We can say that this is simply
+        <defn>behaviour delegation</defn>. Properties/,ethods don't get
+        'passed' onto children, rather, the <defn>responsibility</defn> for
+        properties/methods that aren't found in children, are 'passed' onto
+        their parent (<defn>prototype</defn>).
+      </p>
+      <p>
+        In <defn>classical inheritance</defn>, we do have properties/methods
+        passed onto children in <defn>compile time</defn>. The <defn>
+        inheritance chain</defn> of a class instance (consisting of inherited
+        properties/methods) is <defn>flattened</defn> into the instance class.
+        (in combination with lookup tables for super functions).
+      </p>
+      <hr>
+      <h3>
+        4. <defn>AMD</defn> vs <defn>CommonJS</defn>?
+      </h3>
+      <p>
+        These are both ways to implement a <defn>module system</defn>, which was
+        not a feature native in <defn>JavaScript</defn> until
+        <defn>ES6/2015</defn>.
+      </p>
+      <p>
+        <defn>CommonJS</defn>: synchronous, and designed for server-side
+        development. Syntax is simpler and is closer to
+        <defn>Node</defn>. There is less overhead caused by
+        <defn>context-switching</defn> between client and server-side JS
+        development.
+      </p>
+      <p>
+        <defn>AMD</defn>: a.k.a <defn>Asynchronous Module Definition</defn>
+        (read: asynchronous), more intended for browsers. Syntax is much more
+        verbose, and often unnecessary because JavaScript files are usually
+        bundled, thus not benefiting from asynchronous loading.
+      </p>
     </div>
   </div>
 </div>
