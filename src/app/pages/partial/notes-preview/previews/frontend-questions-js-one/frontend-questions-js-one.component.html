@@ -258,6 +258,80 @@ obj.fn(); // &#123; value: 'hello', fn: f &#125;</code></pre>
         or <code>undefined</code>... When declaring a variable with no value in
         mind, set it to <code>null</code>!
       </p>
+      <hr>
+      <h3>
+        7. What is a <defn>closure</defn>, and how/why would you use one?
+      </h3>
+      <p>
+        <defn>Closures</defn> are functions that have access to variables
+        belonging to its outer enclosing function (even when that enclosing
+        function has finished executing). This is caused by a function's
+        <defn>lexical environment</defn> (a mapping of identifiers to
+        variables... which is based on where a function is defined, regardless
+        of where it is called.)
+      </p>
+      <p>We would use a <defn>closure</defn> for:</p>
+      <ul>
+        <li><p>
+          <defn>Currying</defn> or <defn>partial applications</defn>.
+        </p></li>
+        <li><p>
+          <defn>Data privacy</defn> (the whole idea of <defn>private methods
+          </defn>, <defn>getters</defn>, and <defn>setters</defn>.)
+        </p></li>
+      </ul>
+      <p>
+        <defn>Closures</defn> are used in the <defn>module pattern</defn>
+        (having an object, where some of the values are functions, and those
+        functions use other values in the object).
+      </p>
+      <pre class="language-javascript"><code>var module = &#123;
+  myProperty: "value",
+  myGetter: function() &#123;
+    return this.myProperty;
+  &#125;
+&#125;</code></pre>
+      <hr>
+      <h3>
+        8. Can you describe the main difference between a <code>.forEach</code>
+        loop, and a <code>.map</code> loop, and why you pick one versus the
+        other?
+      </h3>
+      <p>What <code>.forEach</code> does:</p>
+      <ul>
+        <li><p>
+          <defn>Iterates</defn> through each element in the array.
+        </p></li>
+        <li><p>
+          And executes a <defn>callback</defn> for each element.
+        </p></li>
+        <li><p>
+          But it <defn>doesn't return</defn> a value!
+        </p></li>
+      </ul>
+      <p>What <code>.map</code> does:</p>
+      <ul>
+        <li><p>
+          <defn>Iterates</defn> through each element in the array.
+        </p></li>
+        <li><p>
+          And executes a <defn>callback</defn> for each element.
+        </p></li>
+        <li><p>
+          Where the <defn>returned value</defn> from the <defn>callback</defn>
+          is <defn>mapped</defn> to a new array.
+        </p></li>
+        <li><p>
+          This new array is returned (original array is not mutated.)
+        </p></li>
+      </ul>
+      <p>
+        Main difference? <code>.map</code> returns a new array, whereas
+        <code>.forEach</code> does not. <code>.map</code> is useful for when
+        you want to perform calculations on an array and get the result, but not
+        mutate it. Otherwise, <code>.forEach</code> is a generic iterato when
+        no other array helpers fit the job.
+      </p>
     </div>
   </div>
 </div>
