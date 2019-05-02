@@ -110,6 +110,88 @@ newFunction(); // hello</code></pre>
         </code>, the binding of <code>this</code> and providing is done within
         the same (single) call.
       </p>
+      <hr>
+      <h3>
+        15. When would you use <code class="language-javascript">document.write()
+        </code>?
+      </h3>
+      <p>
+        <code class="language-javascript">document.write()</code> writes a
+        string of text to a stream that was opened by
+        <code class="language-javascript">document.open()</code>. When
+        <code class="language-javascript">document.write()</code> is executed
+        after a web-page is loaded, then it'll call
+        <code class="language-javascript">document.open()</code>, which will
+        clear the entire doucment (including <code>head</code> and
+        <code>body</code>). The contents get replaced with what's provided
+        as arguments.
+      </p>
+      <p>
+        Thus, this practice should be avoided, and not used in general.
+      </p>
+      <hr>
+      <h3>
+        16. What's the difference between <defn>feature detection</defn>, <defn>
+        feature inference</defn>, and using the <defn>UA string</defn>?
+      </h3>
+      <p>
+        <defn>Feature detection</defn>: checking for the condition that a
+        browser supports a specific feature, before executing a block of code
+        using that feature. If some feature is not supported, then execute
+        another block of code as a work-around.
+      </p>
+      <pre class="language-javascript"><code>if ('geolocation' in navigator) &#123;
+  // block of code using geolocation
+&#125; else &#123;
+  // workaround
+&#125;</code></pre>
+      <p>
+        <defn>Feature inference</defn>: also checks for a feature (similarly to
+        <defn>feature detection</defn>). Upon verifying a feature is supported,
+        it executes a block of code that uses a different feature, which is
+        assumed t be supported as consequence. This is not recommended because
+        it isn't foolproof.
+      </p>
+      <p>
+        <defn>UA String</defn>: a string that is reported by the browser,
+        allowing <defn>network protocol peers</defn> to identify: the
+        <defn>application type</defn>, <defn>operating system</defn>,
+        <defn>software vendor/version</defn> of the requesting user agent.
+        It is accessed via
+        <code class="language-javascript">navigator.userAgent</code>
+      </p>
+      <p>
+        This string is not easy parsed, and can be falsified (Chrome reports as
+        both Chrome and Safari.) This method should be avoided.
+      </p>
+      <hr>
+      <h3>
+        17. Explain <defn>Ajax</defn> in as much detail as possible.
+      </h3>
+      <p>
+        <defn>AJAX</defn>: stands for <defn>Asynchronous JavaSciprt and XML
+        </defn>.
+      </p>
+      <p>
+        It is a set of <defn>web development techniques</defn> that relies on
+        web technologies on the <defn>client side</defn>, to make <defn>
+        asynchronous</defn> web applications.
+      </p>
+      <p>
+        The main idea is that web-apps can <defn>send and retrieve data</defn>
+        to and from the server, and do so <defn>asynchronously</defn> (read:
+        in the background), not interfering with the user experience of the
+        displayed page.
+      </p>
+      <p>
+        <defn>Ajax</defn> separates the <defn>data interchange layer</defn> and
+        the <defn>presentation layer</defn>. This allows for dynamic pages
+        (changing without reloading/refreshing entire page).
+      </p>
+      <p>
+        Modern implementations normally use <defn>JSON</defn> instead of
+        <defn>XML</defn>, because it is native to JavaScript.
+      </p>
     </div>
   </div>
 </div>
