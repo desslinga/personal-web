@@ -1,0 +1,66 @@
+<div class="blog">
+  <div class="row">
+    <div class="col-12">
+      <h3>Questions 11-20</h3>
+    </div>
+    <div class="col-12">
+      <h3>
+        11. What's the difference between <defn>host objects</defn> and
+        <defn>native objects</defn>?
+      </h3>
+      <p>
+        <defn>Native objects</defn>: are <defn>ECMAScript</defn>
+        implementations. How they work (semantics) is defined by the spec,
+        rather than the host environment.
+      </p>
+      <p>
+        Examples: <code>Object</code>, <code>Date</code>, <code>parseInt</code>,
+        <code>indexOf</code>, and <code>replace</code>.
+      </p>
+      <p>
+        <defn>Host objects</defn>: are objects supplied by the host
+        environment, which help with the execution.
+      </p>
+      <p>
+        Examples: (assuming browser environment) <code>window</code>,
+        <code>history</code>, <code>document</code>, <code>querySelector</code>.
+      </p>
+      <hr>
+      <h3>
+        12. What's the difference between: <code class="language-javascript">
+        function Person() &#123;&#125;</code>,
+        <code class="language-javascript"> var person = Person()</code>, and
+        <code class="language-javascript">var person = new Person()</code>?
+      </h3>
+      <p>This questions is about how constructors work in JavaScript.</p>
+      <ul>
+        <li><p>
+          <code class="language-javascript">function() &#123;&#125;</code>
+          is simply a <defn>function declaration</defn>. It is written in
+          <defn>PascalCase</defn>, which is convention for constructor names.
+        </p></li>
+        <li><p>
+          <code class="language-javascript">var person = Person()</code> calls
+          the <code class="language-javascript">Person()</code> as a function
+          and assigns its return value to te <code>person</code> variable.
+          It doesn't call <code class="language-javascript">Person()</code> as
+          a constructor.
+        </p></li>
+        <li><p>
+          <code class="language-javascript">var person = new Person()</code>
+          creates a new instance of the <code>Person</code> object, and assigns
+          it to the <code>person</code> variable. This is the effect of the
+          <code>new</code> operator. The new instance of <code>Person</code>
+          inherits from <code>Person.prototype</code>.
+        </p></li>
+      </ul>
+      <pre><code class="language-javascript">function Person(name) &#123;
+  this.name = name;
+&#125;
+// this does NOT invoke a constructor:
+var person = Person('John'); // person is undefined!
+// this invokes a constructor:
+var person = new Person('John');</code></pre>
+    </div>
+  </div>
+</div>
