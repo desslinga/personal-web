@@ -61,6 +61,55 @@
 var person = Person('John'); // person is undefined!
 // this invokes a constructor:
 var person = new Person('John');</code></pre>
+      <hr>
+      <h3>
+        13. What's the difference between <code>.call()</code> and <code>.apply()
+        </code>?
+      </h3>
+      <p>
+        Both <code>.call()</code> and <code>.apply()</code> are used to call
+        functions, where the first argument will be used as the value of
+        <code>this</code> inside the function.
+      </p>
+      <p>The difference is how they take the rest of the arguments:</p>
+      <ul>
+        <li><p>
+          <code>.call()</code> takes them as comma-separated values.
+        </p></li>
+        <li><p>
+          <code>.apply()</code> takes them as an array of comma-separated
+          values.
+        </p></li>
+      </ul>
+      <pre class="language-javascript"><code>function add(a, b) &#123;
+  return a + b;
+&#125;
+add.call(null, 1, 2); // 3
+add.apply(null, [1, 2]); // 3</code></pre>
+      <h3>
+        14. Explain <code class="language-javascript">Function.prototype.bind
+        </code>.
+      </h3>
+      <p>
+        The <code>bind()</code> method creates and returns a new function such
+        that, when it is invoked, the value of <code>this</code> inside the
+        function is set to provided argument.
+      </p>
+      <pre class="language-javascript"><code>define myFunction() &#123;&#125;
+  console.log(this.value);
+&#125;
+var obj = &#123;
+  value: 'hello';
+&#125;
+var newFunction = myFunction.bind(obj);
+newFunction(); // hello</code></pre>
+      <p>
+        It is different from <code>.call()</code> and <code>.apply()</code>
+        because <code>.bind()</code> creates a new function, with the same
+        parameters as the original. With <code>.call()</code> and <code>.apply()
+        </code>, the binding of <code>this</code> and providing is done within
+        the same (single) call.
+      </p>
     </div>
   </div>
 </div>
