@@ -1,78 +1,113 @@
 <div class='blog'>
   <div class="row">
     <div class="col-12">
-      <h3>1. What does a DOCTYPE do?</h3>
-      <p>Short form of 'Document Type,' it specifies which <defn>
-        Document Type Definition (DTD)</defn> should be followed.</p>
-      <p>For the case of web-pages, you can specify which HTML version
-        the document follows. To specify that an html file respects HTML5
-        standards, we declare <loc>&lt;!DOCTYPE html&gt;</loc>. If the DOCTYPE
-        is not
-        specified, then quirks mode will be triggered. In quirks mode, content
-        may display in unexpected ways. If it is specified, then no-quirks mode
-        is activated.</p>
+      <h3>
+        1. What does a <defn>DOCTYPE</defn> do?
+      </h3>
+      <p>
+        Short form of <defn>Document Type</defn>, it specifies which <defn>
+        Document Type Definition (DTD)</defn> should be followed.
+      </p>
+      <p>
+        For the case of web-pages, you can specify which <defn>HTML version
+        </defn> the document follows. To specify that an html file respects
+        <defn>HTML5 standards</defn>, we declare <code class="language-html">
+        &lt;!DOCTYPE html&gt;</code>. If the <defn>DOCTYPE</defn> is not
+        specified, then <defn>quirks mode</defn> will be triggered. In
+        <defn>quirks mode</defn>, content may display in unexpected ways. If
+        it is specified, then <defn>no-quirks mode</defn> is activated.
+      </p>
       <hr>
-      <h3>2. How do you serve a page with content in multiple languages?</h3>
-      <p>When an HTTP request is sent to a server, the request usually contains
-        info about language preferences (Accept-Language header). The server
-        uses this information to return a version of the HTML document to match
-        the language needed. Usually, the html will have an attribute lang.
-        E.g. <loc>&lt;html lang="en"&gt;&lt;/html&gt;</loc></p>
+      <h3>
+        2. How do you serve a page with content in
+        <defn>multiple languages</defn>?
+      </h3>
+      <p>
+        When an <defn>HTTP request</defn> is sent to a server, the request
+        usually contains info about language preferences, like the
+        <code>Accept-Language</code> header. The server uses this information
+        to return a version of the HTML document to match the language needed.
+        Usually, the html will have an attribute <code>lang</code>.
+        E.g. <code class="language-html">&lt;html lang="en"&gt;&lt;/html&gt;
+        </code>
+      </p>
       <hr>
-      <h3>3. What kind of things must you be wary of when designing/developing
-        for multilingual sites?</h3>
+      <h3>
+        3. What kind of things must you be wary of when designing/developing
+        for <defn>multilingual</defn> sites?
+      </h3>
       <p>Some things that should be kept in mind:</p>
       <ol>
-        <li><p>Using lang attribute in HTML, to specify language.</p></li>
-        <li><p>UX: Allow users to easily change into their native language,
-          possibly by modal.</p></li>
-        <li><p>Text in images are NOT scalable.</p></li>
-        <li><p>Sentence length: some sentences are much longer in some
-          languages than others.</p></li>
-        <li><p>Date and currency formatting are different for some
-          countries/langues.</p></li>
-        <li><p>Text reading direction: some are right-to-left, and others
-          are left-to-right.</p></li>
+        <li><p>
+          Using <code>lang</code> attribute in HTML, to specify language.
+        </p></li>
+        <li><p>
+          UX: Allow users to easily change into their  <defn>native language
+          </defn>, possibly by modal.
+        </p></li>
+        <li><p>
+          <defn>Text in images</defn> are NOT scalable.
+        </p></li>
+        <li><p>
+          <defn>Sentence length</defn>: some sentences are much longer in some
+          languages than others.
+        </p></li>
+        <li><p>
+          <defn>Date</defn> and <defn>currency formatting</defn> are different
+          for some countries/langues.
+        </p></li>
+        <li><p>
+          <defn>Text reading direction</defn>: some are right-to-left, and
+          others are left-to-right.
+        </p></li>
       </ol>
       <hr>
-      <h3>4. What are data- attributes good for?</h3>
-      <p>A method of storing extra data before JavaScript frameworks became
-        more mainstream. Using data- attributes allowed to store data in the
-        DOM itself. It is not recommended because users can simply change
-        these attributes via inspect element.</p>
+      <h3>
+        4. What are <code>data-</code> attributes good for?
+      </h3>
+      <p>
+        A method of storing <defn>extra data</defn> before JavaScript frameworks
+        became more mainstream. Using <code>data-</code> attributes allowed to
+        store data in the DOM itself. It is <defn>not recommended</defn> because
+        users can simply change these attributes via <defn>inspect
+        element</defn>.
+      </p>
       <hr>
-      <h3>5. Consider HTML5 as an open web platform. What are the building blocks
-        of HTML5?</h3>
+      <h3>
+        5. Consider <defn>HTML5</defn> as an open web platform. What are the
+        <defn>building blocks</defn> of <defn>HTML5</defn>?</h3>
       <p>New and important stuff in HTML5:</p>
       <ol>
         <li><p>
           <defn>Semantics</defn>: more specific ways to define content. New
-          tags such as <loc>&lt;footer&gt;</loc> and <loc>&lt;aside&gt;</loc>
-          to better describe content.
+          tags such as <code class="language-html">&lt;footer&gt;</code> and
+          <code class="language-html">&lt;aside&gt;</code> to better describe
+          content.
         </p></li>
         <li><p>
           <defn>Connectivity</defn>: new ways to communicate with server.
-          Web sockets, server-sent events (as compared to client having to
-          send data first).
+          <defn>Web sockets</defn>, <defn>server-sent events</defn> (as
+          compared to client having to send data first).
         </p></li>
         <li><p>
           <defn>Offline and Storage</defn>: webpages can now store client-side
-          data more efficiently. Multimedia: video and audio now have their
-          own tags. Thus can operate offline better.
-        <p></li>
+          data more efficiently. <defn>Multimedia</defn>: video and audio now
+          have their own tags. Thus can operate <defn>offline</defn> better.
+        </p></li>
         <li><p>
           <defn>2D-3D graphics/effects</defn>: more diverse presentation.
           Canvas, SVG, WebGL.
-        <p></li>
+        </p></li>
         <li><p>
           <defn>Performance and Integration</defn>: for better speed and
-          optimization. Web workers for background threads (!). History API,
-          manipulating browser history.
-        <p></li>
+          optimization. Web workers for background threads (!). <defn>History
+          API</defn>, for manipulating browser history.
+        </p></li>
         <li><p>
-          <defn>Device Access</defn>: More options for input and output. Styling: extension
-          of CSS to CSS3. Touch events, camera API, device orientation.
-        <p></li>
+          <defn>Device Access</defn>: More options for input and output.
+          <defn>Styling</defn>: extension of CSS to CSS3. Touch events,
+          camera API, device orientation.
+        </p></li>
       </ol>
       <hr>
       <h3>6. Describe the difference between a <defn>cookie</defn>,
@@ -83,69 +118,87 @@
         objects).
       </p>
       <p>
-        <defn>cookie</defn>: Client or server can initiate storage. Servers must
-        use 'Set-Cookie' header. Data expiry is set by initiator, and can be set
-        to persist across browser sessions (or otherwise). Cookies are sent to
-        server with every HTTP request, with a 'Cookie' header. They can hold
-        4kb per domain, and are accessible by any window.
+        <defn>cookie</defn>: <defn>Client or server</defn> can initiate storage.
+        Servers must use <code>Set-Cookie</code> header. Data expiry is <defn>
+        set by initiator</defn>, and can be set to persist across browser
+        sessions (or otherwise). Cookies are sent to server with every HTTP
+        request, with a <code>Cookie</code> header. They can hold<defn>4kb per
+        domain</defn>, and are accessible by <defn>any window</defn>.
       </p>
       <p>
         <defn>localStorage</defn> and <defn>sessionStorage</defn> similarities:
-        Initiated on the client side. Data stored in either are not sent to
-        server with every HTTP request. They both store 5 MB per domain.
+        Initiated on the <defn>client</defn> side. Data stored in either are
+        not sent to server with every HTTP request. They both store
+        <defn>5 MB per domain</defn>.
       </p>
       <p>
-        <defn>localStorage</defn>: Once set, lasts forever (until removed by
-        user or some application), thus it is persistent across browser sessions.
-        It is accessible by any window.
+        <defn>localStorage</defn>: Once set, <defn>lasts forever</defn> (until
+        removed by user or some application), thus it is <defn>persistent</defn>
+        across browser sessions. It is accessible by <defn>any window</defn>.
       </p>
       <p>
-        <defn>sessionStorage</defn>: Once set, lasts until tab closes. Data
-        doesn't persist across browser sessions, and is only accessible by the
-        same tab in a window.
+        <defn>sessionStorage</defn>: Once set, lasts until <defn>tab
+        closes</defn>. Data doesn't persist across browser sessions, and is
+        only accessible by the <defn>same tab</defn> in a window.
       </p>
       <hr>
-      <h3> 7. Describe the difference between <loc>&lt;script&gt;</loc>,
-        <loc>&lt;script async&gt;</loc> and <loc>&lt;script defer&gt;</loc></h3>
-      <p><loc>&lt;script&gt;</loc> : HTML parsing is blocked and the script is
-        downloaded. The script must finish downloading before parsing resumes.
+      <h3>
+        7. Describe the difference between <code class="language-html">
+        &lt;script&gt;</code>, <code class="language-html">&lt;script async&gt;
+        </code> and <code class="language-html">&lt;script defer&gt;</code>
+      </h3>
+      <p>
+        <code class="language-html">&lt;script&gt;</code> : HTML parsing is
+        <defn>blocked</defn> and the script is <defn>downloaded</defn>. The
+        script must finish downloading before parsing resumes.
       </p>
       <p>
-        <loc>&lt;script async&gt;</loc> : HTML keeps parsing, and script is
-        downloaded in parallel. The script is executed once it is available.
-        It is a good idea to use this when the script is independent of other
-        scripts, or the DOM.
+        <code class="language-html">&lt;script async&gt;</code> : HTML <defn>
+        keeps parsing</defn>, and script is <defn>downloaded in parallel</defn>.
+        The script is executed once it is <defn>available</defn>. It is a good
+        idea to use this when the script is <defn>independent</defn> of
+        other scripts, or the DOM.
       </p>
       <p>
-        <loc>&lt;script defer&gt;</loc> : HTML keeps parsing, and script is
-        downloaded in parallel. The script is executed once HTML is done parsing.
-        It is a good idea to use this when script relies on DOM.
+        <code class="language-html">&lt;script defer&gt;</code> : HTML <defn>
+        keeps parsing</defn>, and script is <defn>downloaded in parallel</defn>.
+        The script is executed once HTML is <defn>done parsing</defn>. It is a
+        good idea to use this when script relies on DOM.
       </p>
       <hr>
-      <h3>8. Why is it good to position CSS <loc>&lt;link&gt;</loc> between
-        <loc>&lt;head&gt;&lt;/head &gt;</loc> tags, and JS
-        <loc>&lt;script &gt;</loc> just before <loc>&lt;/body&gt;</loc> ?
+      <h3>
+        8. Why is it good to position CSS <code class="language-html">
+        &lt;link&gt;</code> between <code class="language-html">
+        &lt;head&gt;&lt;/head &gt;</code> tags, and JS
+        <code class="language-html">&lt;script &gt;</code> just before
+        <code class="language-html">&lt;/body&gt;</code>?
         Any exceptions?</h3>
       <p>
-        CSS : When placing <loc>&lt;link&gt;</loc> inside the
-        <loc>&lt;head&gt;&lt;/head&gt;</loc> tags, then the HTML and CSS are
-        being parsed simultaneously. Both the DOM and CSSOM are created, and
-        used to create the website visuals. It also allows for progressive
-        rendering. If the CSS link is placed at the bottom, the styles are
-        parsed after the HTML is... which will prevent <defn> progressive
-        rendering</defn> in many browsers. This is because browsers block
-        rendering so as to not have to restyle elements as their styles change.
+        CSS : When placing <code class="language-html">&lt;link&gt;</code>
+        inside the <code class="language-html">&lt;head&gt;&lt;/head&gt;</code>
+        tags, then the HTML and CSS are being <defn>parsed simultaneously</defn>.
+        Both the <defn>DOM</defn> and <defn>CSSOM</defn> are created, and
+        used to create the website visuals. It also allows for <defn>progressive
+        rendering</defn>. If the CSS link is placed at the bottom, the
+        styles are <defn>parsed after</defn> the HTML is... which will prevent
+        <defn>progressive rendering</defn> in many browsers. This is because
+        browsers block rendering so as to not have to restyle elements as
+        their styles change.
       </p>
       <p>
-        SCRIPT : Using just <loc>&lt;script&gt;</loc> halts HTML parsing until
-        the script has been downloaded. This means users have to wait
+        SCRIPT : Using just <code class="language-html">&lt;script&gt;</code>
+        <defn> halts HTML parsing</defn> until the script has been
+        <defn>downloaded</defn>. This means users have to wait
         (not good), so the solution is to load scripts after HTML is parsed,
-        before the ending <loc>&lt;/body&gt;</loc> tag. Using
-        <loc>&lt;script defer&gt;</loc> in the head is better and achieves the
-        same effect, but there are a few browsers that don't support it.
+        before the ending <code class="language-html">&lt;/body&gt;</code> tag.
+        Using <code class="language-html">&lt;script defer&gt;</code> in the
+        <code class="language-html">&lt;head&gt;</code> is better and achieves
+        the same effect, but there are a few browsers that don't support it.
       </p>
       <hr>
-      <h3>9. What is <defn>progressive rendering</defn>?</h3>
+      <h3>
+        9. What is <defn>progressive rendering</defn>?
+      </h3>
       <p>
         <defn>Progressive rendering</defn> is are the sets of techniques to
         render content for display as fast as possible. This is to improve
@@ -157,35 +210,41 @@
           about to be displayed.
         </p></li>
         <li><p>
-        <defn>Above-the-fold Rendering</defn>: prioritize rendering content
-        that is going to be visible immediately. Other content can be rendered
-        after, or later.
+          <defn>Above-the-fold Rendering</defn>: prioritize rendering content
+          that is going to be visible immediately. Other content can be rendered
+          after, or later.
         </p></li>
         <li><p>
-        <defn>Async HTML fragments</defn>: Rendering HTML elements to the
-        browser, while the page is made in the back-end.
+          <defn>Async HTML fragments</defn>: Rendering HTML elements to the
+          browser, while the page is made in the back-end.
         </p></li>
       </ol>
       <hr>
-      <h3>10. Why would you use a <defn>srcset</defn> attribute in an image tag?
-        Explain how the browser evaluates the content of this attribute.</h3>
-      <p>Using srcset is for when we want to use differently sizes images
+      <h3>
+        10. Why would you use a <code>srcset</code> attribute in an image tag?
+        Explain how the browser evaluates the content of this attribute.
+      </h3>
+      <p>
+        Using <code>srcset</code> is for when we want to use differently sizes images
         depending on the user's device width. We display higher resolution
-        images for higher resolution displays, and otherwise.</p>
-      <p>Use it like so:
-        <br>
-        <loc>&lt;img srcset="small.png 500w, medium.png 1000w, large.png 2000w" src="..."&gt;</loc>
+        images for higher resolution displays, and otherwise.
       </p>
       <p>
-        Where the number beside 'w' denotes the width of that image in pixels.
-        Then for device width of 400px, srcset makes these calculations:
-        <br>
+         Use it like so: <code class="language-html"> &lt;img srcset="small.png
+         500w, medium.png 1000w, large.png 2000w" src="..."&gt;</code>
+      </p>
+      <p>
+        Where the number beside <code>w</code> denotes the width of that image
+        in pixels. Then for device width of 400px, srcset makes these
+        calculations:
+      </p>
+      <p><defn>
         500/400 = 1.25
         <br>
         1000/400 = 2.5
         <br>
         2000/400 = 5
-      </p>
+      </defn></p>
       <p>
         And it chooses the image for which the evaluated number is closest to 1.
         That would be small.png with 1.25 for this case.
