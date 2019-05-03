@@ -64,6 +64,50 @@ var moo = function() &#123;
   console.log("MOOO");
 &#125;
 console.log(moo); // [Function: moo]</code></pre>
+      <hr>
+      <h3>
+        22. Describe <defn>event bubbling</defn>.
+      </h3>
+      <p>When an event is triggered in some DOM element, it will look for an
+      <defn>event handler</defn> to handle it. If there is no <defn>event
+      handler</defn> within the element where it was invoked, then the event
+      <defn>bubbles</defn> up to its parent, and attempt to be handled there.
+      It continues this process (may be all the way up to the <code>document
+      </code> until the event has been handled.</p>
+      <hr>
+      <h3>
+        23. What's the difference between an <defn>attribute</defn>, and a
+        <defn>property</defn>?
+      </h3>
+      <p>
+        <defn>Attributes</defn>: are defined on the <defn>HTML markup</defn>
+        (whatever is defined initially by the developer).
+      </p>
+      <p>
+        <defn>Properties</defn>: are defined on the <defn>DOM</defn>. It can be
+        changed programatically or by user input.
+      </p>
+      <p>
+        For example, say we have a text input: <code class="language-html">
+        &lt;input type="text" value="Hello"&gt;</code>.
+      </p>
+      <pre class="language-javascript"><code>const input = document.querySelector('input');
+console.log(input.getAttribute('value')); // Hello
+console.log(input.value); // Hello</code></pre>
+      <p>
+        First we get the <defn>attribute</defn> via
+        <code class="language-javascript">input.getAttribute('value')</code>,
+        then we get the <defn>property</defn> value via
+        <code class="language-javascript">input.value</code>. If some user
+        changes the text in the input field to "Hello World!" then we get:
+      </p>
+      <pre class="language-javascript"><code>console.log(input.getAttribute('value')) // Hello
+console.log(input.value); // Hello World!</code></pre>
+      <p>
+        The <defn>attribute</defn> remains the same as we've defined in in
+        the <defn>HTML markup</defn>, but the <defn>property</defn> value
+        changes via user input.
+      </p>
     </div>
   </div>
 </div>
