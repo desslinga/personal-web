@@ -352,20 +352,37 @@ obj.fn(); // &#123; value: 'hello', fn: f &#125;</code></pre>
         You may want to use <defn>anonymous functions</defn> when...
       </p>
       <ul>
-        <li><p>
-          You want to use an <defn>IIFE (Immediately Invoked Function
-          Expression)</defn> so that variables declared inside it are not
-          accessible outside the scope.
-        </p></li>
-        <li><p>
-          Creating a <defn>callback</defn> that is only used once, thus not
-          needing to be named and reused elsewhere. This makes them more
-          readable too.
-        </p></li>
-        <li><p>
-          As above: a <defn>callback</defn> to functional programming
-          constructs (like <code>.map</code>, <code>.forEach</code>).
-        </p></li>
+        <li>
+          <p>
+            You want to use an <defn>IIFE (Immediately Invoked Function
+            Expression)</defn> so that variables declared inside it are not
+            accessible outside the scope.
+          </p>
+          <pre class="language-javascript"><code>(function() &#123;
+  // code you want to run
+&#125;)(); // function called immediately !</code></pre>
+        </li>
+        <li>
+          <p>
+            Creating a <defn>callback</defn> that is only used once, thus not
+            needing to be named and reused elsewhere. This makes them more
+            readable too.
+          </p>
+          <pre class="language-javascript"><code>setTimeout(function() &#123;
+  console.log('i am in a callback!');
+&#125;, 1000);</code></pre>
+        </li>
+        <li>
+          <p>
+            As above: a <defn>callback</defn> to functional programming
+            constructs (like <code>.map</code>, <code>.forEach</code>).
+          </p>
+          <pre class="language-javascript"><code>const nums = [1, 2, 3];
+const doubledNums = nums.map(function(num) &#123;
+  return num * 2;
+&#125;);
+console.log(doubledNums); // [2, 4, 6]</code></pre>
+        </li>
       </ul>
       <hr>
       <h3>

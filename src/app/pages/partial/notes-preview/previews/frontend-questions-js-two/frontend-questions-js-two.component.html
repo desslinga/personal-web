@@ -152,6 +152,15 @@ newFunction(); // hello</code></pre>
         assumed t be supported as consequence. This is not recommended because
         it isn't foolproof.
       </p>
+      <pre class="language-javascript"><code>if (document.getElementsByTagName) &#123;
+  element = document.getElementById(id);
+&#125;</code></pre>
+      <p>
+        In the above example, it is assumed that
+        <code class="language-javascript">document.getElementById()</code> will
+        work, if <code class="language-javascript">
+        document.getElementsByTagName</code> works.
+      </p>
       <p>
         <defn>UA String</defn>: a string that is reported by the browser,
         allowing <defn>network protocol peers</defn> to identify: the
@@ -233,6 +242,60 @@ newFunction(); // hello</code></pre>
           <defn>SPA Disadvantages</defn>
         </p></li>
       </ul>
+      <hr>
+      <h3>
+        19. Explain how <defn>JSONP</defn> works (and how it's not really
+        <defn>Ajax</defn>).
+      </h3>
+      <p>
+        <defn>JSONP: JSON with Padding.</defn>
+      </p>
+      <p>
+        This is a method used to bypass <defn>cross-domain restrictions</defn>
+        in browsers. <defn>Ajax</defn> requests that are made to <defn>
+        cross-origin</defn> domains are not allowed.
+      </p>
+      <p>How it works:</p>
+      <ul>
+        <li>
+          <p>
+            <defn>JSONP</defn> makes a request to a <defn>cross-origin</defn>
+            domain via a <code>&lt;script&gt;</code> tag, and (usually) a
+            <code>callback</code> parameter.
+          </p>
+          <p>
+            Example: <code>https://othersite.com?callback=showData</code>
+          </p>
+        </li>
+        <li>
+          <p>
+            The server will wrap the data in the <code>callback</code> function
+            that was specified, and return it to the client.
+          </p>
+          <p>
+            Like so: <code class="language-javascript">
+            showData(&#123; name: 'Fides' &#125;)</code>, where
+            <code class="language-javascript">&#123; name: 'Fides' &#125;</code>
+            is the data from the server.
+          </p>
+        </li>
+        <li>
+          <p>
+            When the wrapped function is recieved, then it will be executed
+            by the client (the <code>callback</code> function must be
+            in the global scope!).
+          </p>
+        </li>
+      </ul>
+      <p>
+        Should we use it? <defn>JSONP</defn> has security implications.
+        <defn>JSONP</defn> is JavaScript, so you must trust the provider
+        (server) of that data.
+      </p>
+      <p>
+        Alternatives: <defn>CORS</defn> (the recommended approach for
+        cross-origin requests.)
+      </p>
     </div>
   </div>
 </div>
