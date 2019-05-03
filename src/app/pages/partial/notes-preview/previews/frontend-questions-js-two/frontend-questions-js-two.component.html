@@ -296,6 +296,25 @@ newFunction(); // hello</code></pre>
         Alternatives: <defn>CORS</defn> (the recommended approach for
         cross-origin requests.)
       </p>
+      <hr>
+      <h3>
+        20. Have you ever used JavaScript <defn>templating</defn>? If so, what
+        libraries have you used?
+      </h3>
+      <p>
+        Personally, I've used <defn>Angular/AngularJS</defn>, and
+        <defn>JSX</defn>. <defn>Angular/AngularJS</defn> templating makes heavy
+        use of strings in their <defn>directives</defn>, and sometimes typos
+        can go uncaught. On the other hand, <defn>JSX</defn> is closer to
+        JavaScript (because it is technically JavaScript), and it uses object
+        syntax <code>&#123; &#125;</code> for attribute values, leading to
+        less uncaught errors.
+      </p>
+      <p>
+        Some templating can even be done in native JavaScript with <defn>ES2015
+        </defn>, via <defn>template string literals</defn>.
+      </p>
+      <pre class="language-javascript"><code>const template = `&lt;div&gt;Hi, I'm $&#123;name&#125;&lt;div&gt;`;</code></pre>
     </div>
   </div>
 </div>
