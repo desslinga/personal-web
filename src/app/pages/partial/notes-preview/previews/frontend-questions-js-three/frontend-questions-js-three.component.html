@@ -1,0 +1,69 @@
+<div class="blog">
+  <div class="row">
+    <div class="col-12">
+      <h3>Questions 21-30</h3>
+    </div>
+    <div class="col-12">
+      <h3>
+        21. Explain <defn>hoisting</defn>.
+      </h3>
+      <p>
+        <defn>Hoisting</defn> describes the behaviour of <defn>variable
+        declarations</defn>. Variables that have been declared with keywords:
+        <code>var</code>, <code>let</code>, and <code>const</code> are
+        moved to the top of it's containing <defn>scope</defn> (read:
+        <defn>hoisting</defn>.)
+      </p>
+      <p>
+        Variables declared with <code>var</code> are <defn>hoisted</defn>, and
+        <defn>initialized</defn>. This means that when accessing it's value
+        before it has been assigned one, it will return as
+        <code>undefined</code>.
+      </p>
+      <pre class="language-javascript"><code>console.log(fruit); // undefined
+var fruit = 'Apple';
+console.log(fruit); // Apple</code></pre>
+      <p>
+        Variables declared with <code>let</code> and <code>const</code> are also
+        <defn>hoisted</defn>. But they are not <defn>initialized</defn>. This
+        means that when accessing it's value before it has been assigned one,
+        it will throw a <code>ReferenceError</code>.
+      </p>
+      <pre class="language-javascript"><code>console.log(fruit); // ReferenceError: fruit is not defined
+let fruit = 'Apple';
+console.log(fruit); // Apple</code></pre>
+      <p>
+        For all three types, the only the <defn>declaration</defn> is moved.
+        The <defn>assignment</defn> of a value stays where it was placed.
+      </p>
+      <pre class="language-javascript"><code>console.log(name); // undefined
+var name = 'Fides';
+console.log(name); // Fides</code></pre>
+      <p>becomes:</p>
+      <pre class="language-javascript"><code>var name; // undefined
+console.log(name); // undefined
+name = 'Fides';
+console.log(name); // Fides</code></pre>
+      <p>
+        <defn>Function declarations</defn> also get <defn>hoisted</defn> with
+        the entire body of the function.
+      </p>
+      <pre class="language-javascript"><code>console.log(moo); // [Function: moo]
+moo(); // MOOO
+function moo() &#123;
+  console.log("MOOO");
+&#125;
+console.log(moo); // [Function: moo]</code></pre>
+      <p>
+        On the other hand, <defn>function expressions</defn>, only get the
+        <defn>variable declaration hoisted</defn>.
+      </p>
+      <pre class="language-javascript"><code>console.log(moo); // undefined
+moo(); // Uncaught TypeError: moo is not a function
+var moo = function() &#123;
+  console.log("MOOO");
+&#125;
+console.log(moo); // [Function: moo]</code></pre>
+    </div>
+  </div>
+</div>

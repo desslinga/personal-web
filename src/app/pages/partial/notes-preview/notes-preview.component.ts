@@ -26,6 +26,7 @@ export class NotesPreviewComponent implements OnInit {
         break;
       case 'frontend-questions-js-one':
       case 'frontend-questions-js-two':
+      case 'frontend-questions-js-three':
         this.title = "Front-end Developer Interview Questions - JavaScript";
         break;
       default:
