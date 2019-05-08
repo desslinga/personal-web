@@ -108,6 +108,42 @@ console.log(input.value); // Hello World!</code></pre>
         the <defn>HTML markup</defn>, but the <defn>property</defn> value
         changes via user input.
       </p>
+      <hr>
+      <h3>
+        24. Why is <defn>extending built-in</defn> JavaScript objects not a
+        good idea?
+      </h3>
+      <p>
+        <defn>Extending</defn> a <defn>built-in/native</defn> JavaScript object
+        refers to adding your own methods and properties to a
+        <code>prototype</code>. It is not a good idea because it can cause
+        conflicts. For example, say we have two libraries that extend
+        <code class="language-javascript">Array.prototype</code>. If we change
+        some function in <code class="language-javascript">Array.prototype
+        </code>, then those two extended implementations may not work as
+        expected, because they could conflict with each other.
+      </p>
+      <p>
+        Is it ever okay to extend these built-in JavaScript objects? Yes, only
+        in <defn>polyfills</defn>, where we want to provide an implementation
+        for some method that may not be supported by an older browser.
+      </p>
+      <hr>
+      <h3>
+        25. What's the difference between the document <code>load</code> event,
+        and the document <code>DOMContentLoaded</code> event?
+      </h3>
+      <p>
+        <code>DOMContentLoaded</code>: an event that is fired when the initial
+        HTML document has been <defn>parsed</defn>. It <defn>doesn't wait</defn>
+        for <defn>resources</defn> loaded by that document, such as stylesheets,
+        images, or subframes.
+      </p>
+      <p>
+        <code>window</code>'s <code>load</code>: an event that is fired when
+        initial HTML document has been <defn>parsed</defn> AND <defn> it's
+        resources</defn> have been downloaded.
+      </p>
     </div>
   </div>
 </div>
