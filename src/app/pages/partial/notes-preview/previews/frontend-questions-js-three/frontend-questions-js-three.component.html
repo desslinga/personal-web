@@ -144,6 +144,54 @@ console.log(input.value); // Hello World!</code></pre>
         initial HTML document has been <defn>parsed</defn> AND <defn> it's
         resources</defn> have been downloaded.
       </p>
+      <hr>
+      <h3>
+        26. What's the difference between <code>==</code> and <code>===</code>?
+      </h3>
+      <p>
+        <code>==</code> : the <defn>abstract equality operator</defn>. It will
+        perform needed <defn>type conversions</defn> prior to testing for
+        equality. Because of this, the following expressions will all
+        return <code>true</code>.
+      </p>
+      <pre class="language-javascript"><code>1 == '1'; // true
+1 == [1]; // true
+1 == true; // true
+0 == ''; // true
+0 == '0'; // true
+5 == '5'; // true
+0 == false; // true</code></pre>
+      <p>
+        <code>===</code> : the <defn>strict equality operator</defn>. It will
+        <defn>not</defn> do any <defn>type conversions</defn> and instead
+        just compare equality on the given expressions.
+      </p>
+      <p>
+        Which should we use? Should avoid using the <code>==</code> operator
+        whenever possible, except for convenience. For example, we can use it
+        to compare an expression against <code>null</code> or
+        <code>undefined</code>.
+      </p>
+      <pre class="language-javascript"><code>var a = null;
+console.log(a == null); // true
+console.log(a == undefined); // true</code></pre>
+      <hr>
+      <h3>
+        27. Explain the <defn>same-origin policy</defn> with regards to
+        JavaScript.
+      </h3>
+      <p>
+        The <defn>same-origin policy</defn> prevents JavaScript from making
+        <defn>cross-origin requests</defn>.
+      </p>
+      <p>
+        <defn>Origin</defn>: a combination of the URI scheme, hostname, and
+        port number.
+      </p>
+      <p>
+        With the <defn>same-origin policy</defn> in place, a malicious script
+        is prevented from accessing another web-page's data through its DOM.
+      </p>
     </div>
   </div>
 </div>
