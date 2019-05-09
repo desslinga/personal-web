@@ -192,6 +192,44 @@ console.log(a == undefined); // true</code></pre>
         With the <defn>same-origin policy</defn> in place, a malicious script
         is prevented from accessing another web-page's data through its DOM.
       </p>
+      <hr>
+      <h3>
+        28. Create a function <defn>duplicate</defn> that works like so:
+        <code class="language-javascript">duplicate([1, 2, 3]); // [1, 2, 3, 1, 2, 3]</code>
+      </h3>
+      <p>
+        There are a few ways to do this, for example:
+      </p>
+      <pre class="language-javascript"><code>function duplicate(arr) &#123;
+  return arr.concat(arr);
+&#125;
+
+// using ES6
+function duplicate(arr) &#123;
+  return [...arr, ...arr];
+&#125;</code></pre>
+      <hr>
+      <h3>
+        29. For <defn>ternary expressions</defn>, what does the word <defn>ternary
+        </defn> indicate?
+      </h3>
+      <p>
+        <defn>Ternary</defn> is an n-ary operation where n = 3. For JavaScript
+        this means it accepts 3 operands: the <defn>test condition</defn>, the
+        <defn>then expression</defn> (if test evaluates to <code>true</code>),
+        and the <defn>else expression</defn> (if test evalutes to <code>false
+        </code>.)
+      </p>
+      <p>
+        In JavaScript, ternary operators evaluate a <defn>test condition</defn>,
+        then returns the result of the <defn>then expression</defn> if it is
+        <code>true</code>, and returns the result of the <defn>else expression
+        </defn> otherwise.
+      </p>
+      <pre class="language-javascript"><code>let x = true;
+(x ? 'hello' : 'goodbye'); // hello
+x = false;
+(x ? 'hello' : 'goodbye'); // goodbye</code></pre>
     </div>
   </div>
 </div>
