@@ -230,6 +230,61 @@ function duplicate(arr) &#123;
 (x ? 'hello' : 'goodbye'); // hello
 x = false;
 (x ? 'hello' : 'goodbye'); // goodbye</code></pre>
+      <hr>
+      <h3>
+        30. What is <code class="language-javascript">"use strict";</code>?
+        What are the advantages and disadvantages to using it?
+      </h3>
+      <p>
+        <code class="language-javascript">"use strict";</code> is used to
+        enable <defn>strict mode</defn>, which is a restricted version of
+        JavaScript.
+      </p>
+      <p>Advantages:</p>
+      <ul>
+        <li><p>
+          Cannot accidentally create <defn>global variables</defn>.
+        </p></li>
+        <li><p>
+          Throw an <defn>exception</defn> for variable assignments that would
+          silently fail otherwise.
+        </p></li>
+        <li><p>
+          Throw an <defn>exception</defn> when there is an attempt to delete
+          an <defn>undeletable propety</defn>.
+        </p></li>
+        <li><p>
+          Function <defn>parameter names</defn> must be <defn>unique</defn>.
+        </p></li>
+        <li><p>
+          In global scope, <code>this</code> is <code>undefined</code>.
+        </p></li>
+        <li><p>
+          Throws <defn>exceptions</defn> for common coding mistakes.
+        </p></li>
+        <li><p>
+          Features that are confusing/badly designed are <defn>disabled</defn>.
+        </p></li>
+      </ul>
+      <p>Disadvantages:</p>
+      <ul>
+        <li><p>
+          Gets rid of features that some developers are used to.
+        </p></li>
+        <li><p>
+          Cannot use <code class="language-javascript">function.caller</code>
+          and <code class="language-javascript">function.arguments</code>.
+        </p></li>
+        <li><p>
+          <defn>Concatenating scripts</defn> which have different <defn>strict
+          modes</defn> may cause some issues.
+        </p></li>
+      </ul>
+      <p>
+        Conclusion? The advantages definitely outweight the disadvatages, and
+        it is worth avoiding the potential problems caused by not using
+        <code class="language-javascript">"use strict";</code>.
+      </p>
     </div>
   </div>
 </div>
