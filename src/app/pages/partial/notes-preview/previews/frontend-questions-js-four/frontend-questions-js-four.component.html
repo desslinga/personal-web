@@ -16,6 +16,39 @@ for (let i = 1; i &lt;= 100; i++) &#123;
   else if (f) console.log("Fizz");
   else if (b) console.log("Buzz");
 &#125;</code></pre>
+      <hr>
+      <h3>
+        32. Why is it, in general, a good idea to leave the <defn>global scope
+        </defn> of a website as-is, and never touch it?
+      </h3>
+      <p>
+        Every script has access to the <defn>global scope</defn>. If any of
+        the variables there are modified, then the multiple scrips that rely
+        on them, may not work as expected. In order to avoid these collissions,
+        variables should be <defn>encapsulated</defn> to a local namespace
+        (<defn>IIFE</defn>s can be used for this.)
+      </p>
+      <hr>
+      <h3>
+        33. Why would you use the <code>load</code> event? Does this event have
+        disadvantages? Do you know any alternatives?
+      </h3>
+      <p>
+        The window <code>load</code> event fires when both the HTML document
+        has <defn>finished parsing</defn>, and its <defn>resources</defn> have
+        <defn>downloaded</defn>. It is ideal to use <code>load</code> when
+        executing a function that needs the HTML document as well as its
+        resources all ready. The disadvantage is that this approach may take
+        longer than necessary.
+      </p>
+      <p>
+        An alternative is using the <code>DOMContentLoaded</code> event, which
+        fires when the HTML document has <defn>finished parsing</defn>. It
+        <defn>doesn't wait</defn> for its resources to finish downloading.
+        Thus, it is ideal to use <code>DOMContentLoaded</code> when executing
+        a function that only needs the HTML document to have finished (not
+        necessarily with its resources.)
+      </p>
     </div>
   </div>
 </div>
