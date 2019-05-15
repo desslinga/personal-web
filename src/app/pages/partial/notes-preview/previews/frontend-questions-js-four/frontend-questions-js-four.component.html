@@ -112,6 +112,39 @@ for (let i = 1; i &lt;= 100; i++) &#123;
           given to web-crawlers.
         </p></li>
       </ul>
+      <hr>
+      <h3>
+        35. What is a <defn>Promise</defn>?
+      </h3>
+      <p>
+        <defn>Promise</defn>: an object that may return a <defn>single value
+        </defn> sometime in the future. At any time, a <defn>promise</defn>
+        is in one of three states:
+      </p>
+      <ul>
+        <li><p>
+          <defn>Fulfilled:</defn> the <defn>promise</defn> has <defn>resolved
+          </defn> to a single, succesful (implied) value.
+        </p></li>
+        <li><p>
+          <defn>Rejected:</defn> the <defn>promise</defn> has <defn>resolved
+          </defn> to a single, failed (implied) value.
+        </p></li>
+        <li><p>
+          <defn>Pending:</defn> the <defn>promise</defn> has not yet been
+          <defn>resolved</defn> (by being <defn>fulfilled</defn> or <defn>
+          rejected</defn>.)
+        </p></li>
+      </ul>
+      <p>
+        We say that a <defn>promise</defn> is <defn>settled (resolved)</defn>
+        if it is <defn>not pending</defn>. Once a <defn>promise</defn> has been
+        <defn>settled</defn>, then it cannot be resettled again.
+      </p>
+      <p>
+        When using a <defn>promise</defn>, one can use a <defn>callback</defn>
+        to handle the fulfilled value (or rejected reason).
+      </p>
     </div>
   </div>
 </div>
