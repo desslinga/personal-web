@@ -49,6 +49,69 @@ for (let i = 1; i &lt;= 100; i++) &#123;
         a function that only needs the HTML document to have finished (not
         necessarily with its resources.)
       </p>
+      <hr>
+      <h3>
+        34. Explain what a <defn>single page app</defn> is and how to make one
+        <defn>SEO-friendly</defn>.
+      </h3>
+      <p>
+        Traditionally (earlier days of web-app development), the browser
+        recieves complete HTML from the server. The browser's only job is to
+        <defn>render</defn> that HTML page. When a user navigates to another
+        url, then a <defn>page refresh</defn> is required, fetching a new
+        HTML page to be re-rendered. This is called <defn>server-side rendering
+        </defn>.
+      </p>
+      <p>
+        When we have <defn>page refreshes</defn>, we don't consider that web-app
+        as a <defn>single page app</defn>. For <defn>SPA</defn>s, we use
+        <defn>client-side rendering</defn>.
+      </p>
+      <p>
+        <defn>Client-side rendering</defn>: browser loads the initial page, and
+        <defn>downloads</defn> all its <defn>scripts and resources</defn>
+        (frameworks, libraries, stylesheets).
+      </p>
+      <p>
+        Whenever new content is to be displayed on the page, we <defn>don't
+        </defn> perform a page refresh. Instead, we use the <defn>History API
+        </defn>, and new data is retrieved from the server via
+        <defn>AJAX</defn>. It is the job of the browser to process and render
+        data from the server, and <defn>dynamically</defn> update the page.
+      </p>
+      <p>Advantages:</p>
+      <ul>
+        <li><p>
+          App feels <defn>responsive</defn> and has a smoother experience.
+        </p></li>
+        <li><p>
+          <defn>Fewer HTTP requests</defn>, because scripts and other resources
+          don't have to be re-downloaded on every page refresh.
+        </p></li>
+        <li><p>
+          <defn>Separation</defn> between <defn>client</defn> and
+          <defn>server</defn>, allowing each to have separate code-bases, and
+          responsibilites.
+        </p></li>
+      </ul>
+      <p>Disadvantages:</p>
+      <ul>
+        <li><p>
+          <defn>Heavier initial page load</defn> because scripts and resources
+          required for future pages are also downloaded.
+        </p></li>
+        <li><p>
+          Requirement to <defn>configure routes</defn> to a single entry point
+          because all routing requests are to be handled by the client.
+        </p></li>
+        <li><p>
+          <defn>Reliance on JavaScript</defn>, because some search engines
+          don't enable JavaScript during <defn>web-crawling</defn>. This
+          will hurt the <defn>SEO</defn> of a page. As a work-around, we can
+          use services that "pre-render" a static version of the site, to be
+          given to web-crawlers.
+        </p></li>
+      </ul>
     </div>
   </div>
 </div>
