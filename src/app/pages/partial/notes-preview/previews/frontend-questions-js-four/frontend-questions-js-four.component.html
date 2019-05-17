@@ -145,6 +145,64 @@ for (let i = 1; i &lt;= 100; i++) &#123;
         When using a <defn>promise</defn>, one can use a <defn>callback</defn>
         to handle the fulfilled value (or rejected reason).
       </p>
+      <hr>
+      <h3>
+        36. What are the pros and cons of using <defn>Promises</defn> instead of
+        <defn>callbacks</defn>?
+      </h3>
+      <p>Pros:</p>
+      <ul>
+        <li><p>
+          Avoiding <defn>callback hell</defn> (unreadable code).
+        </p></li>
+        <li><p>
+          Can <defn>chain sequential asynchronous</defn> code by using the
+          <code class="language-javascript">.then()</code>.
+        </p></li>
+        <li><p>
+          For <defn>parallel asynchronous</defn> code, we can use
+          <code class="language-javascript">Promise.all()</code>.
+        </p></li>
+        <li>
+          <p>
+          The following issues, which happen with callbacks, won't happen:
+          </p>
+          <ul>
+            <li><p>
+              Avoiding <defn>callback hell</defn> (unreadable code).
+            </p></li>
+            <li><p>
+              Callback being called <defn>too early</defn>.
+            </p></li>
+            <li><p>
+              Callback being called <defn>too late</defn> (or <defn>never
+              </defn>.)
+            </p></li>
+            <li><p>
+              Callback being called <defn>too few</defn> or <defn>too many
+              </defn> times.
+            </p></li>
+            <li><p>
+              <defn>Environments/parameters</defn> that the callback needs may
+              not be passed to the callback.
+            </p></li>
+            <li><p>
+              <defn>Errors/exceptions</defn> may be swallowed by callback
+              (not reported.)
+            </p></li>
+          </ul>
+        </li>
+      </ul>
+      <p>Cons:</p>
+      <ul>
+        <li><p>
+          Code is slightly more <defn>complex</defn>.
+        </p></li>
+        <li><p>
+          Older browsers may <defn>not support ES2015</defn> so a <defn>
+          polyfill</defn> would be required.
+        </p></li>
+      </ul>
     </div>
   </div>
 </div>
