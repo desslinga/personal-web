@@ -1,0 +1,56 @@
+//gallery preview styles
+.preview-container {
+  @extend .overflow-scrolling-touch;
+  @extend .font-xs;
+  position: absolute;
+  top: 0; right: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  animation: $a-fade-from-down;
+  overflow-y: scroll;
+  z-index: 7;
+  padding: $container-pad-top-xs 0 $container-pad-top-xs 0;
+  @include sm {
+    padding: $container-pad-top 0 $container-pad-top 0;
+  }
+  & .content {
+    width: 100%;
+    margin: 0 auto;
+  }
+  transition: $fast-ease;
+}
+
+.close-preview {
+  transform: translateY(15px);
+  opacity: 0;
+  transition: $fast-ease;
+}
+
+.preview-title {
+  font-weight: 400;
+  font-size: 27px;
+  width: 80%;
+  word-break: break-word;
+}
+
+.preview-subtitle {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.preview-photo {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.preview-close {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  top: 3px;
+  right: 10px;
+  fill: $brown;
+  height: 27px;
+  width: 27px;
+}
