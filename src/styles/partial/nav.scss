@@ -1,6 +1,6 @@
 .nav-overlay-container {
-  @extend .max-width;
   @extend .site-width;
+  @extend .max-width;
 }
 
 .nav-content {
@@ -87,7 +87,7 @@ a {
   position: absolute;
   overflow-y: scroll;
   height: 100vh;
-  width: 100vw;
+  width: 100vw !important;
   overflow-x: hidden;
   z-index: 6;
   top: -$container-pad-top-xs;
