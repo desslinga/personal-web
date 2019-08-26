@@ -8,6 +8,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 export class NotesPreviewComponent implements OnInit {
   @Input() project: string;
   title: string;
+  theme: string;
 
   constructor(private router: Router) {
     this.project = this.router.url.slice(7);
@@ -15,7 +16,29 @@ export class NotesPreviewComponent implements OnInit {
   }
 
   ngOnInit() {
+    // determine theme of note
+    if ([
+      'frontend-questions-html',
+      'frontend-questions-css-one',
+      'frontend-questions-css-two',
+      'frontend-questions-css-three',
+      'frontend-questions-js-one',
+      'frontend-questions-js-two',
+      'frontend-questions-js-three',
+      'frontend-questions-js-four'
+    ].includes(this.project)) {
+      this.theme = 'notes-dev';
+    }
+    if ([
+      'personal-first-post'
+    ].includes(this.project)) {
+      this.theme = 'notes-personal';
+    }
+
+    // determine title of note
     switch(this.project) {
+      case 'personal-first-post':
+        this.title = "Welcome!";
       case 'frontend-questions-html':
         this.title = "Front-end Developer Interview Questions - HTML";
         break;

@@ -1,5 +1,5 @@
 <app-preview
-  project="notes"
+  [project]="theme"
   [title]="title"
   prevUrl="/notes">
     <app-frontend-questions-html
@@ -26,4 +26,7 @@
     <app-frontend-questions-js-four
       *ngIf="project==='frontend-questions-js-four'"
     ></app-frontend-questions-js-four>
+    <app-personal-first-post
+      *ngIf="project==='personal-first-post'"
+    ></app-personal-first-post>
 </app-preview>

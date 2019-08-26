@@ -44,6 +44,7 @@ import { FrontendQuestionsJsOneComponent } from './pages/partial/notes-preview/p
 import { FrontendQuestionsJsTwoComponent } from './pages/partial/notes-preview/previews/frontend-questions-js-two/frontend-questions-js-two.component';
 import { FrontendQuestionsJsThreeComponent } from './pages/partial/notes-preview/previews/frontend-questions-js-three/frontend-questions-js-three.component';
 import { FrontendQuestionsJsFourComponent } from './pages/partial/notes-preview/previews/frontend-questions-js-four/frontend-questions-js-four.component';
+import { PersonalFirstPostComponent } from './pages/partial/notes-preview/previews/personal-first-post/personal-first-post.component';
 
 // note components
 import { DefnComponent } from './components/notes/defn.component';
@@ -83,7 +84,8 @@ import { LocComponent } from './components/notes/loc.component';
     FrontendQuestionsJsOneComponent,
     FrontendQuestionsJsTwoComponent,
     FrontendQuestionsJsThreeComponent,
-    FrontendQuestionsJsFourComponent
+    FrontendQuestionsJsFourComponent,
+    PersonalFirstPostComponent
   ],
   imports: [
     BrowserModule,
