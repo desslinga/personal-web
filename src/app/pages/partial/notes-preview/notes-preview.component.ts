@@ -39,6 +39,7 @@ export class NotesPreviewComponent implements OnInit {
     switch(this.project) {
       case 'personal-first-post':
         this.title = "Welcome!";
+        break;
       case 'frontend-questions-html':
         this.title = "Front-end Developer Interview Questions - HTML";
         break;
