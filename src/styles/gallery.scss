@@ -71,5 +71,5 @@
 }
 
 .notes-personal {
-  @include custom-preview(white, black, #616161);
+  @include custom-preview($c-primary, $c-secondary, #616161);
 }

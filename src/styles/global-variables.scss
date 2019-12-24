@@ -9,6 +9,7 @@ $screen-xxl-min: 1607px;
 
 //$beige: #F8EAD5;
 $beige: #FFF5E6;
+$warmer-beige: #fffae6;
 $med-beige: #EECC99;
 $darker-beige: #D6B686;
 $brown: #8C4B25;
@@ -25,7 +26,7 @@ $yellow: #f1d766;
 $golden-yellow: #dab100;
 $rust: #c57c52;
 
-$c-primary: $beige;
+$c-primary: $warmer-beige;
 $c-secondary: $off-black;
 $c-accent: $off-black;
 $c-special: $rust;
@@ -46,6 +47,8 @@ $font-md: 1.4rem;
 $font-md-line-height: 2.6rem;
 $font-lg: 1.5rem;
 $font-lg-line-height: 2.8rem;
+$font-xl: 1.6rem;
+$font-xl-line-height: 3rem;
 
 // font weights
 $font-light: 300;
