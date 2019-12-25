@@ -28,6 +28,11 @@ h1, span {
   line-height: $font-lg-line-height;
 }
 
+@mixin font-xl {
+  font-size: $font-xl;
+  line-height: $font-xl-line-height;
+}
+
 .font-xxs {
   @include font-xxs;
 }
@@ -46,6 +51,10 @@ h1, span {
 
 .font-lg {
   @include font-lg;
+}
+
+.font-xl {
+  @include font-xl;
 }
 
 .subtitle {

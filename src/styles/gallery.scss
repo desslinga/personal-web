@@ -18,58 +18,71 @@
 }
 
 .uofthacks-v {
-  @include custom-preview(#0a010c, #da907c, #fff);
+  //@include custom-preview(#0a010c, #da907c, #fff);
+  @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .amacss-coffeehouse {
-  @include custom-preview(#72a4c1, #fffaed, #fff);
+  //@include custom-preview(#72a4c1, #fffaed, #fff);
+  @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .potted-plants {
-  @include custom-preview(#985c3e, #edd39e, #fff);
+  //@include custom-preview(#985c3e, #edd39e, #fff);
+  @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .amacss-gaming {
-  @include custom-preview(#0e1826, #ffd37a, #fff);
+  //@include custom-preview(#0e1826, #ffd37a, #fff);
+  @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .warm-series {
-  @include custom-preview(#9b6b44, #fed886, #fff);
+  //@include custom-preview(#9b6b44, #fed886, #fff);
+  @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .go-introduction {
-  @include custom-preview(#2c332c, #e1e6a3, #fff);
+  //@include custom-preview(#2c332c, #e1e6a3, #fff);
+ @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .amacss-other {
-  @include custom-preview(#0e1826, #f0ca9d, #fff);
+  //@include custom-preview(#0e1826, #f0ca9d, #fff);
+  @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .floral-series {
-  @include custom-preview(#30170e, #e28356, #fff);
+  //@include custom-preview(#30170e, #e28356, #fff);
+  @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .amacss-piday {
-  @include custom-preview(#efc68c, #88391c, #fff);
+  //@include custom-preview(#efc68c, #88391c, #fff);
+  @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .waffly {
-  @include custom-preview(#0e1826, #e6d9b7, #29313f);
+  //@include custom-preview(#0e1826, #e6d9b7, #29313f);
+  @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .closetr {
-  @include custom-preview(#334143, #e6ecef, #5a7b80);
+  //@include custom-preview(#334143, #e6ecef, #5a7b80);
+  @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .sparknodes {
-  @include custom-preview(#1b1b1b, #ffffff, #616161);
+  //@include custom-preview(#1b1b1b, #ffffff, #616161);
+  @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .notes-dev {
   //@include custom-preview($beige, $brown, $darker-beige);
-  @include custom-preview(#1b1b1b, #ffffff, #616161);
+  //@include custom-preview(#1b1b1b, #ffffff, #616161);
+  @include custom-preview($c-secondary, $c-primary, #616161);
 }
 
 .notes-personal {
-  @include custom-preview(white, black, #616161);
+  @include custom-preview($c-primary, $c-secondary, #616161);
 }

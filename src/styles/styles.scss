@@ -57,6 +57,12 @@ body {
   color: $c-special-2;
 }
 
+.icon-link {
+  @extend .font-link;
+  @extend .font-xl;
+  margin-right: 10%;
+}
+
 a:hover {
   color: $c-accent;
   transition: 0.3s ease-in-out;
