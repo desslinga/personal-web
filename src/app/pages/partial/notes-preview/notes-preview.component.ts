@@ -12,7 +12,6 @@ export class NotesPreviewComponent implements OnInit {
 
   constructor(private router: Router) {
     this.project = this.router.url.slice(7);
-    console.log(this.project);
   }
 
   ngOnInit() {
