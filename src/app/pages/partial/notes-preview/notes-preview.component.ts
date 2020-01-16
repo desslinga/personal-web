@@ -33,11 +33,19 @@ export class NotesPreviewComponent implements OnInit {
     ].includes(this.project)) {
       this.theme = 'notes-personal';
     }
+    if ([
+      'cscc69-t1'
+    ].includes(this.project)) {
+      this.theme = 'notes-academic'
+    }
 
     // determine title of note
     switch(this.project) {
       case 'personal-first-post':
         this.title = "Welcome!";
+        break;
+      case 'cscc69-t1':
+        this.title = "CSCC69 Tutorial Notes";
         break;
       case 'frontend-questions-html':
         this.title = "Front-end Developer Interview Questions - HTML";

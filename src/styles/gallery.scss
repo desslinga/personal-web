@@ -86,3 +86,7 @@
 .notes-personal {
   @include custom-preview($c-primary, $c-secondary, #616161);
 }
+
+.notes-academic {
+  @include custom-preview($c-primary, $c-secondary, #616161);
+}

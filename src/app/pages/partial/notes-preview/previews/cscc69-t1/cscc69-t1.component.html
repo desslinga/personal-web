@@ -1,0 +1,165 @@
+<div class='blog'>
+  <div class="row">
+    <div class="col-12">
+      <h3>Tutorial Week 2</h3>
+    </div>
+    <div class="col-12">
+      <h3>
+        CPU Architecture Review
+      </h3>
+      <p>
+        <b>Important components:</b>
+      </p>
+      <ul>
+        <li><p>
+          <defn><b>Program Counter (PC):</b></defn> tells us where the next
+          instruction is, when executing a program.
+        </p></li>
+        <li><p>
+          <defn><b>Stack Pointer (SP):</b></defn> similar to a program counter,
+          it tells us the location of the last program request.
+        </p></li>
+        <li><p>
+          <defn><b>Data Registers:</b></defn> can store small amounts of data
+          temporarily, and allows for (relatively) fast access.
+        </p></li>
+        <li><p>
+          <defn><b>Interrupts:</b></defn> high priority function calls. When
+          interrupts occur, the operating system takes over and figures out how
+          to handle the interrupts.
+        </p></li>
+      </ul>
+      <p>
+        <b>An example of a CPU Instruction being called:</b>
+      </p>
+      <p>
+        First, we check the Program Counter (PC) and see where the next
+        instruction is. We see that it's at <code>AE00</code>. That address
+        (<code>AE00</code>) is moved into the <defn>Memory Address Register
+        (MAR)</defn>, which stores addresses used to access memory.
+      </p>
+      <p>
+        Then we increment the Program Counter. We go through the <defn>Address
+        Bus</defn> and look for the value at address <code>AE00</code>. We see
+        that the value is <code>3C</code> (this means "Increment Register A").
+      </p>
+      <p>
+        That data (<code>3c</code>) goes through the <defn>Data Bus</defn> and
+        is loaded into the <defn>Buffer Register (BR)</defn>. Now, if the data
+        happens to be an instruction (which it is), it also gets loaded into
+        the <defn>Buffer Register (BR)</defn>.
+      </p>
+      <p>
+        We decode the instruction, and it translates to "INC A" (Increment
+        Register A). To execute the instruction, we need the ALU. After
+        incrementing we get the value <code>01</code> in A.
+      </p>
+      <hr>
+      <h3>
+        Memory Hierarchy
+      </h3>
+      <p>
+        In memory hierarchy we measure by how (physically) close the memory
+        location is to the CPU. When memory is closer, this means accessing that
+        memory is faster.
+      </p>
+      <p>
+        CPU registers are the closest, followed by cache, then we have our RAM,
+        and the furthest away is Secondary Storage. Usually, faster memory is
+        more expensive so we can't have a lot of it.
+      </p>
+      <hr>
+      <h3>
+        More about Memory
+      </h3>
+      <p>
+        Memory is technically all in one continuous space. However, this space
+        is segmented into these parts: the <defn>code</defn>, <defn>data</defn>,
+        <defn>stack</defn>, and <defn>heap</defn>. Here's a simplified look:
+      </p>
+      <p>
+        Note that the heap grows upwards, while the stack grows downwards!
+      </p>
+      <hr>
+      <h3>
+        Stack Frame
+      </h3>
+      <p>
+        Here's a short example of how a <defn>stack</defn> works. We have three
+        functions and we're going to call them one after another (<code>Function
+        1</code> calls <code>Function 2</code>, which calls <code>Function 3
+        </code>).
+      </p>
+      <p>
+        Initially, we're in <code>Function 1</code>, and we have our local
+        variables in the <defn>stack</defn>.
+      </p>
+      <p>
+        Once we call <code>Function 2</code> (from within <code>Function 1
+        </code>), the <defn>stack</defn> grows to accomodate it. We have to
+        store the parameters passed into <code>Function 2</code>, and then
+        the return address of <code>Function 1</code> (for when we're finished
+        executing)... and then the local variables for <code>Function 2</code>.
+      </p>
+      <p>
+        Once <code>Function 2</code> calls <code>Function 3</code>, the same
+        thing happens; our <defn>stack</defn> grows.
+      </p>
+      <hr>
+      <h3>
+        C Review
+      </h3>
+      <p>In Operating Systems, we'll be working with C a lot! Hopefully this
+      review will help, especially with assignments.</p>
+      <h3>
+        Pointers
+      </h3>
+      <p>
+        All variables are stored somewhere; they're stored at a memory address.
+        To get a variable's <defn>address</defn>, use the <code>&</code>
+        operator.
+      </p>
+      <p>
+        Pointers are variables that hold memory addresses. To get the
+        <defn>value of the data</defn> in the memory address, we can
+        <defn>de-reference</defn> a pointer, using <code>*</code>.
+      </p>
+      <p>
+        Good practice: Initialize pointers to null. This makes debugging easier.
+      </p>
+      <h3>
+        Pass by Value vs Pass by Reference
+      </h3>
+      <p>
+        If we pass a regular variable (not a pointer) to a function, we won't
+        see any changes made to that variable outside that function. However,
+        if we instead pass a <defn>pointer</defn> variable, any changes made
+        to it within the function... will be seen outside that function too!
+      </p>
+      <hr>
+      <h3>
+        Arrays
+      </h3>
+      <p>
+        Let's discuss how arrays are a little different in C. Arrays are similar
+        to <defn>pointers</defn>. We can assign arrays to <defn>pointer</defn>
+        variables, and we can access them from these pointer variables the
+        same way we would if they were array variables. This is because
+        an array variable points to the first element in the array.
+      </p>
+      <h3>
+        Structs
+      </h3>
+      <p>
+        Structs are most easily understood as objects; they have multiple
+        properties (called <defn>members</defn>). To access struct
+        <defn>members</defn>:
+      </p>
+      <p>
+        When using a struct <defn>variable</defn>: <code>struct.member</code>
+        <br>
+        When using a struct <defn>pointer</defn>: <code>struct->member</code>
+      </p>
+    </div>
+  </div>
+</div>
