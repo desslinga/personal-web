@@ -161,6 +161,8 @@
         To get a variable's <defn>address</defn>, use the <code>&</code>
         operator.
       </p>
+      <pre class="language-clike"><code>int x = 42;
+int *x_ptr = &amp;x;</code></pre>
       <p>
         Pointers are variables that hold memory addresses. To get the
         <defn>value of the data</defn> in the memory address, we can
@@ -220,7 +222,7 @@
         <code>&</code> (AND), <code>|</code> (OR), <code>~</code> (NOT), and
         <code>^</code> (XOR). In action:
       </p>
-      <pre class="language-c"><code>a = 0110 1001, b = 0101 0101
+      <pre class="language-clike"><code>a = 0110 1001, b = 0101 0101
 
 ~a = 1001 0110
 ~b = 1010 1010
@@ -252,7 +254,7 @@ a^b = 0011 1100</code></pre>
         passing in functions as parameters. We can intialize <defn>function
         pointers</defn> like so:
       </p>
-      <pre class="language-c"><code>int (*function_ptr)(int, int)</code></pre>
+      <pre class="language-clike"><code>int (*function_ptr)(int, int)</code></pre>
       <p>
         The above creates a pointer (named <code>function_ptr</code>) to a
         function that takes two <code>int</code>s as input and returns an
@@ -268,7 +270,7 @@ a^b = 0011 1100</code></pre>
         When declaring <defn>function pointers</defn> we have to declare the
         function name, with the <code>*</code> in parenthesis.
       </p>
-      <pre class="language-c"><code>// This is the correct way; a pointer p to
+      <pre class="language-clike"><code>// This is the correct way; a pointer p to
 // a function that takes two ints, and returns
 // an int.
 int (*p)(int, int)
@@ -288,6 +290,11 @@ int *p(int, int)</code></pre>
         A program that sits between <defn>user applications</defn> and
         <defn>hardware</defn>, helping the two communicate.
       </p>
+    </div>
+    <div class="col-12">
+      <img src="./assets/images/notes/cscc69_t1_9.jpg">
+    </div>
+    <div class="col-12">
       <h3>
         Kernel Modules
       </h3>
