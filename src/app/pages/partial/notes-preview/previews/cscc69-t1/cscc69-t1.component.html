@@ -24,7 +24,7 @@
           temporarily, and allows for (relatively) fast access.
         </p></li>
         <li><p>
-          <defn><b>Interrupts:</b></defn> high priority function calls. When
+          <defn><b>Interrupts:</b></defn> are high priority function calls. When
           interrupts occur, the operating system takes over and figures out how
           to handle the interrupts.
         </p></li>
@@ -32,12 +32,18 @@
       <p>
         <b>An example of a CPU Instruction being called:</b>
       </p>
+    </div>
+    <div class="col-12">
+      <img src="./assets/images/notes/cscc69_t1_1.jpg">
+    </div>
+    <div class="col-12">
       <p>
         First, we check the Program Counter (PC) and see where the next
         instruction is. We see that it's at <code>AE00</code>. That address
         (<code>AE00</code>) is moved into the <defn>Memory Address Register
         (MAR)</defn>, which stores addresses used to access memory.
       </p>
+
       <p>
         Then we increment the Program Counter. We go through the <defn>Address
         Bus</defn> and look for the value at address <code>AE00</code>. We see
@@ -49,11 +55,21 @@
         happens to be an instruction (which it is), it also gets loaded into
         the <defn>Buffer Register (BR)</defn>.
       </p>
+    </div>
+    <div class="col-12">
+      <img src="./assets/images/notes/cscc69_t1_2.jpg">
+    </div>
+    <div class="col-12">
       <p>
         We decode the instruction, and it translates to "INC A" (Increment
         Register A). To execute the instruction, we need the ALU. After
         incrementing we get the value <code>01</code> in A.
       </p>
+    </div>
+    <div class="col-12">
+      <img src="./assets/images/notes/cscc69_t1_3.jpg">
+    </div>
+    <div class="col-12">
       <hr>
       <h3>
         Memory Hierarchy
@@ -63,6 +79,11 @@
         location is to the CPU. When memory is closer, this means accessing that
         memory is faster.
       </p>
+    </div>
+    <div class="col-12">
+      <img src="./assets/images/notes/cscc69_t1_4.jpg">
+    </div>
+    <div class="col-12">
       <p>
         CPU registers are the closest, followed by cache, then we have our RAM,
         and the furthest away is Secondary Storage. Usually, faster memory is
@@ -77,6 +98,11 @@
         is segmented into these parts: the <defn>code</defn>, <defn>data</defn>,
         <defn>stack</defn>, and <defn>heap</defn>. Here's a simplified look:
       </p>
+    </div>
+    <div class="col-12">
+      <img src="./assets/images/notes/cscc69_t1_5.jpg">
+    </div>
+    <div class="col-12">
       <p>
         Note that the heap grows upwards, while the stack grows downwards!
       </p>
@@ -87,24 +113,40 @@
       <p>
         Here's a short example of how a <defn>stack</defn> works. We have three
         functions and we're going to call them one after another (<code>Function
-        1</code> calls <code>Function 2</code>, which calls <code>Function 3
-        </code>).
+        1</code> calls <code>Function 2</code>, which calls
+        <code>Function 3</code>).
       </p>
       <p>
         Initially, we're in <code>Function 1</code>, and we have our local
         variables in the <defn>stack</defn>.
       </p>
+    </div>
+    <div class="col-12">
+      <img src="./assets/images/notes/cscc69_t1_6.jpg">
+    </div>
+    <div class="col-12">
       <p>
-        Once we call <code>Function 2</code> (from within <code>Function 1
-        </code>), the <defn>stack</defn> grows to accomodate it. We have to
-        store the parameters passed into <code>Function 2</code>, and then
-        the return address of <code>Function 1</code> (for when we're finished
-        executing)... and then the local variables for <code>Function 2</code>.
+        Once we call <code>Function 2</code> (from within
+        <code>Function 1</code>), the <defn>stack</defn> grows to accomodate it.
+        We have to store the parameters passed into <code>Function 2</code>, and
+        then the return address of <code>Function 1</code> (for when we're
+        finished executing)... and then the local variables for
+        <code>Function 2</code>.
       </p>
+    </div>
+    <div class="col-12">
+      <img src="./assets/images/notes/cscc69_t1_7.jpg">
+    </div>
+    <div class="col-12">
       <p>
         Once <code>Function 2</code> calls <code>Function 3</code>, the same
         thing happens; our <defn>stack</defn> grows.
       </p>
+    </div>
+    <div class="col-12">
+      <img src="./assets/images/notes/cscc69_t1_8.jpg">
+    </div>
+    <div class="col-12">
       <hr>
       <h3>
         C Review
@@ -159,6 +201,121 @@
         When using a struct <defn>variable</defn>: <code>struct.member</code>
         <br>
         When using a struct <defn>pointer</defn>: <code>struct->member</code>
+      </p>
+      <h3>
+        Allocating Memory
+      </h3>
+      <p>
+        When we use <code>malloc</code>, we allocate memory on the
+        <defn>heap</defn>. Lots of online resources explain this well.
+      </p>
+      <p>
+        Key: Free memory that you malloc! Otherwise, we get memory leaks.
+      </p>
+      <h3>
+        Bit Manipulation
+      </h3>
+      <p>
+        When we want to manipulate bits directly, we can use bitwise operators
+        <code>&</code> (AND), <code>|</code> (OR), <code>~</code> (NOT), and
+        <code>^</code> (XOR). In action:
+      </p>
+      <pre class="language-c"><code>a = 0110 1001, b = 0101 0101
+
+~a = 1001 0110
+~b = 1010 1010
+a&b = 0100 0001
+a|b = 0111 1101
+a^b = 0011 1100</code></pre>
+      <h3>
+        Bit Masks
+      </h3>
+      <p>
+        Bit masks are useful for when we want to clear some bits, and preserve
+        some others.
+      </p>
+      <h3>
+        Bit Shifting
+      </h3>
+      <p>
+        Bit shifts move all the bits left, or right, and then replace the
+        remaining space with zeros (<code>0</code>). For bit shifting, we can
+        use the <code><<</code> (<defn>left shift</defn>) or
+        <code>>></code> (<defn>right shift</defn>) operators.
+      </p>
+      <hr>
+      <h3>
+        Function Pointers
+      </h3>
+      <p>
+        Functions can have <defn>pointers</defn> too! These are useful for
+        passing in functions as parameters. We can intialize <defn>function
+        pointers</defn> like so:
+      </p>
+      <pre class="language-c"><code>int (*function_ptr)(int, int)</code></pre>
+      <p>
+        The above creates a pointer (named <code>function_ptr</code>) to a
+        function that takes two <code>int</code>s as input and returns an
+        <code>int</code>.
+      </p>
+      <p>
+        To get the address of a function, we can use the <code>&</code> operator
+        (like with other variables). To call the function that's being pointed
+        to by the <defn>function pointer</defn>, we can
+        <defn>de-reference</defn> that pointer.
+      </p>
+      <p>
+        When declaring <defn>function pointers</defn> we have to declare the
+        function name, with the <code>*</code> in parenthesis.
+      </p>
+      <pre class="language-c"><code>// This is the correct way; a pointer p to
+// a function that takes two ints, and returns
+// an int.
+int (*p)(int, int)
+
+// On the other hand, this is not a pointer.
+// Rather, it is a function that takes two
+// ints, and returns an int* (pointer to int).
+int *p(int, int)</code></pre>
+      <hr>
+      <h3>
+        Kernel Programming
+      </h3>
+      <h3>
+        Kernel
+      </h3>
+      <p>
+        A program that sits between <defn>user applications</defn> and
+        <defn>hardware</defn>, helping the two communicate.
+      </p>
+      <h3>
+        Kernel Modules
+      </h3>
+      <p>
+        We can extend a kernel's functionality using <defn>kernel modules</defn>.
+        For Assignment 1, we will be making one of these. To compile a module,
+        we use a <code>makefile</code> (provided in the assignment).
+      </p>
+      <p>
+        We also have conventions for return values in <defn>kernel modules</defn>.
+        Normally, we return <code>0</code> if a function <defn>exits correctly
+        </defn>. When there are <defn>errors</defn>, we have to use the
+        appropriate <defn>error code</defn>. The ones we'll be using in
+        Assignment 1 are: <code>-ENOMEM</code>, <code>-EINVAL</code>,
+        <code>-EPERM</code>, and <code>-EBUSY</code>. In Assignment 1, we
+        specify which error codes to return for specific circumstances.
+      </p>
+      <hr>
+      <h3>
+        Synchronization and Spinlocks
+      </h3>
+      <p>
+        When creating <defn>kernel modules</defn>, we have to use spinlocks to
+        avoid <defn>race conditions</defn>. Whenever we're accessing
+        (reading/writing) any shared resource, we must use spinlocks! An example
+        of a shared resource is a <defn>system call table</defn>, which are
+        used by lots of processes. We must ensure that only one
+        <defn>process/thread</defn> accesses it at a time (in Assignment 1!).
       </p>
     </div>
   </div>
