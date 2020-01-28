@@ -50,6 +50,7 @@ import { Cscc69T1Component } from './pages/partial/notes-preview/previews/cscc69
 // note components
 import { DefnComponent } from './components/notes/defn.component';
 import { LocComponent } from './components/notes/loc.component';
+import { Cscc69T2Component } from './pages/partial/notes-preview/previews/cscc69-t2/cscc69-t2.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { LocComponent } from './components/notes/loc.component';
     FrontendQuestionsJsThreeComponent,
     FrontendQuestionsJsFourComponent,
     PersonalFirstPostComponent,
-    Cscc69T1Component
+    Cscc69T1Component,
+    Cscc69T2Component
   ],
   imports: [
     BrowserModule,

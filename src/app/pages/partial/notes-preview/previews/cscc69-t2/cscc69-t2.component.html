@@ -1,0 +1,165 @@
+<div class='blog'>
+  <div class="row">
+    <div class="col-12">
+      <h3>Tutorial Week 3</h3>
+    </div>
+    <div class="col-12">
+      <h3>
+        Useful links:
+      </h3>
+    </div>
+  </div>
+  <div class='row'>
+    <div class="col-12 col-sm-6">
+      <a class="btn-sim" href="https://www.virtualbox.org/wiki/Downloads">
+        <span>Virtual Box Download</span>
+      </a>
+    </div>
+    <div class="col-12 col-sm-6">
+      <a class="btn-sim" href="http://www.cs.toronto.edu/~mustafa/C69A1/">
+        <span>Version Control with VM</span>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h3>
+        Running some <code>my_syscall()</code> calls
+      </h3>
+      <p>
+        <b>
+          Processes: P1, P2, P3, P4, P5
+        </b>
+        <br>
+        <b>
+          generic interceptor:
+        </b>
+          logs a message (only if the system call is
+          intercepted and the process calling it is being monitored) then
+          calls the original system call
+      </p>
+      <hr>
+      <p>
+        <b>
+          System Call Table
+        </b>
+        <br>
+        0. my_syscall
+        <br>
+        1. generic_interceptor() -> log message -> original syscall
+        <br>
+        2. mkdir
+        <br>
+        3. write
+        <br>
+        4. ls
+      </p>
+      <p>
+        Now let's run some my_syscall() calls and see what happens to our
+        book-keeping table.
+      </p>
+      <hr>
+      <p>
+        <code>my_syscall(REQUEST_SYSCALL_INTERCEPT, read, P1)</code>
+        <br>
+        <b>Book-keeping Table</b>
+        <br>
+        0. my_syscall
+        <br>
+        1. read -> intercepted, monitoring: []
+        <br>
+        2. mkdir -> not intercepted, monitoring: []
+        <br>
+        3. write -> not intercepted, monitoring: []
+        <br>
+        4. ls -> not intercepted, monitoring: []
+      </p>
+      <hr>
+      <p>
+        <code>my_syscall(REQUEST_START_MONITORING, read, P1)</code>
+        <br>
+        <b>Book-keeping Table</b>
+        <br>
+        0. my_syscall
+        <br>
+        1. read -> intercepted, monitoring: [P1]
+        <br>
+        2. mkdir -> not intercepted, monitoring: []
+        <br>
+        3. write -> not intercepted, monitoring: []
+        <br>
+        4. ls -> not intercepted, monitoring: []
+      </p>
+      <hr>
+      <p>
+        <code>my_syscall(REQUEST_START_MONITORING, mkdir, P1)</code>
+        <br>
+        return <code>-EINVAL</code>
+      </p>
+      <hr>
+      <p>
+        <code>my_syscall(REQUEST_SYSCALL_INTERCEPT, mkdir, 0)</code>
+        <br>
+        <b>Book-keeping Table</b>
+        <br>
+        0. my_syscall
+        <br>
+        1. read -> intercepted, monitoring: [P1]
+        <br>
+        2. mkdir -> intercepted, monitoring: []
+        <br>
+        3. write -> not intercepted, monitoring: []
+        <br>
+        4. ls -> not intercepted, monitoring: []
+      </p>
+      <hr>
+      <p>
+        <code>my_syscall(REQUEST_START_MONITORING, mkdir, 0)</code>
+        <br>
+        <b>Book-keeping Table</b>
+        <br>
+        0. my_syscall
+        <br>
+        1. read -> intercepted, monitoring: [P1]
+        <br>
+        2. mkdir -> intercepted, monitoring: [], monitored = 2 (blacklist)
+        <br>
+        3. write -> not intercepted, monitoring: []
+        <br>
+        4. ls -> not intercepted, monitoring: []
+      </p>
+      <hr>
+      <p>
+        <code>my_syscall(REQUEST_STOP_MONITORING, mkdir, P1)</code>
+        <br>
+        <b>Book-keeping Table</b>
+        <br>
+        0. my_syscall
+        <br>
+        1. read -> intercepted, monitoring: [P1]
+        <br>
+        2. mkdir -> intercepted, monitoring: [P1], monitored = 2 (blacklist)
+        <br>
+        3. write -> not intercepted, monitoring: []
+        <br>
+        4. ls -> not intercepted, monitoring: []
+      </p>
+      <hr>
+      <p>
+        <code>my_syscall(REQUEST_STOP_MONITORING, mkdir, 0)</code>
+        <br>
+        <b>Book-keeping Table</b>
+        <br>
+        0. my_syscall
+        <br>
+        1. read -> intercepted, monitoring: [P1]
+        <br>
+        2. mkdir -> intercepted, monitoring: [], monitored = 0
+        <br>
+        3. write -> not intercepted, monitoring: []
+        <br>
+        4. ls -> not intercepted, monitoring: []
+      </p>
+    </div>
+  </div>
+</div>
