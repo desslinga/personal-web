@@ -9,7 +9,7 @@
       </h3>
       <p>
         We will be covering three types of synchronization mechanisms. These
-        are ways in which control access to computer resources. The types are
+        are ways in which we control access to computer resources. The types are
         <b>locks</b>, <b>semaphores</b>, <b>condition variables</b> (which are
         used in <b>monitors</b>.)
       </p>
@@ -26,7 +26,7 @@
           entering a critical section.
         </p></li>
         <li><p>
-          <code>acquire(lock)</code> in which a process gives up a lock before
+          <code>release(lock)</code> in which a process gives up a lock before
           exiting a critical section.
         </p></li>
       </ul>
@@ -48,7 +48,7 @@
 pthread_mutex_init(mutex, attr);
 
 // destroy a mutex
-pthread_mutex_destory(mutex);
+pthread_mutex_destroy(mutex);
 
 // acquire the lock (mutex)
 pthread_mutex_lock(mutex);
@@ -73,7 +73,7 @@ int pthread_mutex_init(pthread_mutex_t* mutex, const pthread_mutexattr_t* attr);
         You can destroy POSIX mutexes
       </p>
       <pre class="language-clike"><code>// destroy a mutex:
-int pthread_mutex_destory(pthread_mutex_t *mutex);
+int pthread_mutex_destroy(pthread_mutex_t *mutex);
 // the mutex must be unlocked beforehand!</code></pre>
       <p>
         You can acquire POSIX mutexes
@@ -364,8 +364,84 @@ while(!condition) &#123;
         Bounded Buffer Example
       </h3>
       <p>
-        Let's try out monitors with this example.
+        Let's try out monitors with this example. We have a buffer that can
+        only hold up to <b>n items</b>.
       </p>
+      <p>
+        <b>Producers</b> can add items to the buffer (if it's not full).
+        <br>
+        <b>Consumers</b> can remove items from the buffer (if it's not empty).
+      </p>
+      <p>
+        We would thus need two functions: <code>add_to_buffer();</code> for
+        <b>producers</b> and <code>remove_from_buffer();</code> for
+        <b>consumers</b>.
+      </p>
+      <p>
+        Here is our monitor:
+      </p>
+      <pre class="language-clike"><code>#define N 100 // size of buffer
+type struct buf_s &#123;
+  int data[N]; // buffer
+  int inpos; // index for where producer can insert an item
+  int outpos; // index where consumer can remove an item
+  int numelements; // number of items currently in buffer
+
+  struct lock *mylock; // lock for monitor
+  struct cv *notFull; // condition variable: buffer is not full
+  struct cv *notEmpty; // condition variable: buffer is not empty
+&#125; buf_t;
+</code></pre>
+      <p>
+        We can see there are two condition variables in this monitor:
+        <code>notFull</code> and <code>notEmpty</code>
+      </p>
+      <p>
+        Here is the code for <code>add_to_buffer()</code>, which will be used
+        by <b>producers</b>.
+      </p>
+      <pre class="language-clike"><code>// add an item to the buffer
+void add_to_buff(int value) &#123;
+  lock_acquire(buffer.mylock);
+  while (nelements == N) &#123;
+    // condition: only enter monitor if buffer is not full
+    cv_wait(buffer.notFull, buffer.mylock);
+  &#125;
+  // add item at the in position index
+  buf.data[inpos] = value;
+  // adjust the index for the next insert
+  inpos = (inpos + 1)%N
+  nelements++;
+  // since we just added an item, the buffer cannot be empty
+  // let some waiting consumer know
+  cv_signal(buffer.notEmpty, buffer.mylock);
+  lock_release(buffer.mylock);
+&#125;
+</code></pre>
+      <p>
+        And here is the code for <code>remove_from_buffer()</code>, which
+        will be used by <b>consumers</b>.
+      </p>
+      <pre class="language-clike"><code>// remove an item from the buffer
+void remove_to_buff(int value) &#123;
+  // hold the value of item to be removed
+  int val;
+  lock_acquire(buffer.mylock);
+  while (nelements == 0) &#123;
+    // condition: only enter monitor if buffer is not empty
+    cv_wait(buffer.notEmpty, buffer.mylock);
+  &#125;
+  // get item from the out position index
+  val = buf.data[outpos];
+  // adjust the index for the next deletion
+  outpos = (outpos + 1)%N;
+  nelements--;
+  // since we just removed an item, the buffer cannot be full
+  // let some waiting producer know
+  cv_signal(buffer.notFull, buffer.mylock);
+  lock_release(buffer.mylock);
+&#125;
+</code></pre>
     </div>
   </div>
 </div>
