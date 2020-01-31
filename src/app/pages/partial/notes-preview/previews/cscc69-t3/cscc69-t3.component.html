@@ -1,0 +1,371 @@
+<div class="blog">
+  <div class="row">
+    <div class="col-12">
+      <h3>Tutorial Week 4</h3>
+    </div>
+    <div class="col-12">
+      <h3>
+        Synchronization Primitives
+      </h3>
+      <p>
+        We will be covering three types of synchronization mechanisms. These
+        are ways in which control access to computer resources. The types are
+        <b>locks</b>, <b>semaphores</b>, <b>condition variables</b> (which are
+        used in <b>monitors</b>.)
+      </p>
+      <hr>
+      <h3>
+        Locks
+      </h3>
+      <p>
+        Locks have two operations:
+      </p>
+      <ul>
+        <li><p>
+          <code>acquire(lock)</code> in which a process obtains a lock before
+          entering a critical section.
+        </p></li>
+        <li><p>
+          <code>acquire(lock)</code> in which a process gives up a lock before
+          exiting a critical section.
+        </p></li>
+      </ul>
+      <p>
+        After a process obtains a lock for a critical section, then no other
+        process may enter that critical section until that lock is released.
+        Only one process can be in the critical section at a time (which can
+        be a bad thing).
+      </p>
+      <hr>
+      <h3>
+        POSIX Locks (Mutex)
+      </h3>
+      <p>
+        POSIX locks a.k.a <b>mutex</b> (mutual exclusion) are an implementation
+        of the lock mechanism. They have a few more operations:
+      </p>
+      <pre class="language-clike"><code>// initialize a mutex
+pthread_mutex_init(mutex, attr);
+
+// destroy a mutex
+pthread_mutex_destory(mutex);
+
+// acquire the lock (mutex)
+pthread_mutex_lock(mutex);
+
+// try to acquire the lock (mutex)
+pthread_mutex_trylock(mutex);
+
+// release the lock (mutex)
+pthread_mutex_unlock(mutex);</code></pre>
+      <p>
+        You can initialize POSIX mutexes <b>statically</b> or <b>dynamically</b>
+      </p>
+      <pre class="language-clike"><code>// statically:
+pthread_mutex_t mx = PTHREAD_MUTEX_INITIALIZER;
+// this will initialize the mutex with default attributes
+
+// dynamically:
+int pthread_mutex_init(pthread_mutex_t* mutex, const pthread_mutexattr_t* attr);
+// mutex: is the mutex you want to initialize
+// attr: to determine the mutex's attributes</code></pre>
+      <p>
+        You can destroy POSIX mutexes
+      </p>
+      <pre class="language-clike"><code>// destroy a mutex:
+int pthread_mutex_destory(pthread_mutex_t *mutex);
+// the mutex must be unlocked beforehand!</code></pre>
+      <p>
+        You can acquire POSIX mutexes
+      </p>
+      <pre class="language-clike"><code>// acquire a mutex:
+int pthread_mutex_lock(pthread_mutex_t *mutex);
+// if the mutex is already locked by another thread,
+// then this blocks until the mutex is unlocked.
+
+// try to acquire a mutex:
+int pthread_mutex_trylock(pthread_mutex_t *mutex);
+// if the mutex is already locked by another thread,
+// returns -EBUSY</code></pre>
+      <p>
+        You can release POSIX mutexes
+      </p>
+      <pre class="language-clike"><code>// release a mutex:
+int pthread_mutex_unlock(pthread_mutex_t *mutex);</code></pre>
+      <br>
+      <hr>
+      <h3>
+        Banking Example
+      </h3>
+      <p>
+        Let's try to use mutexes with this example. A single variable <code>int
+        balance;</code> holds your bank balance. There are two types of
+        transactions: <b>deposit</b> or <b>withdraw</b>.
+      </p>
+      <pre class="language-clike"><code>void *deposit(void *amt) &#123;
+  // CRITICAL SECTION
+  int amount = (int)amt;
+  int new_balance = balance + amount;
+  balance = new_balance;
+&#125;
+
+void *withdraw(void *amt) &#123;
+  // CRITICAL SECTION
+  int amount = (int)amt;
+  int new_balance = balance - amount;
+  balance = new_balance;
+&#125;
+</code></pre>
+      <p>
+        This might cause a <b>race condition</b>.
+      </p>
+      <ol>
+        <li><p>
+          Start with <code>balance = 1000</code>
+        </p></li>
+        <li><p>
+          We have <code>thread 1</code> that wants to deposit:
+          <code>deposit(1000);</code>, and <code>thread 2</code> that wants to
+          withdraw: <code>withdraw(200);</code>.
+        </p></li>
+        <li><p>
+          <code>thread 1</code> enters the critical section and sets
+          <code>new_balance = 2000</code>.
+        </p></li>
+        <li><p>
+          Then, <code>thread 2</code> enters the critical section and sets
+          <code>new_balance = 800</code>.
+        </p></li>
+        <li><p>
+          <code>thread 1</code> sets <code>balance = 2000</code> and exits.
+        </p></li>
+        <li><p>
+          <code>thread 2</code> sets <code>balance = 800</code> and exits.
+        </p></li>
+        <li><p>
+          Result? <code>balance = 800</code>.
+        </p></li>
+      </ol>
+      <p>
+        To prevent race conditions, the idea is to distinguish critical
+        sections and put locks around them. Here is the fixed code for
+        <code>deposit()</code> and <code>withdraw()</code>:
+      </p>
+      <pre class="language-clike"><code>void *deposit(void *amt) &#123;
+  pthread_mutex_lock(&bal_mutex);
+
+  // CRITICAL SECTION
+  int amount = (int)amt;
+  int new_balance = balance + amount;
+  balance = new_balance;
+
+  pthread_mutex_unlock(&bal_mutex);
+  pthread_exit((void *)0);
+&#125;
+
+void *withdraw(void *amt) &#123;
+  pthread_mutex_lock(&bal_mutex);
+
+  // CRITICAL SECTION
+  int amount = (int)amt;
+  int new_balance = balance - amount;
+  balance = new_balance;
+
+  pthread_mutex_unlock(&bal_mutex);
+  pthread_exit((void *)0);
+&#125;
+</code></pre>
+      <br>
+      <hr>
+      <h3>
+        Semaphores
+      </h3>
+      <p>
+        Semaphores are like locks, but they allow <b>multiple threads</b> to
+        be active in a critical section (compared to mutexes, which only
+        allow up to one).
+      </p>
+      <p>
+        With semaphores we have:
+      </p>
+      <ul>
+        <li><p>
+          <code>integer count</code>, an internal variable that is accessed
+          through 2 operations.
+        </p></li>
+        <li><p>
+          <code>wait()</code> decrements <code>count</code>.
+        </p></li>
+        <li><p>
+          <code>signal()</code> increments <code>count</code>.
+        </p></li>
+      </ul>
+      <hr>
+      <h3>
+        POSIX Semaphores
+      </h3>
+      <p>
+        You can initialize a POSIX semaphore
+      </p>
+      <pre class="language-clike"><code>// initialize a semaphore:
+int sem_init(sem_t *sem, int pshared, unsigned int value);
+// pshared: non-zero value to share between processes
+// value: initial value of count
+</code></pre>
+      <p>
+        You can initialize a POSIX semaphore
+      </p>
+      <pre class="language-clike"><code>// destroy a semaphore:
+int sem_destroy(sem_t *sem);
+// you can't destroy a semaphore with waiting threads!
+</code></pre>
+      <p>
+        You can increment and decrement a POSIX semaphore
+      </p>
+      <pre class="language-clike"><code>// increment a semaphore:
+int sem_wait(sem_t *sem);
+
+// decrement a semaphore:
+int sem_post(sem_t *sem);
+</code></pre>
+      <br>
+      <hr>
+      <h3>
+        Server Example
+      </h3>
+      <p>
+        Let's try semaphores with this example. Here is a snippet of a sample
+        program for a server that is handling connections (one thread per
+        connection).
+      </p>
+      <pre class="language-clike"><code>// declare semaphore
+sem_t resource_sem;
+// the maximum number of connections is 10
+sem_init(&resource_sem, 0, 10);
+
+void *handle_connection(void *client) &#123;
+  sem_wait(&resource_sem);
+  // handling connection...
+  sem_post(&resource_sem);
+&#125;</code></pre>
+      <p>
+        There will be multiple threads attempting to make a connection with
+        the server.
+      </p>
+      <ul>
+        <li><p>
+          The counter variable for <code>resource_sem</code> will initially
+          start at <code>count = 10</code>.
+        </p></li>
+        <li><p>
+          If 10 threads call <code>handle_connection()</code>, they will each
+          decrement the <code>count</code> variable by 1. While all 10 threads
+          are active, <code>count = 0</code>.
+        </p></li>
+        <li><p>
+          If another thread calls <code>handle_connection()</code>, they will
+          decrement the counter to <code>count = -1</code>. This thread will
+          be blocked!
+        </p></li>
+        <li><p>
+          Before a thread exits the function, they will increment the count
+          variable to <code>count = 0</code>, and the previously waiting
+          thread can enter the critical section.
+        </p></li>
+      </ul>
+      <hr>
+      <h3>
+        Condition Variables
+      </h3>
+      <p>
+        Condition variables are used for <b>monitors</b> (which are blocks of
+        code that you want to control access to, similar to a critical
+        section). More on this later...
+      </p>
+      <hr>
+      <h3>
+        POSIX Condition Variables
+      </h3>
+      <p>
+        Here are some operations:
+      </p>
+      <pre class="language-clike"><code>// initialize a condition variable
+int pthread_cond_init(pthread_cont_t *cont, pthread_cond_attr_t *attr);
+
+// destroy a condition variable
+int pthread_cond_destroy(pthread_cond_t *cond);
+
+// wait on a condition variable
+int pthread_cond_wait(pthread_cond_t *cond, pthread_mutex_t *mutex);
+
+// wake up one thread that is waiting on this condition variable
+int pthread_cond_signal(pthread_cond_t *cond);
+
+// wake up all threads waiting on this condition variable
+int pthread_cond_broadcast(pthread_cond_t *cond);</code></pre>
+      <br>
+      <hr>
+      <h3>
+        Monitors
+      </h3>
+      <p>
+        Locks and semaphores contain simple functions and variables.
+        <b>Monitors</b> put all shared data and operations (functions) into
+        a "box," and only one process can be active in that "box" at the same
+        time.
+      </p>
+      <p>
+        If a monitor is "occupied" (there is one process active in it), then
+        no other process can enter.
+      </p>
+      <p>
+        While inside a monitor, a <code>process a</code> is able to suspend
+        execution and release the lock (and let another <code>process b</code>
+        inside the monitor). This is useful for when <code>process a</code>
+        requires something from <code>process b</code> before moving forward.
+      </p>
+      <hr>
+      <h3>
+        Hoare vs Mesa Monitors
+      </h3>
+      <p>
+        Let's say we have two processes <code>P</code> and <code>Q</code>.
+        Currently, <code>P</code> is inside the monitor, while <code>Q</code>
+        is waiting outside the monitor.
+      </p>
+      <p>
+        What if <code>P</code> calls <code>signal()</code>?
+      </p>
+      <p>
+        <b>Hoare Monitors</b>: <code>P</code> would be kicked out of the
+        monitor, and has to wait. <code>Q</code> is now inside the monitor.
+        The condition that <code>P</code> requires is guaranteed to hold, by
+        the time it can enter the monitor.
+      </p>
+      <pre class="language-clike"><code>// hoare monitor wait
+if(!condition) &#123;
+  wait(cv, lock);
+&#125;
+// only have to check condition once!</code></pre>
+      <p>
+        <b>Mesa Monitors</b>: <code>P</code> continues executing in the monitor.
+        <code>Q</code> is placed in a <b>ready queue</b>. The condition that
+        <code>Q</code> requires is not guaranteed to hold... and it must check
+        for the condition again.
+      </p>
+      <pre class="language-clike"><code>// hoare monitor wait
+while(!condition) &#123;
+  wait(cv, lock);
+&#125;
+// have to check condition continuously...</code></pre>
+      <br>
+      <hr>
+      <h3>
+        Bounded Buffer Example
+      </h3>
+      <p>
+        Let's try out monitors with this example.
+      </p>
+    </div>
+  </div>
+</div>

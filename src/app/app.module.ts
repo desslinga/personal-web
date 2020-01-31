@@ -51,6 +51,7 @@ import { Cscc69T1Component } from './pages/partial/notes-preview/previews/cscc69
 import { DefnComponent } from './components/notes/defn.component';
 import { LocComponent } from './components/notes/loc.component';
 import { Cscc69T2Component } from './pages/partial/notes-preview/previews/cscc69-t2/cscc69-t2.component';
+import { Cscc69T3Component } from './pages/partial/notes-preview/previews/cscc69-t3/cscc69-t3.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { Cscc69T2Component } from './pages/partial/notes-preview/previews/cscc69
     FrontendQuestionsJsFourComponent,
     PersonalFirstPostComponent,
     Cscc69T1Component,
-    Cscc69T2Component
+    Cscc69T2Component,
+    Cscc69T3Component
   ],
   imports: [
     BrowserModule,
