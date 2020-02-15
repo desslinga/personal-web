@@ -52,6 +52,8 @@ import { DefnComponent } from './components/notes/defn.component';
 import { LocComponent } from './components/notes/loc.component';
 import { Cscc69T2Component } from './pages/partial/notes-preview/previews/cscc69-t2/cscc69-t2.component';
 import { Cscc69T3Component } from './pages/partial/notes-preview/previews/cscc69-t3/cscc69-t3.component';
+import { Cscc69T5Component } from './pages/partial/notes-preview/previews/cscc69-t5/cscc69-t5.component';
+import { Cscc69T4Component } from './pages/partial/notes-preview/previews/cscc69-t4/cscc69-t4.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +93,9 @@ import { Cscc69T3Component } from './pages/partial/notes-preview/previews/cscc69
     PersonalFirstPostComponent,
     Cscc69T1Component,
     Cscc69T2Component,
-    Cscc69T3Component
+    Cscc69T3Component,
+    Cscc69T5Component,
+    Cscc69T4Component
   ],
   imports: [
     BrowserModule,
