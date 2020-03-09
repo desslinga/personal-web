@@ -46,14 +46,15 @@ import { FrontendQuestionsJsThreeComponent } from './pages/partial/notes-preview
 import { FrontendQuestionsJsFourComponent } from './pages/partial/notes-preview/previews/frontend-questions-js-four/frontend-questions-js-four.component';
 import { PersonalFirstPostComponent } from './pages/partial/notes-preview/previews/personal-first-post/personal-first-post.component';
 import { Cscc69T1Component } from './pages/partial/notes-preview/previews/cscc69-t1/cscc69-t1.component';
+import { Cscc69T2Component } from './pages/partial/notes-preview/previews/cscc69-t2/cscc69-t2.component';
+import { Cscc69T3Component } from './pages/partial/notes-preview/previews/cscc69-t3/cscc69-t3.component';
+import { Cscc69T4Component } from './pages/partial/notes-preview/previews/cscc69-t4/cscc69-t4.component';
+import { Cscc69T5Component } from './pages/partial/notes-preview/previews/cscc69-t5/cscc69-t5.component';
+import { Cscc69T8Component } from './pages/partial/notes-preview/previews/cscc69-t8/cscc69-t8.component';
 
 // note components
 import { DefnComponent } from './components/notes/defn.component';
 import { LocComponent } from './components/notes/loc.component';
-import { Cscc69T2Component } from './pages/partial/notes-preview/previews/cscc69-t2/cscc69-t2.component';
-import { Cscc69T3Component } from './pages/partial/notes-preview/previews/cscc69-t3/cscc69-t3.component';
-import { Cscc69T5Component } from './pages/partial/notes-preview/previews/cscc69-t5/cscc69-t5.component';
-import { Cscc69T4Component } from './pages/partial/notes-preview/previews/cscc69-t4/cscc69-t4.component';
 
 @NgModule({
   declarations: [
@@ -94,8 +95,9 @@ import { Cscc69T4Component } from './pages/partial/notes-preview/previews/cscc69
     Cscc69T1Component,
     Cscc69T2Component,
     Cscc69T3Component,
+    Cscc69T4Component,
     Cscc69T5Component,
-    Cscc69T4Component
+    Cscc69T8Component
   ],
   imports: [
     BrowserModule,
