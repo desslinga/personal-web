@@ -39,7 +39,8 @@ export class NotesPreviewComponent implements OnInit {
       'cscc69-t3',
       'cscc69-t4',
       'cscc69-t5',
-      'cscc69-t8'
+      'cscc69-t8',
+      'cscc69-t9'
     ].includes(this.project)) {
       this.theme = 'notes-academic'
     }

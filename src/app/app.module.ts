@@ -51,6 +51,7 @@ import { Cscc69T3Component } from './pages/partial/notes-preview/previews/cscc69
 import { Cscc69T4Component } from './pages/partial/notes-preview/previews/cscc69-t4/cscc69-t4.component';
 import { Cscc69T5Component } from './pages/partial/notes-preview/previews/cscc69-t5/cscc69-t5.component';
 import { Cscc69T8Component } from './pages/partial/notes-preview/previews/cscc69-t8/cscc69-t8.component';
+import { Cscc69T9Component } from './pages/partial/notes-preview/previews/cscc69-t9/cscc69-t9.component';
 
 // note components
 import { DefnComponent } from './components/notes/defn.component';
@@ -97,7 +98,8 @@ import { LocComponent } from './components/notes/loc.component';
     Cscc69T3Component,
     Cscc69T4Component,
     Cscc69T5Component,
-    Cscc69T8Component
+    Cscc69T8Component,
+    Cscc69T9Component
   ],
   imports: [
     BrowserModule,
