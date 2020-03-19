@@ -40,7 +40,8 @@ export class NotesPreviewComponent implements OnInit {
       'cscc69-t4',
       'cscc69-t5',
       'cscc69-t8',
-      'cscc69-t9'
+      'cscc69-t9',
+      'cscc69-t10'
     ].includes(this.project)) {
       this.theme = 'notes-academic'
     }
@@ -55,6 +56,11 @@ export class NotesPreviewComponent implements OnInit {
       case 'cscc69-t3':
       case 'cscc69-t4':
       case 'cscc69-t5':
+      case 'cscc69-t6':
+      case 'cscc69-t7':
+      case 'cscc69-t8':
+      case 'cscc69-t9':
+      case 'cscc69-t10':
         this.title = "CSCC69 Tutorial Notes";
         break;
       case 'frontend-questions-html':

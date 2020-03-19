@@ -56,6 +56,7 @@ import { Cscc69T9Component } from './pages/partial/notes-preview/previews/cscc69
 // note components
 import { DefnComponent } from './components/notes/defn.component';
 import { LocComponent } from './components/notes/loc.component';
+import { Cscc69T10Component } from './pages/partial/notes-preview/previews/cscc69-t10/cscc69-t10.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +100,8 @@ import { LocComponent } from './components/notes/loc.component';
     Cscc69T4Component,
     Cscc69T5Component,
     Cscc69T8Component,
-    Cscc69T9Component
+    Cscc69T9Component,
+    Cscc69T10Component
   ],
   imports: [
     BrowserModule,

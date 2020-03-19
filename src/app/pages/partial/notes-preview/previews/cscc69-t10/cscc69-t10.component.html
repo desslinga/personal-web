@@ -1,0 +1,178 @@
+<div class='blog'>
+  <div class="row">
+    <div class="col-12">
+      <h3>Tutorial Week 10</h3>
+    </div>
+    <div class="col-12">
+      <p>
+        This tutorial will be an overview of <b>Assignment 3</b>. You will have to implement 
+        commands for manipulating the file system.
+      </p>
+      <ul>
+        <li>
+          <code>ls</code>: List the files in the given directory. If the <code>-a</code>
+          flag is given, then we also show hidden files such as <code>.</code> and <code>..</code>
+        </li>
+        <li>
+          <code>mkdir</code>: Create a directory in the given path.
+        </li>
+        <li>
+          <code>cp</code>: Copies the contents of the specified file into the new 
+          destination path with the new specified name.
+        </li>
+        <li>
+          <code>ln</code>: Creates a soft link of a specified file to the new destination.
+        </li>
+      </ul>
+      <p>
+        Note that there is no starer code, but 
+        <a href="">readimage.c</a> should be good to get you started. As with readimage.c,
+        One of the arguments that you pass into any of the commands is the file name of the 
+        disk image.
+      </p>
+      <hr>
+      <h3><code>ext2_ls</code></h3>
+      <b>Usage: <code>ext2_ls &lt;image file name&gt; &lt;file path&gt; [-a]</code></b>
+      <ul>
+        <li>
+          <code>file path</code>: The name of the directory/file that we want to list 
+          the contents of.
+        </li>
+        <li>
+          <code>hidden flag [-a]</code>: If this flag is specified then we also want to 
+          display hidden entries (for the directory), such as <code>.</code> and <code>..</code>.
+        </li>
+      </ul>
+      <p>
+        For this command (as with the others), you will have to do a lot of validation.
+        This includes checking the path name given. For this case, you will have to check
+        if the disk image is valid, and the path name is valid.
+      </p>
+      <p>
+        You have to ensure that you return an error for paths such as
+        <code>/not//..//valid///path</code>. It would be better to provide a helper 
+        function for this.
+      </p>
+      <p>
+        Now, if the path is valid, there are two cases. The path either points to
+        a directory, or a file.
+      </p>
+      <p>
+        <b>File Case</b>: Get to the inode of the file, and retrieve it's name. Then 
+        print the name of the file (excluding the path).
+      </p>
+      <pre>&gt; ext2_ls disk.img path/to/file.txt
+file.txt</pre>
+      <p>
+        <b>Directory Case</b>: We then have two sub-cases. We either have the 
+        <code>-a</code> flag, or not. Either way, we would similarly retrieve the inode 
+        for the directory. Then from the inode, we locate the block with the directory 
+        entries.
+      </p>
+      <p>
+        We use <code>rec_len</code> to traverse through the files that we see, and add 
+        them to a list. If the <code>-a</code> flag is given, then we also add the entries 
+        <code>.</code> and <code>..</code> to our list. We print these entries line by line.
+      </p>
+      <pre>&gt; ext2_ls disk.img path/to/directory
+file1.txt 
+file2.txt 
+file3.txt</pre>
+      <pre>&gt; ext2_ls disk.img path/to/directory -a
+.
+..
+file1.txt 
+file2.txt 
+file3.txt</pre>
+      <hr>
+      <h3><code>ext2_mkdir</code></h3>
+      <b>Usage: <code>ext2_ls &lt;image file name&gt; &lt;new directory path&gt;</code></b>
+      <ul>
+        <li>
+          <code>new directory path</code>: The path including the destination to place the 
+          new directory, and the name of the new directory.
+        </li>
+      </ul>
+      <p>
+        For this command, you will actually have to manipulate the file system. As usual, 
+        you will have to do some validation on the new directory path name provided. For 
+        example, let's say we are given the following directory path.
+      </p>
+      <pre>ext2_mkdir path/to/new/directory</pre>
+      <p>
+        We would attempt to extract the parent path, and the name of the new directory.
+        For this example, we can do that. <code>path/to/new/</code> should be the parent 
+        directory for your new directory named <code>directory</code>.
+      </p>
+      <p>
+        Next, we would need to create the new directory. First, we would need to consult 
+        the <code>inode_bitmap</code> for a free inode, and <code>block_bitmap</code> for 
+        a free block. We will increment the appropriate inode, and block counters. Then, 
+        we need to set the information in our new inode to reflect the new directory.
+      </p>
+      <p>
+        In the new directory block for <code>directory</code>, we would need to add the
+        default two entries <code>.</code>, <code>..</code>. <b>Hint:</b> create a helper 
+        function that adds a directory entry to a given directory block.
+      </p>
+      <p>
+        We would need to check if <code>path/to/new</code> is the path of a valid directory.
+        Otherwise, we need to return the appropriate error. Next, we create a new directory 
+        entry in the parent inode, named <code>directory</code>. We set this directory entry 
+        with the new block and inode we allocated.
+      </p>
+      <p>
+        If any one of the above steps fails, then we would need to restore the counters and
+        bitmaps that we modified. <b>Hint:</b> create a helper function that does this 
+        for you.
+      </p>
+      <hr>
+      <h3><code>ext2_cp</code></h3>
+      <b>Usage: <code>ext2_cp &lt;image file name&gt; &lt;native OS file path&gt; &lt;disk file path&gt;</code></b>
+      <ul>
+        <li>
+          <code>native OS file path</code>: The path in our native OS file system that 
+          contains the file that we want to copy. Note that we cannot copy directories.
+        </li>
+        <li>
+          <code>disk file path</code>: The directory in the disk file <code>image file name</code>
+          where we want to store the contents we copied.
+        </li>
+      </ul>
+      <p>
+        This command is more complicated than the previous two. There are some validations 
+        that we need to do, such as checking the file name in the native system. If the file 
+        name is too long, for example, then we would return <code>ENAMETOOLONG</code>.
+      </p>
+      <p>
+        For this example, we will assume that we have used the command like so:
+      </p>
+      <pre>ext2_cp disk.img path/big_file.txt /level1/level2</pre>
+      <p>
+        We would need to extract the file name from <code>path/big_file.txt</code>, as this 
+        would be the name of the file in the destination directory. The name would be 
+        <code>big_filet.txt</code>. Then, we would need to check how large the file is that we 
+        are copying. From the size of the file, we can calculate how many blocks we need to store it.
+      </p>
+      <p>
+        Of course, there are possible errors we need to watch out for. For example, if there are 
+        not enough free blocks for the file. However, if there are enough blocks available, then 
+        we can proceed copying the contents of our file into those blocks. Note that the first 12 
+        blocks are direct blocks, and beyond that, we would need to use secondary blocks. After 
+        copying the file contents of <code>big_file.txt</code>, we would allocate an inode for 
+        this new file, and name it appropriately.
+      </p>
+      <p>
+        After we have succesfully copied the file contents, and allocated an inode, then we need to 
+        add a new directory entry to <code>/level1/level2</code>. We would need to check that 
+        <code>/level1/level2</code> is a valid directory, and if it is, then we get it's inode.
+        We get the directory block, and add a new directory entry named <code>big_file.txt</code>.
+        We would need to note the number of new blocks used, and the new inode.
+      </p>
+      <p>
+        If any one of the above steps fails, then we would need to restore the counters and
+        bitmaps that we modified. Recall the helper function suggested earlier.
+      </p>
+    </div>
+  </div>
+</div>
