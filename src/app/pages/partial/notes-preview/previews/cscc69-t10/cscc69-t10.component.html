@@ -23,6 +23,10 @@
         <li>
           <code>ln</code>: Creates a soft link of a specified file to the new destination.
         </li>
+        <li>
+          <code>rm</code>: Removes the file in the specified path. This one is a bonus and 
+          won't be discussed here, but feel free to ask me about it privately.
+        </li>
       </ul>
       <p>
         Note that there is no starer code, but 
@@ -50,7 +54,7 @@
       </p>
       <p>
         You have to ensure that you return an error for paths such as
-        <code>/not//..//valid///path</code>. It would be better to provide a helper 
+        <code>/not//..//valid///path</code>. It would be better to define a helper 
         function for this.
       </p>
       <p>
@@ -61,24 +65,25 @@
         <b>File Case</b>: Get to the inode of the file, and retrieve it's name. Then 
         print the name of the file (excluding the path).
       </p>
-      <pre>&gt; ext2_ls disk.img path/to/file.txt
+      <pre class="language-clike">&gt; ext2_ls disk.img path/to/file.txt
 file.txt</pre>
       <p>
         <b>Directory Case</b>: We then have two sub-cases. We either have the 
         <code>-a</code> flag, or not. Either way, we would similarly retrieve the inode 
-        for the directory. Then from the inode, we locate the block with the directory 
-        entries.
+        for the directory. <b>Hint:</b> define a helper function that returns the inode 
+        number when given a path name. From the inode, we locate the block with the 
+        directory entries.
       </p>
       <p>
         We use <code>rec_len</code> to traverse through the files that we see, and add 
         them to a list. If the <code>-a</code> flag is given, then we also add the entries 
         <code>.</code> and <code>..</code> to our list. We print these entries line by line.
       </p>
-      <pre>&gt; ext2_ls disk.img path/to/directory
+      <pre class="language-clike">&gt; ext2_ls disk.img path/to/directory
 file1.txt 
 file2.txt 
 file3.txt</pre>
-      <pre>&gt; ext2_ls disk.img path/to/directory -a
+      <pre class="language-clike">&gt; ext2_ls disk.img path/to/directory -a
 .
 ..
 file1.txt 
@@ -98,7 +103,7 @@ file3.txt</pre>
         you will have to do some validation on the new directory path name provided. For 
         example, let's say we are given the following directory path.
       </p>
-      <pre>ext2_mkdir path/to/new/directory</pre>
+      <pre class="language-clike">ext2_mkdir path/to/new/directory</pre>
       <p>
         We would attempt to extract the parent path, and the name of the new directory.
         For this example, we can do that. <code>path/to/new/</code> should be the parent 
@@ -147,11 +152,11 @@ file3.txt</pre>
       <p>
         For this example, we will assume that we have used the command like so:
       </p>
-      <pre>ext2_cp disk.img path/big_file.txt /level1/level2</pre>
+      <pre class="language-clike">ext2_cp disk.img path/big_file.txt /level1/level2</pre>
       <p>
         We would need to extract the file name from <code>path/big_file.txt</code>, as this 
         would be the name of the file in the destination directory. The name would be 
-        <code>big_filet.txt</code>. Then, we would need to check how large the file is that we 
+        <code>big_file.txt</code>. Then, we would need to check how large the file is that we 
         are copying. From the size of the file, we can calculate how many blocks we need to store it.
       </p>
       <p>
@@ -162,6 +167,11 @@ file3.txt</pre>
         copying the file contents of <code>big_file.txt</code>, we would allocate an inode for 
         this new file, and name it appropriately.
       </p>
+    </div>
+    <div class="col-12">
+      <img src="./assets/images/notes/cscc69_t10_1.jpg">
+    </div>
+    <div class="col-12">
       <p>
         After we have succesfully copied the file contents, and allocated an inode, then we need to 
         add a new directory entry to <code>/level1/level2</code>. We would need to check that 
@@ -173,6 +183,70 @@ file3.txt</pre>
         If any one of the above steps fails, then we would need to restore the counters and
         bitmaps that we modified. Recall the helper function suggested earlier.
       </p>
+      <hr>
+      <h3><code>ext2_ln</code></h3>
+      <b>Usage: <code>ext2_ln &lt;image file name&gt; &lt;source link path&gt; &lt;destination link path&gt; [-s]</code></b>
+      <ul>
+        <li>
+          <code>source link path</code>: The path in our disk for the file we want to create a 
+          link for.
+        </li>
+        <li>
+          <code>destination link path</code>: The destination path for our new link. The last 
+          name for the link, and the parent directory path, are both included here.
+        </li>
+        <li>
+          <code>symbolic link flag -s</code>: If this flag is given, then we create a symbolic 
+          link. Otherwise, we create a hard link.
+        </li>
+      </ul>
+      <p>
+        This one should be a bit easier than <code>ext2_cp</code>, but there's still some work 
+        to be done. One of the differences is that the <code>destination link path</code> is the 
+        path of the new link, rather than the parent directory. 
+      </p>
+      <p>
+        For this example, we will assume that we have used the command like so:
+      </p>
+      <pre class="language-clike">ext2_ln disk.img path/big_file.txt /level1/level2/newlink</pre>
+      <p>
+        This means we are creating a link to <code>path/big_file.txt</code>. The link will be 
+        named <code>newlink</code> and is placed in the <code>/level1/level2</code> directory.
+        Since the <code>-s</code> flag is omitted, we create a hard link.
+      </p>
+      <p>
+        The usual validations will apply. For example, we have to ensure that 
+        <code>/level1/level2/</code> is a directory, and that an entry <code>newlink</code> 
+        does not yet exist in that directory. We also have to ensure that the new link name 
+        isn't too long (as with <code>ext2_cp</code>). 
+      </p>
+      <p>
+        Since we are creating a hard link, then our task is simple. We simply 
+        have to create a new directory entry in <code>/level1/level2</code>, named 
+        <code>big_file.txt</code>, pointing to the same inode as <code>path/big_file.txt</code>.
+      </p>
+    </div>
+    <div class="col-12">
+      <img src="./assets/images/notes/cscc69_t10_2.jpg">
+    </div>
+    <div class="col-12">
+      <p>
+        What about the case where we want to create a symbolic link? This would be if the 
+        <code>-s</code> flag is given.
+      </p>
+      <pre class="language-clike">ext2_ln disk.img path/big_file.txt /level1/level2/newlink [-s]</pre>
+      <p>
+        This case is a bit more complicated, but the extra work is simply allocating a 
+        new inode. Once we allocate an inode, we need to find a block for the symbolic 
+        link. Then, we write the path of the original file: <code>path/big_file.txt</code>
+        into that block. As with the hard link case, we need to create a new directory 
+        entry <code>newlink</code> in <code>level1/level2</code>. However, this entry 
+        points to the new inode we made.
+      </p>
+    </div>
+    </div>
+    <div class="col-12">
+      <img src="./assets/images/notes/cscc69_t10_3.jpg">
     </div>
   </div>
 </div>
